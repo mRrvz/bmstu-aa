@@ -1,9 +1,9 @@
 CC := ghc
-MAIN := src/Main.hs
+MAIN := Main.hs
 APPNAME := app.exe
 
 build:
-	$(CC) -o $(APPNAME) --make $(MAIN)
+	cd src && $(CC) -o $(APPNAME) --make $(MAIN) && mv app.exe ../
 
 clean:
 	rm *.o *.hi *.exe *.out

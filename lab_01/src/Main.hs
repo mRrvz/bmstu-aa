@@ -1,3 +1,4 @@
+import App
+
 main :: IO ()
-main = do
-    return ()
+main = run
