@@ -1,4 +1,4 @@
-import App
+import Application
 
 main :: IO ()
 main = run
