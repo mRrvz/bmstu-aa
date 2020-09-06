@@ -3,13 +3,22 @@ module Levenshtein (
     levenshteinMemoized,
     levenshteinRecursion,
     levenshteinIterative,
-    damerauLevenshtein
+    damerauLevenshtein,
+    AlgorithmInfo (dist, matrix, depth)
 ) where
 
-
+import System.Clock
 import Data.Matrix
 
 type Distance = Int
+type Depth = Int
+type Time = IO TimeSpec
+
+data AlgorithmInfo = AlgorithmInfo {
+    dist :: Distance,
+    matrix :: Maybe (Matrix Int),
+    depth :: Maybe Depth
+} deriving ();
 
 min3 :: Int -> Int -> Int -> Int
 min3 = (min .) . min
@@ -54,4 +63,13 @@ levenshteinIterative s1 s2 = fromLists $ reverse $ foldl
 
 
 damerauLevenshtein :: String -> String -> Matrix Int
-damerauLevenshtein s1 s2 = fromLists [[23, 23], [4,5]]
+damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
+    (\mtr i -> if head mtr == [] then [[0..length s1]] else calcRow mtr i : mtr) [[]] [0..length s2]
+    where cell mtr row i j = min3 (last row + 1) (head mtr !! j + 1) $ head mtr !! (j - 1) +
+                if s1 !! (j - 1) == s2 !! (i - 1) then 0 else 1
+          transposition i j = i > 1 && j > 1 && s1 !! (j - 1) == s2 !! (i - 2) && s1 !! (j - 2) == s2 !! (i - 1)
+          calcRow mtr i = foldl (\row j -> row ++ [
+                if length row == 0 then length mtr
+                else if transposition i j then min (cell mtr row i j) (((head $ tail mtr) !! i - 2) + 1)
+                else cell mtr row i j]
+            ) [] [0..length s1]
