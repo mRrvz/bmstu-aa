@@ -5,8 +5,10 @@ module Application (
 import Data.Matrix
 import Data.Maybe
 import System.Clock
+import Control.Exception
 import Text.Printf
 import Levenshtein
+import Analysis
 
 type Time = Integer
 
@@ -39,10 +41,10 @@ run = do
 
     start <- getTime Monotonic
 
-    let matrix = case n of {
-        "3" -> Just $ levenshteinIterative s1 s2;
-        "4" -> Just $ damerauLevenshtein s1 s2;
-        _ -> Nothing;
+    matrix <- case n of {
+        "3" -> evaluate $ Just $ levenshteinIterative s1 s2;
+        "4" -> evaluate $ Just $ damerauLevenshtein s1 s2;
+        _ -> evaluate Nothing;
     }
 
     end <- getTime Monotonic
@@ -55,19 +57,26 @@ run = do
 
     start <- getTime Monotonic
 
-    let distance = case n of {
-        "1" -> levenshteinRecursion s1 s2;
-        "2" -> levenshteinMemoized s1 s2;
-        "3" -> getDistance $ fromJust matrix;
-        "4" -> getDistance $ fromJust matrix;
+    results <- case n of {
+        "1" -> evaluate $ levenshteinRecursion s1 s2;
+        "2" -> evaluate $ levenshteinMemoized s1 s2;
+        _ -> evaluate $ getResults $ fromJust matrix;
     }
 
     end <- getTime Monotonic
+
     let time = case matrix_time of {
         Just time -> Just time;
         Nothing -> Just $ calculateTime start end;
     }
 
-    printf "\nДистанция: %d\nВремя: %d (наносек)\n" distance $ fromJust time
+    let memory_usage = case n of {
+        "1" -> calcMemory (snd results) (length s1) $ length s2;
+        "2" -> calcMatrixMemory (snd results) (length s1) $ length s2;
+        _ -> calcMatrixMemory 1 (length s1) $ length s2
+    }
+
+    printf "\nДистанция: %d\nВремя: %d (наносек)\nГлубина: %d\nКоличество задействованной памяти: %d (байт)\n"
+        (fst results) (fromJust time) (snd results) memory_usage
 
     run

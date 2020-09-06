@@ -1,10 +1,9 @@
 module Levenshtein (
-    getDistance,
+    getResults,
     levenshteinMemoized,
     levenshteinRecursion,
     levenshteinIterative,
     damerauLevenshtein,
-    AlgorithmInfo (dist, matrix, depth)
 ) where
 
 import System.Clock
@@ -24,32 +23,47 @@ min3 :: Int -> Int -> Int -> Int
 min3 = (min .) . min
 
 
-getDistance :: Matrix Int -> Distance
-getDistance mtr = getElem (nrows mtr) (ncols mtr) mtr
+max3 :: Int -> Int -> Int -> Int
+max3 = (max .) . max
 
 
-levenshteinMemoized :: String -> String -> Distance
-levenshteinMemoized s1 s2 = _memoized s1 s2 matrix
+getResults :: Matrix Int -> (Distance, Depth)
+getResults mtr = (getElem (nrows mtr) (ncols mtr) mtr, 0)
+
+
+levenshteinMemoized :: String -> String -> (Distance, Depth)
+levenshteinMemoized s1 s2 = _memoized s1 s2 matrix 0
     where matrix = fromList (length s1 + 1) (length s2 + 1) $ repeat (-1) -- проверить корректность
-          _memoized s1 "" _ = length s1
-          _memoized "" s2 _ = length s2
-          _memoized s1 s2 mtr = score where
-              score = min3 insert delete match
-              memoized = getElem (length s1) (length s2) mtr
+          _memoized s1 "" _ n = (length s1, n)
+          _memoized "" s2 _ n = (length s2, n)
+          _memoized s1 s2 mtr n = (score, depth) where
+              score = min3 (insert + 1) (delete + 1) (replace + match)
+              memoized = (getElem (length s1) (length s2) mtr, n + 1)
               new_mtr = setElem score (length s1, length s2) mtr
-              insert = if memoized == -1 then _memoized (init s1) s2 new_mtr + 1 else memoized
-              delete = if memoized == -1 then _memoized s1 (init s2) new_mtr + 1 else memoized
-              match = if memoized == -1 then _memoized (init s1) (init s2) new_mtr +
-                  (if last s1 == last s2 then 0 else 1) else memoized
+
+              (insert, curr1) = if fst memoized == -1 then _memoized (init s1) s2 new_mtr (n + 1)
+                    else memoized
+              (delete, curr2) = if fst memoized == -1 then _memoized s1 (init s2) new_mtr (n + 1)
+                    else memoized
+              (replace, curr3) = if fst memoized == -1 then _memoized (init s1) (init s2) new_mtr (n + 1)
+                    else memoized
+
+              match = if last s1 == last s2 then 0 else 1
+              depth = max3 curr1 curr2 curr3
 
 
-levenshteinRecursion :: String -> String -> Distance
-levenshteinRecursion s1 "" = length s1
-levenshteinRecursion "" s2 = length s2
-levenshteinRecursion s1 s2 = min3 insert match delete where
-    insert = levenshteinRecursion (init s1) s2 + 1
-    delete = levenshteinRecursion s1 (init s2) + 1
-    match = levenshteinRecursion (init s1) (init s2) + if last s1 == last s2 then 0 else 1
+levenshteinRecursion :: String -> String -> (Distance, Depth)
+levenshteinRecursion s1 s2 = _recursion s1 s2 0
+    where _recursion s1 "" n = (length s1, n)
+          _recursion "" s2 n = (length s2, n)
+          _recursion s1 s2 n = (score, depth) where
+              (insert, curr1) = _recursion (init s1) s2 (n + 1)
+              (delete, curr2) = _recursion s1 (init s2) (n + 1)
+              (replace, curr3) = _recursion (init s1) (init s2) (n + 1)
+
+              match = if last s1 == last s2 then 0 else 1
+              score = min3 (insert + 1) (delete + 1) (replace + match)
+              depth = max3 curr1 curr2 curr3
 
 
 levenshteinIterative :: String -> String -> Matrix Int
