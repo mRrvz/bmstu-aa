@@ -6,19 +6,16 @@ module Application (
 
 import Data.Matrix
 import Data.Maybe
-import Data.List
 import System.Clock
-import Control.DeepSeq (deepseq)
+import System.TimeIt
+import System.Clock
 import Control.Exception
-import System.Clock
---import Control.Exception
+
 import Text.Printf
 import Levenshtein
 import Analysis
 import Criterion.Main
-import System.CPUTime (getCPUTime)
 
-import System.TimeIt
 type Time = Integer
 
 
