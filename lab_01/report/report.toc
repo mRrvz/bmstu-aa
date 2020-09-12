@@ -1,0 +1,13 @@
+\babel@toc {russian}{}
+\contentsline {chapter}{Введение}{2}%
+\contentsline {chapter}{\numberline {1}Аналитическая часть}{4}%
+\contentsline {section}{\numberline {1.1}Вывод}{5}%
+\contentsline {chapter}{\numberline {2}Конструкторская часть}{6}%
+\contentsline {section}{\numberline {2.1}Схемы алгоритмов}{6}%
+\contentsline {chapter}{\numberline {3}Технологическая часть}{8}%
+\contentsline {section}{\numberline {3.1}Выбор ЯП}{8}%
+\contentsline {section}{\numberline {3.2}Реализация алгоритма}{8}%
+\contentsline {chapter}{\numberline {4}Исследовательская часть}{11}%
+\contentsline {section}{\numberline {4.1}Сравнительный анализ на основе замеров времени работы алгоритмов}{11}%
+\contentsline {section}{\numberline {4.2}Тестовые данные}{11}%
+\contentsline {chapter}{Заключение}{13}%

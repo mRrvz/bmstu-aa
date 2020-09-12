@@ -1,23 +1,33 @@
+{-# LANGUAGE BangPatterns #-}
+
 module Application (
     run
 ) where
 
 import Data.Matrix
 import Data.Maybe
+import Data.List
 import System.Clock
+import Control.DeepSeq (deepseq)
 import Control.Exception
+import System.Clock
+--import Control.Exception
 import Text.Printf
 import Levenshtein
 import Analysis
+import Criterion.Main
+import System.CPUTime (getCPUTime)
 
+import System.TimeIt
 type Time = Integer
+
 
 menu :: IO String
 menu = do
-    printf "1. Левенштейн: рекурсивный алгоритм\n\
-    \2. Левенштейн: рекурсивный алгоритм с мемоизацией\n\
-    \3. Левенштейн: итеративный алгоритм\n\
-    \4. Дамерау-Левенштейн: итеративный алгоритм\n"
+    printf "1. Расстояние Левенштейна: рекурсивный алгоритм\n\
+    \2. Расстояние Левенштейна: рекурсивный алгоритм с мемоизацией\n\
+    \3. Расстояние Левенштейна: итеративный алгоритм\n\
+    \4. Расстояние Дамерау-Левенштейна: итеративный алгоритм\n"
 
     n <- getLine
     return n
@@ -34,6 +44,11 @@ getStrings = do
 calculateTime :: TimeSpec -> TimeSpec -> Time
 calculateTime t1 t2 = toNanoSecs $ diffTimeSpec t2 t1
 
+timeItTPure :: (a -> (c, d)) -> a -> IO (Double, a)
+timeItTPure p a = timeItT $ p a `seq` return a
+
+flex p = product [1..p]
+
 run :: IO ()
 run = do
     (s1, s2) <- getStrings
@@ -41,10 +56,10 @@ run = do
 
     start <- getTime Monotonic
 
-    matrix <- case n of {
-        "3" -> evaluate $ Just $ levenshteinIterative s1 s2;
-        "4" -> evaluate $ Just $ damerauLevenshtein s1 s2;
-        _ -> evaluate Nothing;
+    let matrix = case n of {
+        "3" -> Just $ levenshteinIterative s1 s2;
+        "4" -> Just $ damerauLevenshtein s1 s2;
+        _ -> Nothing;
     }
 
     end <- getTime Monotonic
@@ -57,10 +72,10 @@ run = do
 
     start <- getTime Monotonic
 
-    results <- case n of {
-        "1" -> evaluate $ levenshteinRecursion s1 s2;
-        "2" -> evaluate $ levenshteinMemoized s1 s2;
-        _ -> evaluate $ getResults $ fromJust matrix;
+    let results = case n of {
+        "1" -> levenshteinRecursion s1 s2;
+        "2" -> levenshteinMemoized s1 s2;
+        _ ->  getResults $ fromJust matrix;
     }
 
     end <- getTime Monotonic
@@ -70,13 +85,15 @@ run = do
         Nothing -> Just $ calculateTime start end;
     }
 
+    print time
+
     let memory_usage = case n of {
         "1" -> calcMemory (snd results) (length s1) $ length s2;
         "2" -> calcMatrixMemory (snd results) (length s1) $ length s2;
         _ -> calcMatrixMemory 1 (length s1) $ length s2
     }
 
-    printf "\nДистанция: %d\nВремя: %d (наносек)\nГлубина: %d\nКоличество задействованной памяти: %d (байт)\n"
-        (fst results) (fromJust time) (snd results) memory_usage
+    --printf "\nДистанция: %d\nВремя: %d (наносек)\nГлубина: %d\nКоличество задействованной памяти: %d (байт)\n"
+        --(fst results) (fromJust time) (snd results) memory_usage
 
     run
