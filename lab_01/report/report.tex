@@ -5,6 +5,10 @@
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{pgfplots}
+\usepackage{filecontents}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
 
 % Для листинга кода:
 \lstset{ %
@@ -393,23 +397,73 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 		 	\hline
 			Длина строк & LR & LMR & LI & DLI \\  
 		 	\hline
-		 	10 & 15928 & 7643 & 7456 & 4367560\\
+		 	10 & 30500400 & 1300 & 650 & 680\\
 		 	\hline
-		 	20 & NaN & 7224736 & 21854 & 8286833\\
+		 	20 & NaN & 5100 & 2300 & 2500 \\
 		 	\hline
-			30 & NaN & 12123365 & 105445 & 12852145\\
+			30 & NaN & 11000 & 4800 & 5200 \\
 			\hline
-			50 & NaN & 16940041 & 407763 & 18585284\\
+			50 & NaN & 30000 & 12500 & 13500 \\
 			\hline
-			100 & NaN & 23402008 & 1966658 & 24103230\\
+			100 & NaN & 115000 & 48000 & 55000\\
 			\hline
-			200 & NaN & 32328258 & 11002094 & 27935583\\
+			200 & NaN & 530000 & 249000 & 528000 \\
 			\hline
 		\end{tabular}
 	\end{center}
 	\caption{Таблица времени выполнения алгоритмов (в наносекундах)}
 \end{table}
 
+\section{Оценка памяти}
+
+\begin{filecontents}{iter.dat}
+10      634
+20      2367
+30      4813
+50      12518
+100     48111
+200     249057
+\end{filecontents}
+
+\begin{filecontents}{iterDl.dat}
+10      681
+20      2562
+30      5207
+50      13533
+100     54078
+200     527797
+\end{filecontents}
+
+\begin{filecontents}{rec.dat}
+5       6771
+10      32766430
+\end{filecontents}
+
+\begin{filecontents}{recWithMem.dat}
+10      1313
+20      5157
+30      11342
+50      30066
+100     116134
+200     529335
+\end{filecontents}
+
+\begin{tikzpicture}
+
+\begin{axis}[
+    axis lines = left,
+    xlabel={len (symbols)},
+    ylabel={time (ticks)},
+    xmin=5, xmax=200,
+    ymin=1, ymax=600000,
+    legend pos=north west,
+    ymajorgrids=true
+]
+
+\addplot[color=red] table[x index=0, y index=1] {iter.dat}; 
+\addplot[color=orange] table[x index=0, y index=1] {iterdl.dat};
+\addplot[color=blue, mark=square] table[x index=0, y index=1] {rec.dat};
+\addplot[color=green, mark=square] table[x index=0, y index=1] {recwithmem.dat};
 
 \section{Вывод}
 
