@@ -397,7 +397,7 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 \end{table}
 
 \section{Вывод}
-В данном разделе были разработан исходный код четырех алгоритмов: вычисления расстояния Левенштейна рекурсивно, с заполнением матрицы и рекурсивно с заполнением матрицы, а также вычисления расстояния Дамерау — Левенштейна с заполнением матрицы.
+В данном разделе были разработаны исходные коды четырех алгоритмов: вычисления расстояния Левенштейна рекурсивно, с заполнением матрицы и рекурсивно с заполнением матрицы, а также вычисления расстояния Дамерау — Левенштейна с заполнением матрицы.
 
 \chapter{Исследовательская часть}
 
@@ -435,7 +435,6 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 \begin{table} [h!]
 	\caption{Таблица времени выполнения алгоритмов (в наносекундах)}
 	\begin{center}
-	    \caption{Таблица времени выполнения алгоритмов (в наносекундах)}
 		\begin{tabular}{|c c c c c|} 
 		 	\hline
 			Длина строк & Rec & MatRec & Iter & DamIter \\  
@@ -472,7 +471,7 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 
 Использование памяти при итеративной реализации теоретически равно:
 \begin{equation}
-(\mathcal{S}(STR_1) + 1) \cdot (\mathcal{S}(STR_2) + 1) \cdot \mathcal{S}\mathrm{(integer)} + 10\cdot \mathcal{S}\mathrm{(integer)} + 2 \cdot \mathcal{S}\mathrm{(string)}.
+(\mathcal{S}(STR_1) + 1) \cdot (\mathcal{S}(STR_2) + 1) \cdot \mathcal{S}\mathrm{(integer)} + 5\cdot \mathcal{S}\mathrm{(integer)} + 2 \cdot \mathcal{S}\mathrm{(string)}.
 \end{equation}
 
 

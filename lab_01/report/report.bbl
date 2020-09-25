@@ -27,19 +27,29 @@ The Haskell purely functional programming language [Электронный
 \selectlanguageifdefined{russian}
 Debian -- универсальная операционная система
   [Электронный ресурс].
-\newblock Режим доступа: \url{https://www.debian.org/}
-  note=Дата обращения: 20.09.2020).
+\newblock Режим доступа: \url{https://www.debian.org/}.
+\newblock Дата обращения: 20.09.2020.
 
 \bibitem{linux}
 \selectlanguageifdefined{russian}
 Linux -- Википедия [Электронный ресурс].
 \newblock Режим доступа: \url{https://ru.wikipedia.org/wiki/Linux}.
+\newblock Дата обращения: 20.09.2020.
+
+\bibitem{i5}
+\selectlanguageifdefined{russian}
+Процессор Intel® Core™ i5-3550 [Электронный
+  ресурс].
+\newblock Режим доступа:
+  \url{https://ark.intel.com/content/www/ru/ru/ark/products/65516/intel-core-i5-3550-processor-6m-cache-up-to-3-70-ghz.html}.
+\newblock Дата обращения: 20.09.2020.
 
 \bibitem{profiling}
 \selectlanguageifdefined{russian}
 Profiling -- Википедия [Электронный ресурс].
 \newblock Режим доступа:
   \url{https://en.wikipedia.org/wiki/Profiling}.
+\newblock Дата обращения: 20.09.2020.
 
 \bibitem{C++}
 \selectlanguageifdefined{russian}
