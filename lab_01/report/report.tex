@@ -10,13 +10,16 @@
 \usepackage{indentfirst}
 \usepackage{eucal}
 \usepackage{enumitem}
-\frenchspacing
-\usepackage{indentfirst} % Красная строка
+\frenchspacing
+
+\usepackage{indentfirst} % Красная строка
+
 
 \usetikzlibrary{datavisualization}
 \usetikzlibrary{datavisualization.formats.functions}
 
-\usepackage{amsmath}
+\usepackage{amsmath}
+
 
 
 
@@ -77,7 +80,7 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 	
 	\begin{center}
 		\noindent\begin{minipage}{1.3\textwidth}\centering
-			\Large\textbf{ Отчет по лабораторной работе № 1}\newline
+			\Large\textbf{  Отчет по лабораторной работе №1}\newline
 			\textbf{по дисциплине "Анализ алгоритмов"}\newline\newline
 		\end{minipage}
 	\end{center}
@@ -112,7 +115,7 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 	\item в биоинформатике для сравнения генов, хромосом и белков
 \end{itemize}
 
-Целью данной лабораторной работы: 
+Цели данной лабораторной работы: 
 \begin{enumerate}
 	\item Изучение метода динамического программирования на материале алгоритмов нахождения расстояния Левенштейна и Дамерау-Левенштейна.
 	\item Оценка реализаций алгоритмов нахождения расстояния Левенштейна и Дамерау-Левенштейна.
@@ -129,7 +132,6 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 	\item Описание и обоснование полученных результатов в отчете о выполненной лабораторной
 работе, выполненного как расчётно-пояснительная записка к работе. 
 \end{enumerate}
-
 
 \chapter{Аналитическая часть}
 
@@ -414,10 +416,15 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 
 Ниже приведеные технические характеристики устройства, на котором было проведенно тестирование ПО:
 
-\begin{itemize}
-	\item Операционная система: Debian \cite{debian} Linux \cite{linux} 11 <<bullseye>> 64-bit.
-	\item Оперативная память: 12 GB.
-	\item Процессор: Intel(R) Core(TM) i5-3550 CPU @ 3.30GHz\cite{i5}.
+\begin{itemize}
+
+	\item Операционная система: Debian \cite{debian} Linux \cite{linux} 11 <<bullseye>> 64-bit.
+
+	\item Оперативная память: 12 GB.
+
+	\item Процессор: Intel(R) Core(TM) i5-3550 CPU @ 3.30GHz
+\cite{i5}.
+
 \end{itemize}
 
 \section{Время выполнения алгоритмов}
@@ -428,6 +435,7 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 \begin{table} [h!]
 	\caption{Таблица времени выполнения алгоритмов (в наносекундах)}
 	\begin{center}
+	    \caption{Таблица времени выполнения алгоритмов (в наносекундах)}
 		\begin{tabular}{|c c c c c|} 
 		 	\hline
 			Длина строк & Rec & MatRec & Iter & DamIter \\  
@@ -466,7 +474,6 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 \begin{equation}
 (\mathcal{S}(STR_1) + 1) \cdot (\mathcal{S}(STR_2) + 1) \cdot \mathcal{S}\mathrm{(integer)} + 10\cdot \mathcal{S}\mathrm{(integer)} + 2 \cdot \mathcal{S}\mathrm{(string)}.
 \end{equation}
-
 
 
 \section{Вывод}

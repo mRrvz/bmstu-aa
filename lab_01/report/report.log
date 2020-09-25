@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.8.16)  26 SEP 2020 02:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.8.16)  26 SEP 2020 02:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1195,12 +1195,12 @@ Overfull \hbox (3.6707pt too wide) in paragraph at lines 129--130
 <rec.jpg, id=36, 1149.29375pt x 1126.2075pt>
 File: rec.jpg Graphic file (type jpg)
 <use rec.jpg>
-Package pdftex.def Info: rec.jpg  used on input line 253.
+Package pdftex.def Info: rec.jpg  used on input line 252.
 (pdftex.def)             Requested size: 375.36299pt x 367.81747pt.
 <mem.jpg, id=37, 939.51pt x 1125.20375pt>
 File: mem.jpg Graphic file (type jpg)
 <use mem.jpg>
-Package pdftex.def Info: mem.jpg  used on input line 260.
+Package pdftex.def Info: mem.jpg  used on input line 259.
 (pdftex.def)             Requested size: 422.77559pt x 506.33702pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1208,10 +1208,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <iter.jpg, id=38, 578.16pt x 1105.12875pt>
 File: iter.jpg Graphic file (type jpg)
 <use iter.jpg>
-Package pdftex.def Info: iter.jpg  used on input line 267.
+Package pdftex.def Info: iter.jpg  used on input line 266.
 (pdftex.def)             Requested size: 346.89867pt x 663.08238pt.
 
-LaTeX Warning: Float too large for page by 8.75616pt on input line 270.
+LaTeX Warning: Float too large for page by 8.75616pt on input line 269.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1219,7 +1219,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <iter_dl.jpg, id=39, 778.91pt x 1506.62875pt>
 File: iter_dl.jpg Graphic file (type jpg)
 <use iter_dl.jpg>
-Package pdftex.def Info: iter_dl.jpg  used on input line 274.
+Package pdftex.def Info: iter_dl.jpg  used on input line 273.
 (pdftex.def)             Requested size: 311.55849pt x 602.64082pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1230,12 +1230,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
  <./rec.jpg>] [7] [8 <./mem.jpg>] [9 <./iter.jpg>] [10 <./iter_dl.jpg>]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
 LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
-301.
+300.
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-302.
+301.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -1246,16 +1246,16 @@ File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 <primer.png, id=70, 511.9125pt x 618.31pt>
 File: primer.png Graphic file (type png)
 <use primer.png>
-Package pdftex.def Info: primer.png  used on input line 411.
+Package pdftex.def Info: primer.png  used on input line 410.
 (pdftex.def)             Requested size: 358.3363pt x 432.81404pt.
 [14
 
  <./primer.png>]
 
-LaTeX Warning: Citation `i5' on page 15 undefined on input line 427.
+LaTeX Warning: Citation `i5' on page 15 undefined on input line 426.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
 
  []
 
@@ -1317,7 +1317,7 @@ fbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 ss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on report.pdf (19 pages, 593540 bytes).
+Output written on report.pdf (19 pages, 593563 bytes).
 PDF statistics:
  146 PDF objects out of 1000 (max. 8388607)
  101 compressed objects within 2 object streams
