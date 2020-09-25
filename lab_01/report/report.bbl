@@ -18,8 +18,33 @@
 
 \bibitem{Haskell}
 \selectlanguageifdefined{russian}
-The Haskell purely functional programming language.
+The Haskell purely functional programming language [Электронный
+  ресурс].
 \newblock Режим доступа: \url{https://haskell.org/}.
 \newblock Дата обращения: 16.09.2020.
+
+\bibitem{debian}
+\selectlanguageifdefined{russian}
+Debian -- универсальная операционная система
+  [Электронный ресурс].
+\newblock Режим доступа: \url{https://www.debian.org/}
+  note=Дата обращения: 20.09.2020).
+
+\bibitem{linux}
+\selectlanguageifdefined{russian}
+Linux -- Википедия [Электронный ресурс].
+\newblock Режим доступа: \url{https://ru.wikipedia.org/wiki/Linux}.
+
+\bibitem{profiling}
+\selectlanguageifdefined{russian}
+Profiling -- Википедия [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://en.wikipedia.org/wiki/Profiling}.
+
+\bibitem{C++}
+\selectlanguageifdefined{russian}
+C++ -- Википедия [Электронный ресурс].
+\newblock Режим доступа: \url{https://ru.wikipedia.org/wiki/C++}.
+\newblock Дата обращения: 20.09.2020.
 
 \end{thebibliography}

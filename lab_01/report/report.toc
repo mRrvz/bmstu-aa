@@ -8,16 +8,18 @@
 \contentsline {section}{\numberline {1.5}Вывод}{5}%
 \contentsline {chapter}{\numberline {2}Конструкторская часть}{6}%
 \contentsline {section}{\numberline {2.1}Схемы алгоритмов}{6}%
-\contentsline {section}{\numberline {2.2}Вывод}{6}%
-\contentsline {chapter}{\numberline {3}Технологическая часть}{10}%
-\contentsline {section}{\numberline {3.1}Требование к ПО}{10}%
-\contentsline {section}{\numberline {3.2}Средства реализации}{10}%
-\contentsline {section}{\numberline {3.3}Реализация алгоритмов}{10}%
-\contentsline {section}{\numberline {3.4}Вывод}{12}%
-\contentsline {chapter}{\numberline {4}Исследовательская часть}{13}%
-\contentsline {section}{\numberline {4.1}Пример работы}{13}%
-\contentsline {section}{\numberline {4.2}Тестовые данные}{14}%
-\contentsline {section}{\numberline {4.3}Время выполнения алгоритмов}{14}%
-\contentsline {section}{\numberline {4.4}Вывод}{14}%
-\contentsline {chapter}{Заключение}{15}%
-\contentsline {chapter}{Литература}{15}%
+\contentsline {section}{\numberline {2.2}Вывод}{7}%
+\contentsline {chapter}{\numberline {3}Технологическая часть}{11}%
+\contentsline {section}{\numberline {3.1}Требование к ПО}{11}%
+\contentsline {section}{\numberline {3.2}Средства реализации}{11}%
+\contentsline {section}{\numberline {3.3}Реализация алгоритмов}{11}%
+\contentsline {section}{\numberline {3.4}Тестовые данные}{13}%
+\contentsline {section}{\numberline {3.5}Вывод}{13}%
+\contentsline {chapter}{\numberline {4}Исследовательская часть}{14}%
+\contentsline {section}{\numberline {4.1}Пример работы}{14}%
+\contentsline {section}{\numberline {4.2}Технические характеристики}{15}%
+\contentsline {section}{\numberline {4.3}Время выполнения алгоритмов}{15}%
+\contentsline {section}{\numberline {4.4}Использование памяти}{15}%
+\contentsline {section}{\numberline {4.5}Вывод}{16}%
+\contentsline {chapter}{Заключение}{17}%
+\contentsline {chapter}{Литература}{17}%
