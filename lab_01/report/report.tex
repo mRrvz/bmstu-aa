@@ -67,7 +67,7 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 	
 	\begin{center}
 		\noindent\begin{minipage}{1.3\textwidth}\centering
-			\Large\textbf{  Лабораторная работа № 1}\newline
+			\Large\textbf{  Отчет по лабораторной работа №1}\newline
 			\textbf{по дисциплине "Анализ алгоритмов"}\newline\newline
 		\end{minipage}
 	\end{center}
@@ -102,10 +102,10 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 	\item в биоинформатике для сравнения генов, хромосом и белков
 \end{itemize}
 
-Целью данной лабораторной работы: 
+Цели данной лабораторной работы: 
 \begin{enumerate}
-	\item Изучение метода динамического программирования на материале алгоритмов Левенштейна и Дамерау-Левенштейна.
-	\item Оценка реализаций алгоритмов Левенштейна и Дамерау-Левенштейна.
+	\item Изучение метода динамического программирования на материале алгоритмов поиска расстояния Левенштейна и Дамерау-Левенштейна.
+	\item Оценка реализаций алгоритмов нахождения расстояния Левенштейна и Дамерау-Левенштейна.
 \end{enumerate}
 
 Задачи данной лабораторной работы:
@@ -119,7 +119,6 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 	\item Описание и обоснование полученных результатов в отчете о выполненной лабораторной
 работе, выполненного как расчётно-пояснительная записка к работе. 
 \end{enumerate}
-
 
 \chapter{Аналитическая часть}
 
@@ -358,6 +357,7 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 
 \begin{table}[h]
 	\begin{center}
+		\caption{Таблица тестовых данных}
 		\begin{tabular}{|c c c c c|} 
 			\hline
 			№ & Первое слово & Второе слово & Ожидаемый результат & Полученный результат \\ [0.8ex] 
@@ -383,7 +383,6 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 			10 & bmstu & utsmb & 4 4 4 4 & 4 4 4 4\\
 			\hline
 		\end{tabular}
-		\caption{Таблица тестовых данных}
 	\end{center}
 \end{table}
 
@@ -393,6 +392,7 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 В таблице 4.2. представленны замеры времени работы для каждого из алгоритмов.
 \begin{table} [h!]
 	\begin{center}
+	    \caption{Таблица времени выполнения алгоритмов (в наносекундах)}
 		\begin{tabular}{|c c c c c|} 
 		 	\hline
 			Длина строк & LR & LMR & LI & DLI \\  
@@ -411,7 +411,6 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 			\hline
 		\end{tabular}
 	\end{center}
-	\caption{Таблица времени выполнения алгоритмов (в наносекундах)}
 \end{table}
 
 \section{Оценка памяти}
@@ -449,7 +448,6 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 \end{filecontents}
 
 \begin{tikzpicture}
-
 \begin{axis}[
     axis lines = left,
     xlabel={len (symbols)},
@@ -464,6 +462,13 @@ damerauLevenshtein s1 s2 = fromLists $ reverse $ foldl
 \addplot[color=orange] table[x index=0, y index=1] {iterdl.dat};
 \addplot[color=blue, mark=square] table[x index=0, y index=1] {rec.dat};
 \addplot[color=green, mark=square] table[x index=0, y index=1] {recwithmem.dat};
+
+\addlegendentry{L: Iterative}
+\addlegendentry{DL: Iterative}
+\addlegendentry{L: Recursive}
+\addlegendentry{L: RecursiveMemoized}
+\end{axis}
+\end{tikzpicture}
 
 \section{Вывод}
 

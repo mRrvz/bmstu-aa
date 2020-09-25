@@ -13,11 +13,6 @@ type Distance = Int
 type Depth = Int
 type Time = IO TimeSpec
 
-data AlgorithmInfo = AlgorithmInfo {
-    dist :: Distance,
-    matrix :: Maybe (Matrix Int),
-    depth :: Maybe Depth
-} deriving ();
 
 min3 :: Int -> Int -> Int -> Int
 min3 = (min .) . min

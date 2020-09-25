@@ -7,17 +7,13 @@ module Application (
 import Data.Matrix
 import Data.Maybe
 import System.Clock
-import System.TimeIt
-import System.Clock
-import Control.Exception
-
+import Data.Time.Clock
 import Text.Printf
+
 import Levenshtein
 import Analysis
-import Criterion.Main
 
 type Time = Integer
-
 
 menu :: IO String
 menu = do
@@ -41,11 +37,6 @@ getStrings = do
 calculateTime :: TimeSpec -> TimeSpec -> Time
 calculateTime t1 t2 = toNanoSecs $ diffTimeSpec t2 t1
 
-timeItTPure :: (a -> (c, d)) -> a -> IO (Double, a)
-timeItTPure p a = timeItT $ p a `seq` return a
-
-flex p = product [1..p]
-
 run :: IO ()
 run = do
     (s1, s2) <- getStrings
@@ -53,7 +44,7 @@ run = do
 
     start <- getTime Monotonic
 
-    let matrix = case n of {
+    let !matrix = case n of {
         "3" -> Just $ levenshteinIterative s1 s2;
         "4" -> Just $ damerauLevenshtein s1 s2;
         _ -> Nothing;
@@ -69,7 +60,7 @@ run = do
 
     start <- getTime Monotonic
 
-    let results = case n of {
+    let !results = case n of {
         "1" -> levenshteinRecursion s1 s2;
         "2" -> levenshteinMemoized s1 s2;
         _ ->  getResults $ fromJust matrix;
@@ -82,15 +73,13 @@ run = do
         Nothing -> Just $ calculateTime start end;
     }
 
-    print time
-
     let memory_usage = case n of {
         "1" -> calcMemory (snd results) (length s1) $ length s2;
         "2" -> calcMatrixMemory (snd results) (length s1) $ length s2;
         _ -> calcMatrixMemory 1 (length s1) $ length s2
     }
 
-    --printf "\nДистанция: %d\nВремя: %d (наносек)\nГлубина: %d\nКоличество задействованной памяти: %d (байт)\n"
-        --(fst results) (fromJust time) (snd results) memory_usage
+    printf "\nДистанция: %d\nВремя: %d (наносек)\nГлубина: %d\nКоличество задействованной памяти: %d (байт)\n"
+        (fst results) (fromJust time) (snd results) memory_usage
 
     run
