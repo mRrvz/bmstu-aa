@@ -7,11 +7,7 @@ module Application (
 import Data.Matrix
 import Data.Maybe
 import System.Clock
-<<<<<<< HEAD
-
-=======
 import Data.Time.Clock
->>>>>>> 6414840a63573c158d7d1cd1781768e376bac275
 import Text.Printf
 
 import Levenshtein
