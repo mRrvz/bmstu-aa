@@ -4,7 +4,24 @@ let rec bsort arr =
     | x1 :: x2 :: xs -> x1 :: _bsort (x2 :: xs)
     | arr -> arr
   in 
-    let s = _bsort arr in
-      if s = arr then s
-      else _bsort arr
+  let maybe_sorted = _bsort arr in
+    if maybe_sorted = arr then arr
+    else bsort maybe_sorted
 ;;
+
+(*let rec isort arr = arr*)
+(*;;*)
+let rec isort arr = 
+  let rec insert k = function 
+     | x :: xs when k < x -> k :: x :: xs
+     | x :: xs -> x :: (insert k xs)
+     | [] -> []
+  in 
+    match arr with
+    | [] -> []
+    | x :: xs -> insert x (isort xs)
+;;
+    (*let maybe_sorted = _isort arr in*)
+      (*if mayber_sorted = arr then arr*)
+      (*else isort*)
+   
