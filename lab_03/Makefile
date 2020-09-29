@@ -1,10 +1,15 @@
 CC=ocamlc
+FLAGS=-c
 
 build:
-	${CC} src/Main.ml -o app.exe
+	cd src && \
+		$(CC) $(FLAGS) Sorts.mli && \
+		$(CC) $(FLAGS) Sorts.ml && \
+		$(CC) $(FLAGS) Main.ml && \
+		$(CC) -o ../app.exe Sorts.ml Main.ml
 
-run: build
+run: app.exe
 	./app.exe
 
 clean:
-	rm -rf *.exe *.out src/*.cmo src/*.cmo
+	rm -rf *.exe *.out src/*.cmo src/*.cmi src/*.cmx src/*.o *.cmi
