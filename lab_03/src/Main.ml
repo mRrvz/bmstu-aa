@@ -1,16 +1,36 @@
-open Sorts;;
+open Scanf;;
 open Printf;;
+open Sorts;;
 
-let sqr x = x * x;;
+let print_array arr = List.iter (printf "%d ") arr
+;;
 
-let bubble_array = bsort [ 9; 13; 1; 0; -7; -1; 3; 3; 7; 90; ];;
-let insertion_array = isort [ 9; 13; 1; 0; -7; -1; 3; 3; 7; 90; ];;
+let rec read_array arr n =
+    match n with
+    | 0 -> []
+    | n -> arr @ [Scanf.scanf "%d\n" (fun x -> x)] @ read_array arr (n - 1)
+;;
 
-(*let *)
+let print_menu =
+    printf "1. Сортировка пузырьком\n2. Сортировка вставками\n3. Быстрая сортировка\n"
+;;
 
-let main () = 
-    (*List.iter (printf "%d ") bubble_array;*)
-    List.iter (printf "%d ") insertion_array;
+let main () =
+    print_menu;
+    flush stdout;
+
+    let stype = Scanf.scanf "%d\n" (fun x -> x) in
+      printf "Введите размер массива: \n"; flush stdout;
+      let size = Scanf.scanf "%d\n" (fun x -> x) in
+        printf "Введите массив: \n"; flush stdout;
+        let arr = read_array [] size in
+          printf "Реузультат: \n"; print_array (
+            match stype with
+            | 1 -> bsort arr
+            | 2 -> isort arr
+            | 3 -> qsort arr
+            | _ -> []
+          );
 ;;
 
 if !Sys.interactive then () else main ();;
