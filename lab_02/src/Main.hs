@@ -15,22 +15,25 @@ getType = do
 
 main :: IO ()
 main = do
-    let m1 = fromList 10 10 [1..1000000]
-    let m2 = fromList 10 10 [1..1000000]
+    let size = 600
+    let m1 = fromList size size [1..size * size]
+    let m2 = fromList size size [1..size * size]
 
+    --print m1
+    --print m2
+
+    --type' <- getType
+    --print $ winogradOptimizedMultiplication m1 m2
     print m1
-    print m2
 
-    type' <- getType
+    --let result = case type' of {
+        --"1" -> Just $ baseMultiplication m1 m2;
+        --"2" -> Just $ baseTMultiplication m1 m2;
+        --"3" -> Just $ winogradMultiplication m1 m2;
+        --"4" -> Just $ winogradOptimizedMultiplication m1 m2;
+        --_   -> Nothing;
+    --}
 
-    let result = case type' of {
-        "1" -> Just $ baseMultiplication m1 m2;
-        "2" -> Just $ baseTMultiplication m1 m2;
-        "3" -> Just $ winogradMultiplication m1 m2;
-        "4" -> Just $ winogradOptimizedMultiplication m1 m2;
-        _   -> Nothing;
-    }
+    --print $ fromJust result
 
-    print $ fromJust result
-
-    main
+    --main

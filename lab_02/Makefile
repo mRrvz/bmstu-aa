@@ -9,5 +9,5 @@ build:
 clean:
 	cd src && rm *.o *.hi *.exe *.out
 
-run: build
+run: app.exe
 	./$(APPNAME)
