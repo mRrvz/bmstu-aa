@@ -6,21 +6,21 @@
 \contentsline {section}{\numberline {1.3}Вывод}{4}%
 \contentsline {chapter}{\numberline {2}Конструкторская часть}{5}%
 \contentsline {section}{\numberline {2.1}Схемы алгоритмов}{5}%
-\contentsline {section}{\numberline {2.2}Модель вычислений}{6}%
-\contentsline {section}{\numberline {2.3}Трудоёмкость алгоритмов}{6}%
-\contentsline {subsection}{\numberline {2.3.1}Стандартный алгоритм умножения матриц}{6}%
-\contentsline {subsection}{\numberline {2.3.2}Алгоритм Копперсмита — Винограда}{6}%
-\contentsline {subsection}{\numberline {2.3.3}Оптимизированный алгоритм Копперсмита — Винограда}{6}%
-\contentsline {section}{\numberline {2.4}Вывод}{6}%
-\contentsline {chapter}{\numberline {3}Технологическая часть}{10}%
-\contentsline {section}{\numberline {3.1}Требование к ПО}{10}%
-\contentsline {section}{\numberline {3.2}Средства реализации}{10}%
-\contentsline {section}{\numberline {3.3}Реализация алгоритмов}{10}%
-\contentsline {section}{\numberline {3.4}Тестовые данные}{12}%
-\contentsline {section}{\numberline {3.5}Вывод}{13}%
-\contentsline {chapter}{\numberline {4}Исследовательская часть}{14}%
-\contentsline {section}{\numberline {4.1}Технические характеристики}{14}%
-\contentsline {section}{\numberline {4.2}Время выполнения алгоритмов}{14}%
-\contentsline {section}{\numberline {4.3}Вывод}{14}%
-\contentsline {chapter}{Заключение}{16}%
-\contentsline {chapter}{Литература}{16}%
+\contentsline {section}{\numberline {2.2}Модель вычислений}{5}%
+\contentsline {section}{\numberline {2.3}Трудоёмкость алгоритмов}{5}%
+\contentsline {subsection}{\numberline {2.3.1}Стандартный алгоритм умножения матриц}{5}%
+\contentsline {subsection}{\numberline {2.3.2}Алгоритм Копперсмита — Винограда}{5}%
+\contentsline {subsection}{\numberline {2.3.3}Оптимизированный алгоритм Копперсмита — Винограда}{5}%
+\contentsline {section}{\numberline {2.4}Вывод}{5}%
+\contentsline {chapter}{\numberline {3}Технологическая часть}{12}%
+\contentsline {section}{\numberline {3.1}Требование к ПО}{12}%
+\contentsline {section}{\numberline {3.2}Средства реализации}{12}%
+\contentsline {section}{\numberline {3.3}Реализация алгоритмов}{12}%
+\contentsline {section}{\numberline {3.4}Тестовые данные}{14}%
+\contentsline {section}{\numberline {3.5}Вывод}{15}%
+\contentsline {chapter}{\numberline {4}Исследовательская часть}{16}%
+\contentsline {section}{\numberline {4.1}Технические характеристики}{16}%
+\contentsline {section}{\numberline {4.2}Время выполнения алгоритмов}{16}%
+\contentsline {section}{\numberline {4.3}Вывод}{16}%
+\contentsline {chapter}{Заключение}{18}%
+\contentsline {chapter}{Литература}{18}%
