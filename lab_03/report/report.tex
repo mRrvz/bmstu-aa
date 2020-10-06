@@ -1,0 +1,290 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+%\usepackage[14pt]{extsizes}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{pgfplots}
+\usepackage{filecontents}
+\usepackage{indentfirst}
+\usepackage{eucal}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\frenchspacing
+
+\usepackage{indentfirst} % Красная строка
+
+
+%\usetikzlibrary{datavisualization}
+%\usetikzlibrary{datavisualization.formats.functions}
+
+\usepackage{amsmath}
+
+
+
+
+% Для листинга кода:
+\lstset{ %
+language=haskell,                 % выбор языка для подсветки (здесь это С)
+basicstyle=\small\sffamily, % размер и начертание шрифта для подсветки кода
+numbers=left,               % где поставить нумерацию строк (слева\справа)
+numberstyle=\tiny,           % размер шрифта для номеров строк
+stepnumber=1,                   % размер шага между двумя номерами строк
+numbersep=5pt,                % как далеко отстоят номера строк от подсвечиваемого кода
+showspaces=false,            % показывать или нет пробелы специальными отступами
+showstringspaces=false,      % показывать или нет пробелы в строках
+showtabs=false,             % показывать или нет табуляцию в строках
+frame=single,              % рисовать рамку вокруг кода
+tabsize=2,                 % размер табуляции по умолчанию равен 2 пробелам
+captionpos=t,              % позиция заголовка вверху [t] или внизу [b] 
+breaklines=true,           % автоматически переносить строки (да\нет)
+breakatwhitespace=false, % переносить строки только если есть пробел
+escapeinside={\#*}{*)}   % если нужно добавить комментарии в коде
+}
+
+\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+% Для измененных титулов глав:
+\usepackage{titlesec, blindtext, color} % подключаем нужные пакеты
+\definecolor{gray75}{gray}{0.75} % определяем цвет
+\newcommand{\hsp}{\hspace{20pt}} % длина линии в 20pt
+% titleformat определяет стиль
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+
+% plot
+\usepackage{pgfplots}
+\usepackage{filecontents}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+
+\begin{document}
+%\def\chaptername{} % убирает "Глава"
+\thispagestyle{empty}
+\begin{titlepage}
+	\noindent \begin{minipage}{0.15\textwidth}
+	\includegraphics[width=\linewidth]{b_logo}
+	\end{minipage}
+	\noindent\begin{minipage}{0.9\textwidth}\centering
+		\textbf{Министерство науки и высшего образования Российской Федерации}\\
+		\textbf{Федеральное государственное бюджетное образовательное учреждение высшего образования}\\
+		\textbf{~~~«Московский государственный технический университет имени Н.Э.~Баумана}\\
+		\textbf{(национальный исследовательский университет)»}\\
+		\textbf{(МГТУ им. Н.Э.~Баумана)}
+	\end{minipage}
+	
+	\noindent\rule{18cm}{3pt}
+	\newline\newline
+	\noindent ФАКУЛЬТЕТ $\underline{\text{«Информатика и системы управления»}}$ \newline\newline
+	\noindent КАФЕДРА $\underline{\text{«Программное обеспечение ЭВМ и информационные технологии»}}$\newline\newline\newline\newline\newline
+	
+	
+	\begin{center}
+		\noindent\begin{minipage}{1.3\textwidth}\centering
+			\Large\textbf{  Отчёт по лабораторной работе №3}\newline
+			\textbf{по дисциплине "Анализ алгоритмов"}\newline\newline
+		\end{minipage}
+	\end{center}
+	
+	\noindent\textbf{Тема} $\underline{\text{Алгоритмы сортировки}}$\newline\newline
+	\noindent\textbf{Студент} $\underline{\text{Романов А.В.}}$\newline\newline
+	\noindent\textbf{Группа} $\underline{\text{ИУ7-53Б}}$\newline\newline
+	\noindent\textbf{Оценка (баллы)} $\underline{\text{~~~~~~~~~~~~~~~~~~~~~~~~~~~}}$\newline\newline
+	\noindent\textbf{Преподаватели} $\underline{\text{Волкова Л.Л., Строганов Ю.В.}}$\newline\newline\newline
+	
+	\begin{center}
+		\vfill
+		Москва~---~\the\year
+		~г.
+	\end{center}
+\end{titlepage}
+
+
+\tableofcontents
+
+\newpage
+\chapter*{Введение}
+\addcontentsline{toc}{chapter}{Введение}
+
+
+Задачи лабораторной работы:
+
+%\begin{enumerate}
+
+
+
+%\end{enumerate}
+
+\chapter{Аналитическая часть}
+
+
+\section{Сортировка пузырьком}
+
+
+
+\section{Сортировка вставками}
+
+\section{Быстрая сортировка}
+
+\section{Вывод}
+	
+\clearpage
+
+\chapter{Конструкторская часть}
+
+\section{Схемы алгоритмов}
+
+
+
+\begin{figure}[h]
+	\centering
+	%\includegraphics[width=1\linewidth]{base.jpg}
+	\caption{Схема стандартного алгоритма умножения матриц}
+	\label{fig:mpr}
+\end{figure}
+
+
+\section{Модель вычислений}
+
+Для последующего вычисления трудоемкости введём модель вычислений:
+
+\begin{enumerate}
+	\item Операции из списка (\ref{for:opers}) имеют трудоемкость 1.
+	\begin{equation}
+	\label{for:opers}
+	+, -, /, \%, ==, !=, <, >, <=, >=, [], ++, {-}-
+	\end{equation}
+	\item Трудоемкость оператора выбора if условие then A else B рассчитывается, как (\ref{for:if}).
+	\begin{equation}
+	\label{for:if}
+	f_{if} = f_{\text{условия}} +
+	\begin{cases}
+	f_A, & \text{если условие выполняется,}\\
+	f_B, & \text{иначе.}
+	\end{cases}
+	\end{equation}
+	\item Трудоемкость цикла рассчитывается, как (\ref{for:for}).
+	\begin{equation}
+	\label{for:for}
+	f_{for} = f_{\text{инициализации}} + f_{\text{сравнения}} + N(f_{\text{тела}} + f_{\text{инкремента}} + f_{\text{сравнения}})
+	\end{equation}
+	\item Трудоемкость вызова функции равна 0.
+\end{enumerate}
+
+\section{Трудоёмкость алгоритмов}
+
+Пусть размер массивов - $N$
+
+\subsection{Алгоритм сортировки пузырьком}
+
+
+\subsection{Алгоритм сортировки вставками}
+
+\section{Вывод}
+
+\chapter{Технологическая часть}
+
+В данном разделе приведены средства реализации и листинги кода.
+
+\section{Требование к ПО}
+
+К программе предъявляется ряд требований:
+
+\begin{itemize}
+
+	\item На вход ПО получает массив сравнимых элементов;
+
+	\item На выходе -- тот же массив, но отсортированный в заданном порядке.
+
+\end{itemize}
+
+\section{Средства реализации}
+Для реализации ПО я выбрал язык программирования OCaml \cite{Ocaml}. Данный выбор обусловлен моим желанием расширить свои знания в области применения данного язкыа программирования. 
+
+\section{Реализация алгоритмов}
+
+%В листингах 3.1 - 3.4 приведена реализация алгоритмов перемножения матриц.
+
+\begin{lstlisting}[label=some-code,caption=Функция сортировки массива пузырьком, language=Caml]
+let rec bsort arr =
+  let rec _bsort = function
+    | x1 :: x2 :: xs when x1 > x2 -> x2 :: _bsort (x1 :: xs)
+    | x1 :: x2 :: xs -> x1 :: _bsort (x2 :: xs)
+    | arr -> arr
+  in
+  let maybe_sorted = _bsort arr in
+    if maybe_sorted = arr then arr
+  else bsort maybe_sorted
+;;
+\end{lstlisting}
+
+\begin{lstlisting}[label=some-code,caption=Функция сортировки массива вставками,language=Caml]
+let rec isort arr =
+  let rec insert k = function
+    | x :: xs when k < x -> k :: x :: xs
+    | x :: xs -> x :: (insert k xs)
+    | arr -> [k]
+  in
+    match arr with
+    | [] -> []
+    | x :: xs -> insert x (isort xs)
+;;
+\end{lstlisting}
+
+
+\begin{lstlisting}[label=some-code,caption=Функция быстрой сортировки,language=Caml]
+let rec qsort = function
+    | [] -> []
+    | x :: xs -> let bot, top = List.partition (fun a -> a < x) xs
+                 in qsort bot @ (x :: qsort top)
+;;
+\end{lstlisting}
+
+\section{Тестовые данные}
+
+
+\section{Вывод}
+
+
+\chapter{Исследовательская часть}
+
+\section{Технические характеристики}
+
+Ниже приведены технические характеристики устройства, на котором было проведено тестирование ПО:
+
+\begin{itemize}
+	\item Операционная система: Debian \cite{debian} Linux \cite{linux} 11 <<bullseye>> 64-bit.
+	\item Оперативная память: 12 GB.
+	\item Процессор: Intel(R) Core(TM) i5-3550 CPU @ 3.30GHz
+\cite{i5}.
+
+\end{itemize}
+
+\section{Время выполнения алгоритмов}
+Время выполнения алгоритм замерялось с помощью применения технологии профайлинга \cite{profiling}. Данный инстрмуент даёт детальное описание количества вызовов и количества времени CPU, занятого каждой функцией. \newline
+
+
+\section{Вывод}
+
+Тут какой то вывод..
+
+\chapter*{Заключение}
+\addcontentsline{toc}{chapter}{Заключение}
+
+В рамках данной лабораторной работы:
+
+\begin{enumerate}
+
+	\item 123
+\end{enumerate}
+
+
+
+\addcontentsline{toc}{chapter}{Литература}
+
+\bibliographystyle{utf8gost705u}  % стилевой файл для оформления по ГОСТу
+
+\bibliography{51-biblio}          % имя библиографической базы (bib-файла)
+
+
+\end{document}
