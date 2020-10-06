@@ -1,46 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: report.aux
 The style file: utf8gost705u.bst
 Database file #1: 51-biblio.bib
-You've used 5 entries,
+You've used 6 entries,
             2958 wiz_defined-function locations,
-            684 strings with 6130 characters,
-and the built_in function-call counts, 643 in all, are:
-= -- 70
-> -- 5
+            688 strings with 6520 characters,
+and the built_in function-call counts, 764 in all, are:
+= -- 84
+> -- 6
 < -- 0
-+ -- 5
++ -- 6
 - -- 0
-* -- 12
-:= -- 68
-add.period$ -- 15
-call.type$ -- 5
+* -- 14
+:= -- 79
+add.period$ -- 18
+call.type$ -- 6
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 35
-empty$ -- 81
+cite$ -- 6
+duplicate$ -- 42
+empty$ -- 97
 format.name$ -- 0
-if$ -- 156
+if$ -- 187
 int.to.chr$ -- 0
-int.to.str$ -- 5
+int.to.str$ -- 6
 missing$ -- 0
-newline$ -- 40
+newline$ -- 46
 num.names$ -- 0
-pop$ -- 25
+pop$ -- 30
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 10
+skip$ -- 12
 stack$ -- 0
 substring$ -- 0
-swap$ -- 20
+swap$ -- 24
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
 while$ -- 0
-width$ -- 6
-write$ -- 79
+width$ -- 7
+write$ -- 93

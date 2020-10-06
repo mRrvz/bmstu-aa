@@ -7,6 +7,15 @@
 \ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
 \ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
 
+\bibitem{optimize}
+\selectlanguageifdefined{russian}
+Реализация алгоритма умножения матриц по
+  Винограду на языке Haskell. Анисимов Н.С,
+  Строганов Ю.В. [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://cyberleninka.ru/article/n/realizatsiya-algoritma-umnozheniya-matrits-po-vinogradu-na-yazyke-haskell/viewer}.
+\newblock Дата обращения: 01.10.2020.
+
 \bibitem{Haskell}
 \selectlanguageifdefined{russian}
 The Haskell purely functional programming language [Электронный

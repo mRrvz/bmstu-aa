@@ -16,8 +16,8 @@
 \usepackage{indentfirst} % Красная строка
 
 
-\usetikzlibrary{datavisualization}
-\usetikzlibrary{datavisualization.formats.functions}
+%\usetikzlibrary{datavisualization}
+%\usetikzlibrary{datavisualization.formats.functions}
 
 \usepackage{amsmath}
 
@@ -194,6 +194,16 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 
 На рисунках 2.5 и 2.6 представлена схема оптимизированного алгоритма Копперсмита — Винограда. 
 
+Для алгоритма Копперсмита -- Винограда худшим случаем являются матрицы с нечётным общим размером, а лучшим - с чётным, из-за того что отпадает необходимость в последнем цикле.
+
+Данный алгоритм можно оптимизировать \cite{optimize}:
+\begin{itemize}
+	\item Предварительно получить строки столбцы соответствующих матриц;
+	\item Замена вызова функции вычисления длины вектора на заранее вычисленное значение;
+	\item Вынос конструкции if-then-else за пределы лямбда-функции;
+	\item Ускорение работы для матриц с нечетной общей размерностью.
+\end{itemize}
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{base.jpg}
@@ -238,13 +248,149 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 
 \section{Модель вычислений}
 
+Для последующего вычисления трудоемкости введём модель вычислений:
+
+\begin{enumerate}
+	\item Операции из списка (\ref{for:opers}) имеют трудоемкость 1.
+	\begin{equation}
+	\label{for:opers}
+	+, -, /, \%, ==, !=, <, >, <=, >=, [], ++, {-}-
+	\end{equation}
+	\item Трудоемкость оператора выбора if условие then A else B рассчитывается, как (\ref{for:if}).
+	\begin{equation}
+	\label{for:if}
+	f_{if} = f_{\text{условия}} +
+	\begin{cases}
+	f_A, & \text{если условие выполняется,}\\
+	f_B, & \text{иначе.}
+	\end{cases}
+	\end{equation}
+	\item Трудоемкость цикла рассчитывается, как (\ref{for:for}).
+	\begin{equation}
+	\label{for:for}
+	f_{for} = f_{\text{инициализации}} + f_{\text{сравнения}} + N(f_{\text{тела}} + f_{\text{инкремента}} + f_{\text{сравнения}})
+	\end{equation}
+	\item Трудоемкость вызова функции равна 0.
+\end{enumerate}
+
 \section{Трудоёмкость алгоритмов}
 
 \subsection{Стандартный алгоритм умножения матриц}
 
+Трудоёмкость стандартного алгоритма умножения матриц состоит из:
+\begin{itemize}
+	\item Внешнего цикла по $i \in [1..A]$, трудоёмкость которого: $f = 2 + A \cdot (2 + f_{body})$;
+	\item Цикла по $j \in [1..C]$, трудоёмкость которого: $f = 2 + C \cdot (2 + f_{body})$;
+	\item Скалярного умножения двух векторов - цикл по $k \in [1..B]$, трудоёмкость которого: $f = 2 + 10B$;
+\end{itemize}
+
+Трудоёмкость стандартного алгоритма равна трудоёмкости внешнего цикла, можно вычислить ее, подставив циклы тела (\ref{for:base}):
+\begin{equation}
+	\label{for:base}
+	f_{base} = 2 + A \cdot (4 + C \cdot (4 + 10B)) = 2 + 4A + 4AC + 10ABC \approx 10ABC
+\end{equation}
+
 \subsection{Алгоритм Копперсмита — Винограда}
 
+Трудоёмкость алгоритма Копперсмита — Винограда состоит из:
+
+\begin{enumerate}
+	\item Создания векторов rows и cols (\ref{for:init}):
+	\begin{equation}
+	\label{for:init}
+	f_{create} = A + C;
+	\end{equation}
+	
+	\item Заполнения вектора rows (\ref{for:MH}):
+	\begin{equation}
+	\label{for:MH}
+	f_{rows} = 3 + \frac{B}{2} \cdot (5 + 12A);
+	\end{equation}
+	
+	\item Заполнения вектора cols (\ref{for:MV}):
+	\begin{equation}
+	\label{for:MV}
+	f_{cols} = 3 + \frac{B}{2} \cdot (5 + 12C);
+	\end{equation}
+	
+	\item Цикла заполнения матрицы для чётных размеров (\ref{for:cycle}):
+	\begin{equation}
+	\label{for:cycle}
+	f_{cycle} = 2 + A \cdot (4 + C \cdot (11 + \frac{25}{2} \cdot B));
+	\end{equation}
+	
+	\item Цикла, для дополнения умножения суммой последних нечётных строки и столбца, если общий размер нечётный (\ref{for:last}):
+	\begin{equation}
+	\label{for:last}
+	f_{last} = \begin{cases}
+	2, & \text{чётная,}\\
+	4 + A \cdot (4 + 14C), & \text{иначе.}
+	\end{cases}
+	\end{equation}
+\end{enumerate}
+
+Итого, для худшего случая (нечётный размер матриц): 
+\begin{equation}
+\label{for:bad}
+f_{wino\_w} = A + C + 12 + 8A + 5B + 6AB + 6CB + 25AC + \frac{25}{2}ABC \approx 12.5 \cdot MNK
+\end{equation}
+
+Для лучшего случая (чётный размер матриц): 
+\begin{equation}
+\label{for:good}
+f_{wino\_b} = A + C + 10 + 4A + 5B + 6AB + 6CB + 11AC + \frac{25}{2}ABC \approx 12.5 \cdot MNK
+\end{equation}
+
 \subsection{Оптимизированный алгоритм Копперсмита — Винограда}
+
+Трудоёмкость улучшенного алгоритма Копперсмита — Винограда состоит из:
+\begin{enumerate}
+	\item Создания векторов rows и cols (\ref{for:impr_init}):
+	\begin{equation}
+	\label{for:impr_init}
+	f_{init} = A + C;
+	\end{equation}
+	
+	\item Заполнения вектора rows (\ref{for:impr_MH}):
+	\begin{equation}
+	\label{for:impr_MH}
+	f_{rows} = 2 + \frac{B}{2} \cdot (4 + 8A);
+	\end{equation}
+	
+	\item Заполнения вектора cols (\ref{for:impr_MV}):
+	\begin{equation}
+	\label{for:impr_MV}
+	f_{cols} = 2 + \frac{B}{2} \cdot (4 + 8A);
+	\end{equation}
+	
+	\item Цикла заполнения матрицы для чётных размеров (\ref{for:impr_cycle}):
+	\begin{equation}
+	\label{for:impr_cycle}
+	f_{cycle} = 2 + A \cdot (4 + C \cdot (8 + 9B))
+	\end{equation}
+	
+	\item Цикла, для дополнения умножения суммой последних нечётных строки и столбца, если общий размер нечётный (\ref{for:impr_last}):
+	\begin{equation}
+	\label{for:impr_last}
+	f_{last} = 
+	\begin{cases}
+	2, & \text{чётная,}\\
+	4 + A \cdot (4 + 12C), & \text{иначе.}
+	\end{cases}
+	\end{equation}
+\end{enumerate}
+
+Итого, для худшего случая (нечётный общий размер матриц) имеем (\ref{for:bad_impr}):
+\begin{equation}
+\label{for:bad_impr}
+f = A + C + 10 + 4B + 4BC + 4BA + 8A + 20AC + 9ABC \approx 9ABC
+\end{equation}
+
+Для лучшего случая (чётный общий размер матриц) имеем (\ref{for:good_impr}):
+\begin{equation}
+\label{for:good_impr}
+f = A + C + 8 + 4B +4BC + 4BA + 4A + 8AC + 9ABC \approx 9ABC
+\end{equation}
 
 \section{Вывод}
 	На основе теоретических данных, полученных из аналитического раздела, были построены схемы обоих алгоритмов умножения матриц.  Оценены их трудоёмкости в лучшем и худшем случаях.
@@ -447,7 +593,7 @@ winogradOptimizedMultiplication m1 m2 = res
 \section{Время выполнения алгоритмов}
 Время выполнения алгоритм замерялось с помощью применения технологии профайлинга \cite{profiling}. Данный инстрмуент даёт детальное описание количества вызовов и количества времени CPU, занятого каждой функцией. \newline
 
-В таблицах 4.1 и 4.2 представлены замеры времени работы для каждого из алгоритмов на чётных размерах матриц.
+В таблицах 4.1 и 4.2 представлены замеры времени работы для каждого из алгоритмов на чётных размерах матриц. Здесь и далее: С — стандартный алгоритм, ТС -- стандартный алгоритм с транспонированием, КВ — алгоритм Копперсмита -- Винограда, ОКВ -- оптимизированный алгоритм Копперсмита -- Винограда.
 
 \begin{table} [h!]
 	\caption{Таблица времени выполнения алгоритмов при чётных размерах (в секундах)}
@@ -475,24 +621,24 @@ winogradOptimizedMultiplication m1 m2 = res
 \begin{table} [h!]
 	\caption{Таблица времени выполнения алгоритмов при нечётных размерах (в наносекундах)}
 	\begin{center}
-		\begin{tabular}{|c c c c c|} 
-			\hline
-			Размер матрицы & С & ТС & КВ & ОКВ \\  
-			\hline
-			10 & 30500400 & 1300 & 650 & 680\\
-			\hline
-			20 & NaN & 5100 & 2300 & 2500 \\
-			\hline
-			30 & NaN & 11000 & 4800 & 5200 \\
-			\hline
-			50 & NaN & 30000 & 12500 & 13500 \\
-			\hline
-			100 & NaN & 115000 & 48000 & 55000\\
-			\hline
-			200 & NaN & 530000 & 249000 & 528000 \\
-			\hline
-		\end{tabular}
-	\end{center}
+	\begin{tabular}{|c c c c c|} 
+		\hline
+		Размер матрицы & С & ТС & КВ & ОКВ \\  
+		\hline
+		101 & 0.482 & 0.120 & 0.169 & 0.158 \\
+		\hline
+		201 & X & X & X & 1.253 \\
+		\hline
+		301 & X & X & X & 4.063 \\
+		\hline
+		401 & X & X & X & 9.909 \\
+		\hline
+		501 & X & X & X & 19.357 \\
+		\hline
+		601 & X & X & X & 33.265 \\
+		\hline
+	\end{tabular}
+\end{center}
 \end{table}
 
 
