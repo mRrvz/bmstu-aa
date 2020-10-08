@@ -46,7 +46,7 @@ Linux -- Getting Started [Электронный ресурс].
 
 \bibitem{profiling}
 \selectlanguageifdefined{russian}
-Profiling -- Haskell profiling [Электронный ресурс].
+Haskell profiling [Электронный ресурс].
 \newblock Режим доступа:
   \url{https://downloads.haskell.org/ghc/8.8.1/docs/html/user\_guide/index.html}.
 \newblock Дата обращения: 20.09.2020.
