@@ -12,7 +12,7 @@ import Data.Vector as V
 import Control.DeepSeq
 
 baseTMultiplication :: (Num a) => Matrix a -> Matrix a -> Matrix a
-baseTMultiplication m1 m2 =  M.fromList (M.ncols m2) (M.nrows m1) $ V.toList $ _multp m1 (M.transpose m2) 1
+baseTMultiplication m1 m2 =  M.fromList (M.nrows m1) (M.ncols m2) $ V.toList $ _multp m1 (M.transpose m2) 1
   where
     _multp m1 m2 i
       | i == M.nrows m1 + 1 = V.fromList []
@@ -21,12 +21,12 @@ baseTMultiplication m1 m2 =  M.fromList (M.ncols m2) (M.nrows m1) $ V.toList $ _
           V.++ _multp m1 m2 (i + 1)
 
 baseMultiplication :: (Num a) => Matrix a -> Matrix a -> Matrix a
-baseMultiplication m1 m2 = M.fromList (M.ncols m2) (M.nrows m1) $ V.toList $ _multp m1 m2 1
+baseMultiplication m1 m2 = M.fromList (M.nrows m1) (M.ncols m2) $ V.toList $ _multp m1 m2 1
   where
     _multp m1 m2 i
       | i == M.nrows m1 + 1 = V.fromList []
       | otherwise = P.foldl (\acc j ->
-        V.zipWith (+) acc $ V.zipWith (*) (V.fromList $ P.take (M.nrows m1) $ repeat (M.getElem i j m1)) (M.getRow j m2))
+        V.zipWith (+) acc $ V.zipWith (*) (V.fromList $ P.take (M.ncols m2) $ repeat (M.getElem i j m1)) (M.getRow j m2))
           (V.fromList $ P.take (M.ncols m2) $ repeat 0) [1..M.ncols m1] V.++ _multp m1 m2 (i + 1)
 
 winogradMultiplication :: (Num a) => Matrix a -> Matrix a -> Matrix a
