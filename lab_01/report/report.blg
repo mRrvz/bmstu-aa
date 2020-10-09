@@ -4,45 +4,45 @@ The top-level auxiliary file: report.aux
 The style file: utf8gost705u.bst
 Database file #1: 51-biblio.bib
 Warning--empty booktitle in Levenshtein
-You've used 7 entries,
+You've used 6 entries,
             2958 wiz_defined-function locations,
-            696 strings with 6476 characters,
-and the built_in function-call counts, 1204 in all, are:
-= -- 144
-> -- 11
+            692 strings with 6351 characters,
+and the built_in function-call counts, 1083 in all, are:
+= -- 130
+> -- 10
 < -- 1
-+ -- 8
++ -- 7
 - -- 1
-* -- 34
-:= -- 121
-add.period$ -- 23
-call.type$ -- 7
+* -- 32
+:= -- 110
+add.period$ -- 20
+call.type$ -- 6
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 62
-empty$ -- 143
+cite$ -- 7
+duplicate$ -- 55
+empty$ -- 127
 format.name$ -- 1
-if$ -- 306
+if$ -- 275
 int.to.chr$ -- 0
-int.to.str$ -- 7
+int.to.str$ -- 6
 missing$ -- 0
-newline$ -- 53
+newline$ -- 47
 num.names$ -- 3
-pop$ -- 40
+pop$ -- 35
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 33
+skip$ -- 31
 stack$ -- 0
 substring$ -- 32
-swap$ -- 40
+swap$ -- 36
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
 while$ -- 4
-width$ -- 8
-write$ -- 112
+width$ -- 7
+write$ -- 98
 (There was 1 warning)

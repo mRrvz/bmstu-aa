@@ -127,7 +127,6 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 
 \chapter{Аналитическая часть}
 
-
 \section{Сортировка пузырьком}
 
 Алгоритм состоит из повторяющихся проходов по сортируемому массиву.
@@ -165,25 +164,25 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 
 \section{Схемы алгоритмов}
 
-На рисунках 2.1, 2.2 и 2.3 показаны схемы алгоритмов сортировки пузырьком, вставками и быстрой сортировки.
+На рисунках 2.1, 2.2 и 2.3 показаны схемы алгоритмов сортировки пузырьком, вставками и быстрой сортировки соответственно.
 
 \begin{figure}[h]
 	\centering
-	%\includegraphics[width=1\linewidth]{base.jpg}
+	\includegraphics[width=1\linewidth]{bsort.jpg}
 	\caption{Схема сортировки пузырьком}
 	\label{fig:mpr}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-	%\includegraphics[width=1\linewidth]{base.jpg}
+	\includegraphics[width=1\linewidth]{isort.jpg}
 	\caption{Схема сортировки вставками}
 	\label{fig:mpr}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-	%\includegraphics[width=1\linewidth]{base.jpg}
+	\includegraphics[width=1\linewidth]{qsort.jpg}
 	\caption{Схема быстрой сортировки}
 	\label{fig:mpr}
 \end{figure}
@@ -222,7 +221,80 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 
 \subsection{Алгоритм сортировки пузырьком}
 
+Трудоёмкость алгоритма сортировки пузырьком состоит из:
+\begin{itemize}
+	\item Трудоёмкость сравнения и инкремента внешнего цикла $i \in [1..N)$ (\ref{for:bubble_outer}):
+	\begin{equation}
+	\label{for:bubble_outer}
+	f_{i} = 2 + 2(N - 1)
+	\end{equation}
+	\item Суммарная трудоёмкость внутренних циклов, количество итераций которых меняется в промежутке $[1..N-1]$ (\ref{for:bubble_inner}):
+	\begin{equation}
+	\label{for:bubble_inner}
+	f_{j} = 3(N - 1) + \frac{N \cdot (N - 1)}{2} \cdot (3 + f_{if})
+	\end{equation}
+	\item Трудоёмкость условия во внутреннем цикле (\ref{for:bubble_if}):
+	\begin{equation}
+	\label{for:bubble_if}
+	f_{if} = 4 + \begin{cases}
+	0, & \text{в лучшем случае}\\
+	9, & \text{в худшем случае}\\
+	\end{cases}
+	\end{equation}
+\end{itemize}
+
+Трудоёмкость в \textbf{лучшем} случае (\ref{for:bubble_best}):
+\begin{equation}
+\label{for:bubble_best}
+f_{best} = \frac{7}{2} N^2 + \frac{3}{2} N - 3 \approx \frac{7}{2} N^2 = O(N^2)
+\end{equation}
+
+Трудоёмкость в \textbf{худшем} случае (\ref{for:bubble_worst}):
+\begin{equation}
+\label{for:bubble_worst}
+f_{worst} =  8N^2 - 8N - 3 \approx 8N^2 = O(N^2)
+\end{equation}
+
 \subsection{Алгоритм сортировки вставками}
+
+Трудоёмкость алгоритма сортировки пузырьком состоит из:
+\begin{itemize}
+	\item Трудоёмкость сравнения и инкремента внешнего цикла $i \in [1..N)$ (\ref{for:isort_outer}):
+	\begin{equation}
+	\label{for:isort_outer}
+	f_{i} = 2 + 2(N - 1)
+	\end{equation}
+	\item Суммарная трудоёмкость внутренних циклов, количество итераций которых меняется в промежутке $[1..N-1]$ (\ref{for:isort_inner}):
+
+	\begin{equation}
+	\label{for:isort_inner}
+	f_{if} = 4 + \begin{cases}
+		0, & \text{в лучшем случае}\\
+		3(N - 1) + \frac{N \cdot (N - 1)}{2} \cdot (3 + f_{if}), & \text{в худшем случае}\\
+	\end{cases}
+	\end{equation}
+
+	\item Трудоёмкость условия во внутреннем цикле (\ref{for:isort_if}):
+	\begin{equation}
+	\label{for:isort_if}
+	f_{if} = 4 + \begin{cases}
+	0, & \text{в лучшем случае}\\
+	9, & \text{в худшем случае}\\
+	\end{cases}
+	\end{equation}
+\end{itemize}
+
+Трудоёмкость в \textbf{лучшем} случае (\ref{for:isort_best}):
+\begin{equation}
+\label{for:isort_best}
+f_{best} = 13N - 10 \approx 13N = O(N)
+\end{equation}
+
+Трудоёмкость в \textbf{худшем} случае (\ref{for:isort_worst}):
+\begin{equation}
+\label{for:isort_worst}
+f_{worst} = 4.5N^2 + 10N - 13 \approx 4N^2 = O(N^{2})
+\end{equation}
 
 \section{Вывод}
 
@@ -329,87 +401,74 @@ let rec qsort = function
 \begin{table} [h!]
 	\caption{Таблица времени выполнения сортировок на отсортированных данных (в секундах)}
 	\begin{center}
-		\begin{tabular}{|c c c c c|} 
-			\hline
-			Размер & Пузырьком & Вставками & Быстрая &\\  
-			\hline
-			100 & X & X & X &\\
-			\hline
-			200 & X & X & X &\\
-			\hline
-			300 & X & X & X &\\
-			\hline
-			500 & X & X & X &\\
-			\hline
-			1000 & X & X & X &\\
-			\hline
-			2500 & X & X & X &\\
-			\hline
-			5000 & X & X & X &\\
-			\hline
-			10000 & X & X & X &\\
-			\hline
-		\end{tabular}
+	\begin{tabular}{|c c c c|}
+		\hline
+		Размер & bsort & isort & qsort  \\ [0.5ex]
+		1000 & 0.01922 & 2e-05 & 0.00025 \\ 
+		\hline 
+		1200 & 0.02419 & 7e-05 & 0.00029 \\ 
+		\hline 
+		1400 & 0.03516 & 6e-05 & 0.00035 \\ 
+		\hline 
+		1600 & 0.04540 & 0.0001& 0.00034 \\ 
+		\hline 
+		1800 & 0.06051 & 6e-05 & 0.00032 \\ 
+		\hline 
+		2000 & 0.06591 & 9e-05 & 0.00038 \\ 
+	\hline 
+	\end{tabular}
 	\end{center}
 \end{table}
 
 \begin{table} [h!]
 	\caption{Таблица времени выполнения сортировок на отсортированных данных в обратном порядке (в секундах)}
 	\begin{center}
-		\begin{tabular}{|c c c c c|} 
-			\hline
-			Размер & Пузырьком & Вставками & Быстрая &\\  
-			\hline
-			100 & X & X & X &\\
-			\hline
-			200 & X & X & X &\\
-			\hline
-			300 & X & X & X &\\
-			\hline
-			500 & X & X & X &\\
-			\hline
-			1000 & X & X & X &\\
-			\hline
-			2500 & X & X & X &\\
-			\hline
-			5000 & X & X & X &\\
-			\hline
-			10000 & X & X & X &\\
-			\hline
-		\end{tabular}
+	\begin{tabular}{|c c c c|}
+		\hline
+		Размер & bsort & isort & qsort \\ [0.5ex]
+		1000 & 0.02464 & 0.02351 & 0.05463 \\ 
+		\hline  
+		1200 & 0.03504 & 0.03444 & 0.08216 \\ 
+		\hline 
+		1400 & 0.04539 & 0.04633 & 0.11752 \\ 
+		\hline 
+		1600 & 0.07741 & 0.06945 & 0.18477 \\ 
+		\hline 
+		1800 & 0.08010 & 0.07510 & 0.19965 \\ 
+		\hline 
+		2000 & 0.08919 & 0.08319 & 0.22478 \\ 
+		\hline 
+	\end{tabular}
 	\end{center}
 \end{table}
 
 \begin{table} [h!]
 	\caption{Таблица времени выполнения сортировок на случайных данных (в секундах)}
 	\begin{center}
-		\begin{tabular}{|c c c c c|} 
-			\hline
-			Размер & Пузырьком & Вставками & Быстрая &\\  
-			\hline
-			100 & X & X & X &\\
-			\hline
-			200 & X & X & X &\\
-			\hline
-			300 & X & X & X &\\
-			\hline
-			500 & X & X & X &\\
-			\hline
-			1000 & X & X & X &\\
-			\hline
-			2500 & X & X & X &\\
-			\hline
-			5000 & X & X & X &\\
-			\hline
-			10000 & X & X & X &\\
-			\hline
-		\end{tabular}
+	\begin{tabular}{|c c c c|}
+		\hline
+		Размер & bsort & isort  & qsort \\ [0.5ex]
+		1000 & 0.01937 & 0.01129 & 0.00065 \\ 
+		\hline 
+		1200 & 0.02371 & 0.01426 & 0.00042 \\ 
+		\hline 
+		1400 & 0.03296 & 0.01619 & 0.00095 \\ 
+		\hline 
+		1600 & 0.04761 & 0.01842 & 0.00143 \\ 
+		\hline 
+		1800 & 0.06122 & 0.02028 & 0.00145 \\ 
+		\hline 
+		2000 & 0.06756 & 0.02129 & 0.00220 \\ 
+		\hline 
+	\end{tabular}
 	\end{center}
 \end{table}
 
 \section{Вывод}
 
-Тут какой то вывод..
+Как и ожидалось в результате оценки трудоемкости алгоритмов, сортировка вставками работает очень быстро на уже отсортированном массиве. Время сортировки вставками на всех трёх видах массивов примерно одинаково.
+При обратно отсортированном массиве, быстрая сортировка начинает значительно проигрывать по скорости.
+При прямом порядке элементов в массиве, сортировка пузьком работает в 115 раз медленее чем сортировка вставками, и в 70 раз медленее чем быстрая.
 
 \chapter*{Заключение}
 \addcontentsline{toc}{chapter}{Заключение}
@@ -422,8 +481,7 @@ let rec qsort = function
 	\item Был проведён сравнительный анализ алгоритмов на основе экспериментальных данных.
 \end{enumerate}
 
-% еще вывод..
-
+На основании анализа трудоемкости алгоритмов в выбранной модели вычислений, было показано, что алгоритм сортировки вставками имеет наименьшую сложность (линейную) в уже отсортированном массиве. В случае обранто отсортированного массива, сортировка вставками и пузырьком имееют квадратическую сложность. На основании замеров времени исполнения алгоритмов, был сделан вывод, что при прямом порядке элементов в массиве, сортировка пузьком работает в 115 раз медленее чем сортировка вставками, и в 70 раз медленее чем быстрая. Так же был доказана выведенная трудоемкость алгоритма сортировки вставками -- при  уже отсортированном массиве сортировка работает очень быстро. На случайных данных быстрее всех работает алгоритм быстрой сортировки.
 
 
 \addcontentsline{toc}{chapter}{Литература}

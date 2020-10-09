@@ -1,5 +1,3 @@
-{-# LANGUAGE BangPatterns #-}
-
 module Application (
     run
 ) where
@@ -7,7 +5,6 @@ module Application (
 import Data.Matrix
 import Data.Maybe
 import System.Clock
-import Data.Time.Clock
 import Text.Printf
 
 import Levenshtein
@@ -44,7 +41,7 @@ run = do
 
     start <- getTime Monotonic
 
-    let !matrix = case n of {
+    let matrix = case n of {
         "3" -> Just $ levenshteinIterative s1 s2;
         "4" -> Just $ damerauLevenshtein s1 s2;
         _ -> Nothing;
@@ -60,7 +57,7 @@ run = do
 
     start <- getTime Monotonic
 
-    let !results = case n of {
+    let results = case n of {
         "1" -> levenshteinRecursion s1 s2;
         "2" -> levenshteinMemoized s1 s2;
         _ ->  getResults $ fromJust matrix;

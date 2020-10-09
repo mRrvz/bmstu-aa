@@ -32,8 +32,8 @@ Debian -- универсальная операционная система
 
 \bibitem{linux}
 \selectlanguageifdefined{russian}
-Linux -- Википедия [Электронный ресурс].
-\newblock Режим доступа: \url{https://ru.wikipedia.org/wiki/Linux}.
+Linux -- Getting Started [Электронный ресурс].
+\newblock Режим доступа: \url{https://linux.org}.
 \newblock Дата обращения: 20.09.2020.
 
 \bibitem{i5}
@@ -46,15 +46,9 @@ Linux -- Википедия [Электронный ресурс].
 
 \bibitem{profiling}
 \selectlanguageifdefined{russian}
-Profiling -- Википедия [Электронный ресурс].
+Profiling -- Haskell profiling [Электронный ресурс].
 \newblock Режим доступа:
-  \url{https://en.wikipedia.org/wiki/Profiling}.
-\newblock Дата обращения: 20.09.2020.
-
-\bibitem{C++}
-\selectlanguageifdefined{russian}
-C++ -- Википедия [Электронный ресурс].
-\newblock Режим доступа: \url{https://ru.wikipedia.org/wiki/C++}.
+  \url{https://downloads.haskell.org/ghc/8.8.1/docs/html/user\_guide/index.html}.
 \newblock Дата обращения: 20.09.2020.
 
 \end{thebibliography}

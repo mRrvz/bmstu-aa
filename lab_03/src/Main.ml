@@ -21,16 +21,16 @@ let main () =
 
     let stype = Scanf.scanf "%d\n" (fun x -> x) in
       printf "Введите размер массива: \n"; flush stdout;
-      let size = Scanf.scanf "%d\n" (fun x -> x) in
-        printf "Введите массив: \n"; flush stdout;
-        let arr = read_array [] size in
-          printf "Реузультат: \n"; print_array (
-            match stype with
-            | 1 -> bsort arr
-            | 2 -> isort arr
-            | 3 -> qsort arr
-            | _ -> []
-          );
+    let size = Scanf.scanf "%d\n" (fun x -> x) in
+      printf "Введите массив: \n"; flush stdout;
+    let arr = read_array [] size in
+      printf "Реузультат: \n"; print_array (
+        match stype with
+        | 1 -> bsort arr
+        | 2 -> isort arr
+        | 3 -> qsort arr
+        | _ -> []
+    );
 ;;
 
 if !Sys.interactive then () else main ();;
