@@ -1,0 +1,26 @@
+\babel@toc {russian}{}
+\contentsline {chapter}{Введение}{2}%
+\contentsline {chapter}{\numberline {1}Аналитическая часть}{3}%
+\contentsline {section}{\numberline {1.1}Стандартный алгоритм}{3}%
+\contentsline {section}{\numberline {1.2}Алгоритм Копперсмита -- Винограда}{3}%
+\contentsline {section}{\numberline {1.3}Вывод}{4}%
+\contentsline {chapter}{\numberline {2}Конструкторская часть}{5}%
+\contentsline {section}{\numberline {2.1}Схемы алгоритмов}{5}%
+\contentsline {section}{\numberline {2.2}Модель вычислений}{5}%
+\contentsline {section}{\numberline {2.3}Трудоёмкость алгоритмов}{6}%
+\contentsline {subsection}{\numberline {2.3.1}Стандартный алгоритм умножения матриц}{6}%
+\contentsline {subsection}{\numberline {2.3.2}Алгоритм Копперсмита — Винограда}{6}%
+\contentsline {subsection}{\numberline {2.3.3}Оптимизированный алгоритм Копперсмита — Винограда}{7}%
+\contentsline {section}{\numberline {2.4}Вывод}{7}%
+\contentsline {chapter}{\numberline {3}Технологическая часть}{14}%
+\contentsline {section}{\numberline {3.1}Требование к ПО}{14}%
+\contentsline {section}{\numberline {3.2}Средства реализации}{14}%
+\contentsline {section}{\numberline {3.3}Реализация алгоритмов}{14}%
+\contentsline {section}{\numberline {3.4}Тестовые данные}{16}%
+\contentsline {section}{\numberline {3.5}Вывод}{17}%
+\contentsline {chapter}{\numberline {4}Исследовательская часть}{18}%
+\contentsline {section}{\numberline {4.1}Технические характеристики}{18}%
+\contentsline {section}{\numberline {4.2}Время выполнения алгоритмов}{18}%
+\contentsline {section}{\numberline {4.3}Вывод}{19}%
+\contentsline {chapter}{Заключение}{20}%
+\contentsline {chapter}{Литература}{20}%

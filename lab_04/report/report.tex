@@ -1,0 +1,666 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+%\usepackage[14pt]{extsizes}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{pgfplots}
+\usepackage{filecontents}
+\usepackage{indentfirst}
+\usepackage{eucal}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\frenchspacing
+
+\usepackage{indentfirst} % Красная строка
+
+
+%\usetikzlibrary{datavisualization}
+%\usetikzlibrary{datavisualization.formats.functions}
+
+\usepackage{amsmath}
+
+
+
+
+% Для листинга кода:
+\lstset{ %
+language=haskell,                 % выбор языка для подсветки (здесь это С)
+basicstyle=\small\sffamily, % размер и начертание шрифта для подсветки кода
+numbers=left,               % где поставить нумерацию строк (слева\справа)
+numberstyle=\tiny,           % размер шрифта для номеров строк
+stepnumber=1,                   % размер шага между двумя номерами строк
+numbersep=5pt,                % как далеко отстоят номера строк от подсвечиваемого кода
+showspaces=false,            % показывать или нет пробелы специальными отступами
+showstringspaces=false,      % показывать или нет пробелы в строках
+showtabs=false,             % показывать или нет табуляцию в строках
+frame=single,              % рисовать рамку вокруг кода
+tabsize=2,                 % размер табуляции по умолчанию равен 2 пробелам
+captionpos=t,              % позиция заголовка вверху [t] или внизу [b] 
+breaklines=true,           % автоматически переносить строки (да\нет)
+breakatwhitespace=false, % переносить строки только если есть пробел
+escapeinside={\#*}{*)}   % если нужно добавить комментарии в коде
+}
+
+\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+% Для измененных титулов глав:
+\usepackage{titlesec, blindtext, color} % подключаем нужные пакеты
+\definecolor{gray75}{gray}{0.75} % определяем цвет
+\newcommand{\hsp}{\hspace{20pt}} % длина линии в 20pt
+% titleformat определяет стиль
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+
+% plot
+\usepackage{pgfplots}
+\usepackage{filecontents}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+
+\begin{document}
+%\def\chaptername{} % убирает "Глава"
+\thispagestyle{empty}
+\begin{titlepage}
+	\noindent \begin{minipage}{0.15\textwidth}
+	\includegraphics[width=\linewidth]{b_logo}
+	\end{minipage}
+	\noindent\begin{minipage}{0.9\textwidth}\centering
+		\textbf{Министерство науки и высшего образования Российской Федерации}\\
+		\textbf{Федеральное государственное бюджетное образовательное учреждение высшего образования}\\
+		\textbf{~~~«Московский государственный технический университет имени Н.Э.~Баумана}\\
+		\textbf{(национальный исследовательский университет)»}\\
+		\textbf{(МГТУ им. Н.Э.~Баумана)}
+	\end{minipage}
+	
+	\noindent\rule{18cm}{3pt}
+	\newline\newline
+	\noindent ФАКУЛЬТЕТ $\underline{\text{«Информатика и системы управления»}}$ \newline\newline
+	\noindent КАФЕДРА $\underline{\text{«Программное обеспечение ЭВМ и информационные технологии»}}$\newline\newline\newline\newline\newline
+	
+	
+	\begin{center}
+		\noindent\begin{minipage}{1.3\textwidth}\centering
+			\Large\textbf{  Отчёт по лабораторной работе №2}\newline
+			\textbf{по дисциплине "Анализ алгоритмов"}\newline\newline
+		\end{minipage}
+	\end{center}
+	
+	\noindent\textbf{Тема} $\underline{\text{Умножение матриц}}$\newline\newline
+	\noindent\textbf{Студент} $\underline{\text{Романов А.В.}}$\newline\newline
+	\noindent\textbf{Группа} $\underline{\text{ИУ7-53Б}}$\newline\newline
+	\noindent\textbf{Оценка (баллы)} $\underline{\text{~~~~~~~~~~~~~~~~~~~~~~~~~~~}}$\newline\newline
+	\noindent\textbf{Преподаватели} $\underline{\text{Волкова Л.Л., Строганов Ю.В.}}$\newline\newline\newline
+	
+	\begin{center}
+		\vfill
+		Москва~---~\the\year
+		~г.
+	\end{center}
+\end{titlepage}
+
+
+\tableofcontents
+
+\newpage
+\chapter*{Введение}
+\addcontentsline{toc}{chapter}{Введение}
+Алгоритм Копперсмита — Винограда — алгоритм умножения квадратных матриц, предложенный в 1987 году Д. Копперсмитом и Ш. Виноградом.
+В исходной версии асимптотическая сложность алгоритма составляла $O(n^{2,3755})$, где  $n$ — размер стороны матрицы.
+
+Алгоритм Копперсмита — Винограда, с учётом серии улучшений и доработок в последующие годы, обладает лучшей асимптотикой среди известных алгоритмов умножения матриц.
+
+На практике алгоритм Копперсмита — Винограда не используется, так как он имеет очень большую константу пропорциональности и начинает выигрывать в быстродействии у других известных алгоритмов только для матриц, размер которых превышает память современных компьютеров.
+Поэтому пользуются алгоритмом Штрассена по причинам простоты реализации и меньшей константе в оценке трудоемкости.
+
+Задачи лабораторной работы:
+
+\begin{enumerate}
+	\item Изучение и реализация трёх алгоритмов умножения матриц: обычный, Копперсмита-Винограда, оптимизированный Копперсмита-Винограда;
+	\item Сравнительный анализ трудоёмкости алгоритмов на основе теоретических расчетов и выбранной модели вычислений;
+	\item Сравнительный анализ алгоритмов на основе экспериментальных данных.
+\end{enumerate}
+
+\chapter{Аналитическая часть}
+
+
+\section{Стандартный алгоритм}
+
+Пусть даны две прямоугольные матрицы
+\begin{equation}
+	A_{lm} = \begin{pmatrix}
+		a_{11} & a_{12} & \ldots & a_{1m}\\
+		a_{21} & a_{22} & \ldots & a_{2m}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{l1} & a_{l2} & \ldots & a_{lm}
+	\end{pmatrix},
+	\quad
+		B_{mn} = \begin{pmatrix}
+		b_{11} & b_{12} & \ldots & b_{1n}\\
+		b_{21} & b_{22} & \ldots & b_{2n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		b_{m1} & b_{m2} & \ldots & b_{mn}
+	\end{pmatrix},
+\end{equation}
+
+тогда матрица $C$
+\begin{equation}
+	C_{ln} = \begin{pmatrix}
+		c_{11} & c_{12} & \ldots & c_{1n}\\
+		c_{21} & c_{22} & \ldots & c_{2n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		c_{l1} & c_{l2} & \ldots & c_{ln}
+	\end{pmatrix},
+\end{equation}
+
+где
+\begin{equation}
+	\label{eq:M}
+	c_{ij} =
+		\sum_{r=1}^{m} a_{ir}b_{rj} \quad (i=\overline{1,l}; j=\overline{1,n})
+\end{equation}
+
+будет называться произведением матриц $A$ и $B$.
+Стандартный алгоритм реализует данную формулу.
+
+\section{Алгоритм Копперсмита -- Винограда}
+
+Если посмотреть на результат умножения двух матриц, то видно, что каждый элемент в нем представляет собой скалярное произведение соответствующих строки и столбца исходных матриц.
+Можно заметить также, что такое умножение допускает предварительную обработку, позволяющую часть работы выполнить заранее.
+
+Рассмотрим два вектора $V = (v_1, v_2, v_3, v_4)$ и $W = (w_1, w_2, w_3, w_4)$.
+Их скалярное произведение равно: $V \cdot W = v_1w_1 + v_2w_2 + v_3w_3 + v_4w_4$, что эквивалентно (\ref{for:new}):
+\begin{equation}
+	\label{for:new}
+		V \cdot W = (v_1 + w_2)(v_2 + w_1) + (v_3 + w_4)(v_4 + w_3) - v_1v_2 - v_3v_4 - w_1w_2 - w_3w_4.
+\end{equation}
+
+Несмотря на то, что второе выражение требует вычисления большего количества операций, чем стандартный алгоритм: вместо четырёх умножений - шесть, а вместо трёх сложений - десять, выражение в правой части последнего равенства допускает предварительную обработку: его части можно вычислить заранее и запомнить для каждой строки первой матрицы и для каждого столбца второй, что позволит для каждого элемента выполнять лишь два умножения и пять сложений, складывая затем только лишь с 2 предварительно посчитанными суммами соседних элементов текущих строк и столбцов.
+Из-за того, что операция сложения быстрее операции умножения в ЭВМ, на практике алгоритм должен работать быстрее стандартного.
+
+\section{Вывод}
+	В данном разделе были рассмотрены алгоритмы классического умножения матриц и алгоритм Винограда, основное отличие которого от классического алгоритма — наличие предварительной обработки, а также количество операций умножения. 
+\clearpage
+
+\chapter{Конструкторская часть}
+
+\section{Схемы алгоритмов}
+
+На рисунке 2.1 приведена схема стандартного алгоритма умножения матриц.
+
+На рисунках 2.2, 2.3 и 2.4 представлена схема алгоритма Копперсмита — Винограда.
+
+На рисунках 2.5 и 2.6 представлена схема оптимизированного алгоритма Копперсмита — Винограда. 
+
+Для алгоритма Копперсмита -- Винограда худшим случаем являются матрицы с нечётным общим размером, а лучшим - с чётным, из-за того что отпадает необходимость в последнем цикле.
+
+Данный алгоритм можно оптимизировать \cite{optimize}:
+\begin{itemize}
+	\item Предварительно получить строки столбцы соответствующих матриц;
+	\item Замена вызова функции вычисления длины вектора на заранее вычисленное значение;
+	\item Вынос конструкции if-then-else за пределы лямбда-функции;
+	\item Ускорение работы для матриц с нечетной общей размерностью.
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{base.jpg}
+	\caption{Схема стандартного алгоритма умножения матриц}
+	\label{fig:mpr}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{winograd_0.jpg}
+	\caption{Схема алгоритма Копперсмита -- Винограда}
+	\label{fig:mpr}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{winograd_1.jpg}
+	\caption{Схема функций алгоритма Копперсмита -- Винограда}
+	\label{fig:mpr}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1]{winograd_2.jpg}
+	\caption{Схема функций алгоритма Копперсмита -- Винограда}
+	\label{fig:mpr}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{winograd_opt_0.jpg}
+	\caption{Схема оптимизированного алгоритма Копперсмита -- Винограда}
+	\label{fig:mpr}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{winograd_opt_1.jpg}
+	\caption{Схема функций оптимизированного алгоритма Копперсмита -- Винограда}
+	\label{fig:mpr}
+\end{figure}
+
+\section{Модель вычислений}
+
+Для последующего вычисления трудоемкости введём модель вычислений:
+
+\begin{enumerate}
+	\item Операции из списка (\ref{for:opers}) имеют трудоемкость 1.
+	\begin{equation}
+	\label{for:opers}
+	+, -, /, \%, ==, !=, <, >, <=, >=, [], ++, {-}-
+	\end{equation}
+	\item Трудоемкость оператора выбора if условие then A else B рассчитывается, как (\ref{for:if}).
+	\begin{equation}
+	\label{for:if}
+	f_{if} = f_{\text{условия}} +
+	\begin{cases}
+	f_A, & \text{если условие выполняется,}\\
+	f_B, & \text{иначе.}
+	\end{cases}
+	\end{equation}
+	\item Трудоемкость цикла рассчитывается, как (\ref{for:for}).
+	\begin{equation}
+	\label{for:for}
+	f_{for} = f_{\text{инициализации}} + f_{\text{сравнения}} + N(f_{\text{тела}} + f_{\text{инкремента}} + f_{\text{сравнения}})
+	\end{equation}
+	\item Трудоемкость вызова функции равна 0.
+\end{enumerate}
+
+\section{Трудоёмкость алгоритмов}
+
+\subsection{Стандартный алгоритм умножения матриц}
+
+Трудоёмкость стандартного алгоритма умножения матриц состоит из:
+\begin{itemize}
+	\item Внешнего цикла по $i \in [1..A]$, трудоёмкость которого: $f = 2 + A \cdot (2 + f_{body})$;
+	\item Цикла по $j \in [1..C]$, трудоёмкость которого: $f = 2 + C \cdot (2 + f_{body})$;
+	\item Скалярного умножения двух векторов - цикл по $k \in [1..B]$, трудоёмкость которого: $f = 2 + 10B$;
+\end{itemize}
+
+Трудоёмкость стандартного алгоритма равна трудоёмкости внешнего цикла, можно вычислить ее, подставив циклы тела (\ref{for:base}):
+\begin{equation}
+	\label{for:base}
+	f_{base} = 2 + A \cdot (4 + C \cdot (4 + 10B)) = 2 + 4A + 4AC + 10ABC \approx 10ABC
+\end{equation}
+
+\subsection{Алгоритм Копперсмита — Винограда}
+
+Трудоёмкость алгоритма Копперсмита — Винограда состоит из:
+
+\begin{enumerate}
+	\item Создания векторов rows и cols (\ref{for:init}):
+	\begin{equation}
+	\label{for:init}
+	f_{create} = A + C;
+	\end{equation}
+	
+	\item Заполнения вектора rows (\ref{for:MH}):
+	\begin{equation}
+	\label{for:MH}
+	f_{rows} = 3 + \frac{B}{2} \cdot (5 + 12A);
+	\end{equation}
+	
+	\item Заполнения вектора cols (\ref{for:MV}):
+	\begin{equation}
+	\label{for:MV}
+	f_{cols} = 3 + \frac{B}{2} \cdot (5 + 12C);
+	\end{equation}
+	
+	\item Цикла заполнения матрицы для чётных размеров (\ref{for:cycle}):
+	\begin{equation}
+	\label{for:cycle}
+	f_{cycle} = 2 + A \cdot (4 + C \cdot (11 + \frac{25}{2} \cdot B));
+	\end{equation}
+	
+	\item Цикла, для дополнения умножения суммой последних нечётных строки и столбца, если общий размер нечётный (\ref{for:last}):
+	\begin{equation}
+	\label{for:last}
+	f_{last} = \begin{cases}
+	2, & \text{чётная,}\\
+	4 + A \cdot (4 + 14C), & \text{иначе.}
+	\end{cases}
+	\end{equation}
+\end{enumerate}
+
+Итого, для худшего случая (нечётный размер матриц): 
+\begin{equation}
+\label{for:bad}
+f_{wino\_w} = A + C + 12 + 8A + 5B + 6AB + 6CB + 25AC + \frac{25}{2}ABC \approx 12.5 \cdot MNK
+\end{equation}
+
+Для лучшего случая (чётный размер матриц): 
+\begin{equation}
+\label{for:good}
+f_{wino\_b} = A + C + 10 + 4A + 5B + 6AB + 6CB + 11AC + \frac{25}{2}ABC \approx 12.5 \cdot MNK
+\end{equation}
+
+\subsection{Оптимизированный алгоритм Копперсмита — Винограда}
+
+Трудоёмкость улучшенного алгоритма Копперсмита — Винограда состоит из:
+\begin{enumerate}
+	\item Создания векторов rows и cols (\ref{for:impr_init}):
+	\begin{equation}
+	\label{for:impr_init}
+	f_{init} = A + C;
+	\end{equation}
+	
+	\item Заполнения вектора rows (\ref{for:impr_MH}):
+	\begin{equation}
+	\label{for:impr_MH}
+	f_{rows} = 2 + \frac{B}{2} \cdot (4 + 8A);
+	\end{equation}
+	
+	\item Заполнения вектора cols (\ref{for:impr_MV}):
+	\begin{equation}
+	\label{for:impr_MV}
+	f_{cols} = 2 + \frac{B}{2} \cdot (4 + 8A);
+	\end{equation}
+	
+	\item Цикла заполнения матрицы для чётных размеров (\ref{for:impr_cycle}):
+	\begin{equation}
+	\label{for:impr_cycle}
+	f_{cycle} = 2 + A \cdot (4 + C \cdot (8 + 9B))
+	\end{equation}
+	
+	\item Цикла, для дополнения умножения суммой последних нечётных строки и столбца, если общий размер нечётный (\ref{for:impr_last}):
+	\begin{equation}
+	\label{for:impr_last}
+	f_{last} = 
+	\begin{cases}
+	2, & \text{чётная,}\\
+	4 + A \cdot (4 + 12C), & \text{иначе.}
+	\end{cases}
+	\end{equation}
+\end{enumerate}
+
+Итого, для худшего случая (нечётный общий размер матриц) имеем (\ref{for:bad_impr}):
+\begin{equation}
+\label{for:bad_impr}
+f = A + C + 10 + 4B + 4BC + 4BA + 8A + 20AC + 9ABC \approx 9ABC
+\end{equation}
+
+Для лучшего случая (чётный общий размер матриц) имеем (\ref{for:good_impr}):
+\begin{equation}
+\label{for:good_impr}
+f = A + C + 8 + 4B +4BC + 4BA + 4A + 8AC + 9ABC \approx 9ABC
+\end{equation}
+
+\section{Вывод}
+	На основе теоретических данных, полученных из аналитического раздела, были построены схемы обоих алгоритмов умножения матриц.  Оценены их трудоёмкости в лучшем и худшем случаях.
+
+\chapter{Технологическая часть}
+
+В данном разделе приведены средства реализации и листинги кода.
+
+\section{Требование к ПО}
+
+К программе предъявляется ряд требований:
+
+\begin{itemize}
+
+	\item На вход ПО получает размеры 2 матриц, а также их элементы;
+
+	\item На выходе — ПО печатает матрицу, которая является результатом умножения входных матриц.
+
+\end{itemize}
+
+\section{Средства реализации}
+Для реализации ПО я выбрал язык программирования Haskell \cite{Haskell}. Данный выбор обусловлен моим желанием расширить свои знания в области применения данного язкыа программирования. 
+
+\section{Реализация алгоритмов}
+
+В листингах 3.1 - 3.4 приведена реализация алгоритмов перемножения матриц.
+
+\begin{lstlisting}[label=some-code,caption=Функция умножения матриц обычным способом, language=Haskell]
+baseMultiplication :: (Num a) => Matrix a -> Matrix a -> Matrix a
+baseMultiplication m1 m2 = M.fromList (M.nrows m1) (M.ncols m2) $ V.toList $ _multp m1 m2 1
+  where
+    _multp m1 m2 i
+    | i == M.nrows m1 + 1 = V.fromList []
+    | otherwise = P.foldl (\acc j ->
+      V.zipWith (+) acc $ V.zipWith (*) (V.fromList $ P.take (M.ncols m2) $ repeat (M.getElem i j m1)) (M.getRow j m2))
+     (V.fromList $ P.take (M.ncols m2) $ repeat 0) [1..M.ncols m1] V.++ _multp m1 m2 (i + 1)
+\end{lstlisting}
+
+\begin{lstlisting}[label=some-code,caption=Функция умножения матриц с транспонированием,language=Haskell]
+baseTMultiplication :: (Num a) => Matrix a -> Matrix a -> Matrix a
+baseTMultiplication m1 m2 =  M.fromList (M.nrows m1) (M.ncols m2) $ V.toList $ _multp m1 (M.transpose m2) 1
+  where
+    _multp m1 m2 i
+      | i == M.nrows m1 + 1 = V.fromList []
+      | otherwise = P.foldl (\acc j ->
+        V.snoc acc $ V.sum (V.zipWith (*) (M.getRow i m1) (M.getRow j m2))) (V.fromList []) [1..M.nrows m2]
+        V.++ _multp m1 m2 (i + 1)
+\end{lstlisting}
+
+\begin{lstlisting}[label=some-code,caption=Функция умножения матриц по Винограду,language=Haskell]
+winogradMultiplication :: (Num a) => Matrix a -> Matrix a -> Matrix a
+winogradMultiplication m1 m2 = res
+  where
+    a = M.nrows m1
+    b = M.ncols m1
+    c = M.ncols m2
+
+    rows = V.generate a $ \i -> precalc $ M.getRow (i + 1) m1
+    cols = V.generate c $ \j -> precalc $ M.getCol (j + 1) m2
+
+    precalc v = P.foldl (\acc i ->
+    acc - V.unsafeIndex v i * V.unsafeIndex v (i + 1)) 0 [0, 2 .. V.length v - 2]
+	
+    res = M.matrix a c $ \(i, j) ->
+      V.unsafeIndex rows (i - 1) + V.unsafeIndex cols (j - 1)
+      + subcalc (M.getRow i m1) (M.getCol j m2)
+      + if odd b then M.unsafeGet i b m1 * M.unsafeGet b j m2 else 0
+	
+    subcalc v1 v2 = P.foldl (\acc i ->
+    acc + (V.unsafeIndex v1 (i + 1) + V.unsafeIndex v2 (i))
+        * (V.unsafeIndex v1 (i) + V.unsafeIndex v2 (i + 1))) 0 [0, 2 .. V.length v1 - 2]
+\end{lstlisting}
+
+
+\begin{lstlisting}[label=some-code,caption=Функция нахождения расстояния Дамерау-Левенштейна матрично,language=Haskell]
+winogradOptimizedMultiplication :: (Num a) => Matrix a -> Matrix a -> Matrix a
+winogradOptimizedMultiplication m1 m2 = res
+  where
+    a = M.nrows m1
+    b = M.ncols m1
+    c = M.ncols m2
+	
+    m1' = V.generate a $ \i -> M.getRow (i + 1) m1
+    m2' = V.generate c $ \j -> M.getCol (j + 1) m2
+	
+    rows = V.generate a $ \i -> precalc $ V.unsafeIndex m1' i
+    cols = V.generate c $ \j -> precalc $ V.unsafeIndex m2' j
+	
+    precalc v = P.foldl (\acc i ->
+      acc - V.unsafeIndex v i * V.unsafeIndex v (i + 1)) 0 [0, 2 ..  b - 2]
+	
+    res = if odd b
+      then M.matrix a c $ \(i, j) ->
+        let v1 = V.unsafeIndex m1' (i - 1)
+            v2 = V.unsafeIndex m2' (j - 1)
+        in V.unsafeIndex rows (i - 1) + V.unsafeIndex cols (j - 1) + subcalc v1 v2 + V.last v1 * V.last v2
+      else M.matrix a c $ \(i, j) ->
+        let v1 = V.unsafeIndex m1' (i - 1)
+            v2 = V.unsafeIndex m2' (j - 1)
+        in V.unsafeIndex rows (i - 1) + V.unsafeIndex cols (j - 1) + subcalc v1 v2
+	
+    subcalc v1 v2 = P.foldl (\acc i ->
+      acc + (V.unsafeIndex v1 (i + 1) + V.unsafeIndex v2 (i))
+          * (V.unsafeIndex v1 (i) + V.unsafeIndex v2 (i + 1))) 0 [0, 2 .. b - 2]
+\end{lstlisting}
+
+\section{Тестовые данные}
+
+В таблице~\ref{tabular:test_rec} приведены тесты для функций, реализующих стандартный алгоритм умножения матриц, алгоритм Винограда и оптимизированный алгоритм Винограда. Все тесты пройдены успешно.
+
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}{c@{\hspace{7mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}}
+			\hline
+			Первая матрица & Вторая матрица & Ожидаемый результат \\ \hline
+			\vspace{4mm}
+			$\begin{pmatrix}
+			1 & 2 & 3\\
+			1 & 2 & 3\\
+			1 & 2 & 3
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+			1 & 2 & 3\\
+			1 & 2 & 3\\
+			1 & 2 & 3
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+			6 & 12 & 18\\
+			6 & 12 & 18\\
+			6 & 12 & 18
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+			1 & 2 & 2\\
+			1 & 2 & 2
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+			1 & 2\\
+			1 & 2\\
+			1 & 2
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+			5 & 10\\
+			5 & 10
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+			2
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+			2
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+			4
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+			1 & -2 & 3\\
+			1 & 2 & 3\\
+			1 & 2 & 3
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+			-1 & 2 & 3\\
+			1 & 2 & 3\\
+			1 & 2 & 3
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+			0 & 4 & 6\\
+			4 & 12 & 18\\
+			4 & 12 & 18
+			\end{pmatrix}$\\
+			\vspace{2mm}
+			\vspace{2mm}
+		\end{tabular}
+	\end{center}
+	\caption{\label{tabular:test_rec} Тестирование функций}
+\end{table}
+
+\section{Вывод}
+
+В данном разделе были разработаны исходные коды четырёх алгоритмов перемножения матриц: обычный алгоритм, алгоритм с транспонированием, алгоритм Копперсмита — Винограда, оптимизированный алгоритм Копперсмита — Винограда.
+
+\chapter{Исследовательская часть}
+
+\section{Технические характеристики}
+
+Ниже приведены технические характеристики устройства, на котором было проведено тестирование ПО:
+
+\begin{itemize}
+	\item Операционная система: Debian \cite{debian} Linux \cite{linux} 11 <<bullseye>> 64-bit.
+	\item Оперативная память: 12 GB.
+	\item Процессор: Intel(R) Core(TM) i5-3550 CPU @ 3.30GHz
+\cite{i5}.
+
+\end{itemize}
+
+\section{Время выполнения алгоритмов}
+Время выполнения алгоритм замерялось с помощью применения технологии профайлинга \cite{profiling}. Данный инстрмуент даёт детальное описание количества вызовов и количества времени CPU, занятого каждой функцией. \newline
+
+В таблицах 4.1 и 4.2 представлены замеры времени работы для каждого из алгоритмов на чётных размерах матриц. Здесь и далее: С — стандартный алгоритм, ТС -- стандартный алгоритм с транспонированием, КВ — алгоритм Копперсмита -- Винограда, ОКВ -- оптимизированный алгоритм Копперсмита -- Винограда.
+
+\begin{table} [h!]
+	\caption{Таблица времени выполнения алгоритмов при чётных размерах (в секундах)}
+	\begin{center}
+		\begin{tabular}{|c c c c c|} 
+		 	\hline
+			Размер матрицы & С & ТС & КВ & ОКВ \\  
+		 	\hline
+		 	100 & 0.482 & 0.120 & 0.169 & 0.158 \\
+		 	\hline
+		 	200 & 3.998 & 0.947 & 1.312 & 1.253 \\
+		 	\hline
+			300 & 13.526 & 3.364 & 4.478 & 4.063 \\
+			\hline
+			400 & 34.330 & 7.521 & 11.319 & 9.909 \\
+			\hline
+			500 & NaN & 14.913 & 22.427 & 19.357 \\
+			\hline
+			600 & NaN & 26.448 & 39.292 & 33.265 \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table} [h!]
+	\caption{Таблица времени выполнения алгоритмов при нечётных размерах (в наносекундах)}
+	\begin{center}
+	\begin{tabular}{|c c c c c|} 
+		\hline
+		Размер матрицы & С & ТС & КВ & ОКВ \\  
+		\hline
+		101 & 0.493 & 0.126 & 0.190 & 0.178 \\
+		\hline
+		201 & 4.025 & 1.009 & 1.411 & 1.301 \\
+		\hline
+		301 & 13.629 & 3.465 & 4.562 & 4.120 \\
+		\hline
+		401 & 34.710 & 7.810 & 11.450 & 10.080 \\
+		\hline
+		501 & NaN & 15.123 & 22.651 & 19.612 \\
+		\hline
+		601 & NaN & 26.768 & 39.512 & 33.729 \\
+		\hline
+	\end{tabular}
+\end{center}
+\end{table}
+
+\section{Вывод}
+
+Реализация умножения матриц с помощью алгоритма Копперсмита -- Винограда в среднем выполняется в 3.4 раза быстрее, чем умножение обычным способом. Но, не смотря на это, алгоритм матриц с предварительным транспонированием матрицы выполняется быстрее чем любой рассматриваемый алгоритм. Такой алгоритм выполняется быстрее 3.6 раза чем обычное умножение, в 1.5 раза быстрее чем алгоритм Копперсмита -- Винограда и в 1.3 раза быстрее чем его оптимизированная версия. Можно сделать вывод, что это происходит из-за кэширования соседних элементов перемножаемых строк. Кроме этого, для такого алгоритма не нужна дополнительная память, и, следовательно, нет нужды в дополнительном времени для ее выделения.
+
+\chapter*{Заключение}
+\addcontentsline{toc}{chapter}{Заключение}
+
+В рамках данной лабораторной работы:
+
+\begin{enumerate}
+	\item Были изучены и реализованы 3 алгоритма перемножения матриц: обычный, Копперсмита -- Винограда, оптимизированный Копперсмита -- Винограда;
+	\item Был произведён анализ трудоёмкости алгоритмов на основе теоретических расчётов и выбранной модели вычислений;
+	\item Был сделан сравнительный анализ алгоритмов на основе экспериментальных данных.
+\end{enumerate}
+
+На основании анализа трудоёмкости алгоритмов в выбранной модели вычислений было показано, что улучшенный алгоритм Винограда имеет меньшую сложность, нежели простой алгоритм перемножения матриц. На основании замеров времени исполнения алгоритмов, был сделан вывод, что алгоритм Копперсмита -- Винограда в среднем в 3.5 раза быстрее чем обычный алгоритм умножения матриц. Кроме этого, я решил добавить в сравнение алгоритм с предварительным транспонированием матрицы. Оказалось, что такая реализация быстрее алгоритма Копперсмита -- Винограда в 1.5 раза и обгоняет классический алгоритм умножения в 3.6 раза. 
+
+\addcontentsline{toc}{chapter}{Литература}
+
+\bibliographystyle{utf8gost705u}  % стилевой файл для оформления по ГОСТу
+
+\bibliography{51-biblio}          % имя библиографической базы (bib-файла)
+
+
+\end{document}

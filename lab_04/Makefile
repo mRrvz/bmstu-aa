@@ -1,7 +1,7 @@
 CC := ghc
 MAIN := Main.hs
 APPNAME := app.exe
-FLAGS=-dynamic --make -O0 -threaded
+FLAGS=-dynamic --make -O0 -threaded -rtsopts
 
 build:
 	cd src && $(CC) -o $(APPNAME) $(FLAGS) $(MAIN) && mv app.exe ../

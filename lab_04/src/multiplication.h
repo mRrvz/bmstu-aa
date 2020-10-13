@@ -1,0 +1,1 @@
+double getSize(void);
