@@ -1,20 +1,37 @@
-#include <stdio.h>
-#include <string.h>
-#include <omp.h>
 #include "multiplication.h"
 
-double getSize() {
-    int size = 50000;
-    int matrix[size][size];
-    double result = 0;
+void print_matrix(int matrix[N][M]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            printf("%d ", matrix[i][j]);
+        }
 
-    for (int i = 0; i < size; i++) {
-        memset(matrix[i], 1, sizeof(matrix[i]));
-        #pragma omp parallel for
-        for (int j = 0; j < size; j++) {
-            result += matrix[i][j] * matrix[i][j] * matrix[i][j];
+        printf("\n");
+    }
+}
+
+void null_matrix(int matrix[N][M]) {
+    for (int i = 0; i < N; i++) {
+        memset(matrix[i], 0, sizeof(matrix[i]));
+    }
+}
+
+void parallel_multiplication1(int m1[N][M], int m2[M][K], int res[N][K]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < K; j++) {
+            for (int k = 0; k < M; k++) {
+                res[i][j] += m1[i][k] * m2[k][j];
+            }
         }
     }
+}
 
-    return result;
+void parallel_multiplication2(int m1[N][M], int m2[M][K], int res[N][K]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < K; j++) {
+            for (int k = 0; k < M; k++) {
+                res[i][j] += m1[i][k] * m2[k][j];
+            }
+        }
+    }
 }
