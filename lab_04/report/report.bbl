@@ -7,20 +7,24 @@
 \ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
 \ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
 
-\bibitem{optimize}
-\selectlanguageifdefined{russian}
-Реализация алгоритма умножения матриц по
-  Винограду на языке Haskell. Анисимов Н.С,
-  Строганов Ю.В. [Электронный ресурс].
-\newblock Режим доступа:
-  \url{https://cyberleninka.ru/article/n/realizatsiya-algoritma-umnozheniya-matrits-po-vinogradu-na-yazyke-haskell/viewer}.
-\newblock Дата обращения: 01.10.2020.
+\bibitem{Nemirovsky}
+\selectlanguageifdefined{english}
+Mario~Nemirovsky~D. M.~T. Multithreading Architecture~// Morgan and Claypool
+  Publishers.
+\newblock 2013.
 
-\bibitem{Haskell}
+\bibitem{Olukotun}
+\selectlanguageifdefined{english}
+Olukotun~K. Chip Multiprocessor Architecture — Techniques to Improve
+  Throughput and Latency~// Morgan and Claypool Publishers.
+\newblock 2007.
+\newblock p.~154.
+
+\bibitem{C}
 \selectlanguageifdefined{russian}
-The Haskell purely functional programming language [Электронный
-  ресурс].
-\newblock Режим доступа: \url{https://haskell.org/}.
+The С99 Standard.
+\newblock Режим
+  доступа:\url{http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf}.
 \newblock Дата обращения: 16.09.2020.
 
 \bibitem{debian}
@@ -42,13 +46,6 @@ Linux -- Getting Started [Электронный ресурс].
   ресурс].
 \newblock Режим доступа:
   \url{https://ark.intel.com/content/www/ru/ru/ark/products/65516/intel-core-i5-3550-processor-6m-cache-up-to-3-70-ghz.html}.
-\newblock Дата обращения: 20.09.2020.
-
-\bibitem{profiling}
-\selectlanguageifdefined{russian}
-Haskell profiling [Электронный ресурс].
-\newblock Режим доступа:
-  \url{https://downloads.haskell.org/ghc/8.8.1/docs/html/user\_guide/index.html}.
 \newblock Дата обращения: 20.09.2020.
 
 \end{thebibliography}

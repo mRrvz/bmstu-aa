@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  18 OCT 2020 21:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  19 OCT 2020 00:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -964,13 +964,7 @@ LaTeX Warning: Label `fig:mpr' multiply defined.
 LaTeX Warning: Label `fig:mpr' multiply defined.
 
 
-LaTeX Warning: Label `fig:mpr' multiply defined.
-
-
-LaTeX Warning: Label `fig:mpr' multiply defined.
-
-
-LaTeX Warning: Label `fig:mpr' multiply defined.
+LaTeX Warning: Label `some-code' multiply defined.
 
 
 LaTeX Warning: Label `some-code' multiply defined.
@@ -1172,29 +1166,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--94
 
 ] [2
 
-]
+] [3]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
-[3
+[4
 
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+[5
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4
-
-
-] [5]
+]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
-
-LaTeX Warning: Citation `C' on page 6 undefined on input line 194.
-
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -1202,93 +1184,63 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
-200.
+276.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-201.
+277.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [6
 
-]
+] [7]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7] [8]
+[8] [9]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
+[10
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+] [11
 
- []
-
-[9
-
-] (./report.bbl [10
+] (./report.bbl [12
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 12--18
-[]\T2A/cmr/m/n/12 Реализация ал-го-рит-ма умно-же-ния мат-риц по Ви-но-гра-ду н
-а язы-ке Haskell.
+Overfull \hbox (10.7204pt too wide) in paragraph at lines 25--29
+[]\T2A/cmr/m/n/12 The С99 Standard.  Ре-жим доступа:\T2A/cmr/m/n/10.95 http://w
+ww.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf\T2A/cmr/m/n/12 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--18
-\T2A/cmr/m/n/12 Ани-си-мов Н.С, Стро-га-нов Ю.В. [Элек-трон-ный ре-сурс].  Ре-ж
-им до-сту-па:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--18
-\T2A/cmr/m/n/10.95 https://cyberleninka.ru/article/n/realizatsiya-algoritma-umn
-ozheniya-matrits-po-vinogradu-na-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--46
+Underfull \hbox (badness 10000) in paragraph at lines 45--50
 []\T2A/cmr/m/n/12 Процессор Intel\TS1/cmr/m/n/12 ® \T2A/cmr/m/n/12 Core\TS1/cmr
 /m/n/12 — \T2A/cmr/m/n/12 i5-3550 [Элек-трон-ный ре-сурс].  Ре-жим до-сту-па:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--46
+Underfull \hbox (badness 10000) in paragraph at lines 45--50
 \T2A/cmr/m/n/10.95 https://ark.intel.com/content/www/ru/ru/ark/products/65516/i
 ntel-core-i5-3550-processor-6m-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--53
-[]\T2A/cmr/m/n/12 Haskell profiling [Элек-трон-ный ре-сурс].  Ре-жим до-сту-па:
-
- []
-
-
-Underfull \hbox (badness 2326) in paragraph at lines 49--53
-\T2A/cmr/m/n/10.95 https://downloads.haskell.org/ghc/8.8.1/docs/html/user_guide
-/index.html\T2A/cmr/m/n/12 .  Да-та об-ра-ще-ния:
- []
-
-) [11
+) [13
 
 ] (./report.aux)
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29254 strings out of 481820
- 720669 string characters out of 5937972
- 1380553 words of memory out of 5000000
- 44565 multiletter control sequences out of 15000+600000
+ 29280 strings out of 481820
+ 721006 string characters out of 5937972
+ 1423844 words of memory out of 5000000
+ 44591 multiletter control sequences out of 15000+600000
  546604 words of font info for 55 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 68i,16n,98p,727b,1711s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,16n,98p,765b,1711s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1095.600p
 k> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.60
 0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/lass1095.60
@@ -1300,12 +1252,15 @@ k> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.60
 600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1200.
 600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1200.
 600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on report.pdf (12 pages, 167681 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on report.pdf (14 pages, 209569 bytes).
 PDF statistics:
- 448 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 489 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
