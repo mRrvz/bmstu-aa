@@ -1,9 +1,13 @@
 CC := gcc
-OBJ = main.c multiplication.c
+OBJ = src/*.c
 APPNAME := app.exe
+FLAGS=-lpthread -O0 -std=c99 -Wall
 
 build:
-	cd src && $(CC) -o $(APPNAME) $(FLAGS) $(OBJ) && mv app.exe ../
+	$(CC) -o $(APPNAME) $(OBJ) $(FLAGS)
+
+debug:
+	$(CC) -o $(APPNAME) $(OBJ) $(FLAGS) -D__DEBUG__
 
 clean:
 	rm *.exe *.out && cd src && rm *.o *.hi *.exe *.out

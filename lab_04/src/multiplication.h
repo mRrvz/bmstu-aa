@@ -2,19 +2,22 @@
 #define __PRINT_MATRIX__
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#include <pthread.h>
+#include "thread_structs.h"
 
-#define N 3
+#define N 10
 #define M N
 #define K N
 
-void print_matrix(int matrix[N][M]);
+void print_matrix(int **matrix);
 
-void null_matrix(int matrix[N][M]);
+args_t *create_args(int n, int m, int k);
 
-void parallel_multiplication1(int m1[N][M], int m2[M][K], int res[N][K]);
+void base_multiplication(args_t *args);
 
-void parallel_multiplication2(int m1[N][M], int m2[M][K], int res[N][K]);
+void *parallel_multiplication1(void *args);
+
+void *parallel_multiplication2(void *args);
 
 #endif

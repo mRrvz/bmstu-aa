@@ -1,24 +1,32 @@
 #include <stdio.h>
-#include "multiplication.h"
 
-int main() {
-    int m1[N][M] = {
-        { 2, -2, 3 },
-        { 0, 2, 6 },
-        { 5, 1, 0 },
-    };
+#include "threads.h"
 
-    int m2[M][K] = {
-        { 0, 2, 5 },
-        { 4, -1, 7 },
-        { 1, -2, 0 }
-    };
+#define INVALID_ARGS 2
 
-    int res[N][K];
+int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        return INVALID_ARGS;
+    }
 
-    null_matrix(res);
-    parallel_multiplication1(m1, m2, res);
-    print_matrix(res);
-    
+    args_t *args = create_args(N, M, K);
+    if (!args) {
+        return ALLOCATE_ERROR;
+    }
+
+    uint64_t start = tick();
+
+    if (start_threading(args, atoi(argv[1]), atoi(argv[2]))) {
+        return ALLOCATE_ERROR;
+    }
+
+    uint64_t end = tick();
+
+    fprintf(stdout, "Время исполнения %lu (тиков)\nКоличество потоков: %s\n", end - start, argv[1]);
+
+    #ifdef __DEBUG__
+        print_matrix(args->res);
+    #endif
+
     return 0;
 }
