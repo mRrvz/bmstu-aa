@@ -15,7 +15,7 @@ void print_matrix(int **matrix) {
 void init_matrix(int **matrix) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            matrix[i][j] = 10;
+            matrix[i][j] = 10; // random ?
         }
     }
 }
@@ -24,7 +24,7 @@ int **create_matrix(int n, int m) {
     int **matrix = malloc(sizeof(int *) * n);
 
     if (!matrix) {
-        fprintf(stderr, "Invalid allication\n");
+        fprintf(stderr, "Ошибка при выделении памяти. Файл: %s\nСтрока: %d\n", __FILE__, __LINE__);
         return NULL;
     }
 
@@ -32,12 +32,14 @@ int **create_matrix(int n, int m) {
         *(matrix + i) = malloc(sizeof(int) * m);
 
         if (!(*(matrix + i))) {
-            fprintf(stderr, "Invalid rows allocation\n");
+            fprintf(stderr, "Ошибка при выделении памяти. Файл: %s\nСтрока: %d\n", __FILE__, __LINE__);
             return NULL; // TODO: free
         }
     }
 
-    //print_matrix(matrix);
+    #ifdef __DEBUG__
+        print_matrix(matrix);
+    #endif
 
     return matrix;
 }
@@ -85,7 +87,7 @@ void *parallel_multiplication1(void *args) {
     int row_end = (argsp->tid + 1) * (argsp->size / argsp->cnt_threads);
 
     #ifdef __DEBUG__
-        fprintf(stderr, "\n ===== %d %d %d =======", argsp->tid, row_start, row_end);
+        fprintf(stderr, "\n ===== PMULT1: %d %d %d =======", argsp->tid, row_start, row_end);
     #endif
 
     for (int i = row_start; i < row_end; i++) {
@@ -108,7 +110,7 @@ void *parallel_multiplication2(void *args) {
     int col_end = (argsp->tid + 1) * (argsp->size / argsp->cnt_threads);
 
     #ifdef __DEBUG__
-        fprintf(stderr, "\n ===== %d %d %d =======", argsp->tid, col_start, col_end);
+        fprintf(stderr, "\n ===== PMULT2: %d %d %d =======", argsp->tid, col_start, col_end);
     #endif
 
     for (int i = 0; i < N; i++) {

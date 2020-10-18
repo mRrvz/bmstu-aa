@@ -4,7 +4,7 @@ int start_threading(args_t *args, const int cnt_threads, const int type) {
     pthread_t *threads = malloc(cnt_threads * sizeof(pthread_t));
 
     if (!threads) {
-        fprintf(stderr, "Erorr while allocate thredas\n");
+        fprintf(stderr, "Ошибка при выделении памяти. Файл: %s\nСтрока: %d\n", __FILE__, __LINE__);
         return ALLOCATE_ERROR;
     }
 
@@ -12,7 +12,7 @@ int start_threading(args_t *args, const int cnt_threads, const int type) {
 
     if (!args_array) {
         free(threads);
-        fprintf(stderr, "Erorr while allocate pthread arguments\n");
+        fprintf(stderr, "Ошибка при выделении памяти: %d\nФайл: %s\n", __LINE__, __FILE__);
         return ALLOCATE_ERROR;
     }
 
