@@ -6,7 +6,7 @@
 #include <string.h>
 #include "thread_structs.h"
 
-#define N 10
+#define N 1600
 #define M N
 #define K N
 
