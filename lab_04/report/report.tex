@@ -223,27 +223,36 @@ c_{ij} =
 
 \chapter{Конструкторская часть}
 
+На рисунке 2.1 представлена схема обычного алгоритма перемножения матриц (без распараллеливания). На рисунках 2.2 и 2.3 представлены схемы первого и второго варианта распараллеливания алгоритма умножения матриц. На риснуке 2.4 показана схема функции, запускающей вышеописанные функции на нужных промежутках.
+
 \section{Схемы алгоритмов}
 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{base.jpg}
+	\includegraphics[scale=0.85]{base.jpg}
 	\caption{Схема стандартного алгоритма умножения матриц.}
 	\label{fig:mpr}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-	%\includegraphics[scale=0.6]{winograd_0.jpg}
+	\includegraphics[scale=0.85]{parallel1.jpg}
 	\caption{Схема распараллеленного алгоритма умножения матриц, способ №1.}
 	\label{fig:mpr}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-	%\includegraphics[scale=0.8]{winograd_1.jpg}
+	\includegraphics[scale=0.85]{parallel2.jpg}
 	\caption{Схема распараллеленного алгоритма умножения матриц, способ №2.}
+	\label{fig:mpr}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{start_threading.jpg}
+	\caption{Функция создания потоков и запуска параллельных реализация умножения матриц}
 	\label{fig:mpr}
 \end{figure}
 
