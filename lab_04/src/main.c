@@ -5,7 +5,7 @@
 #define INVALID_ARGS 2
 
 int main(int argc, char *argv[]) {
-    if (argc != 3) {
+    if (argc < 2) {
         return INVALID_ARGS;
     }
 
@@ -14,15 +14,27 @@ int main(int argc, char *argv[]) {
         return ALLOCATE_ERROR;
     }
 
-    uint64_t start = tick();
+    int type = atoi(argv[1]);
 
-    if (start_threading(args, atoi(argv[1]), atoi(argv[2]))) {
-        return ALLOCATE_ERROR;
+    if (3 == type) {
+
+        uint64_t start = tick();
+        base_multiplication(args);
+        uint64_t end = tick();
+
+        fprintf(stdout, "Время исполнения %lu (тиков)\n", end - start);
+
+    } else {
+        uint64_t start = tick();
+
+        if (start_threading(args, atoi(argv[2]), type)) {
+            return ALLOCATE_ERROR;
+        }
+    
+        uint64_t end = tick();
+
+        fprintf(stdout, "Время исполнения %lu (тиков)\nКоличество потоков: %s\n", end - start, argv[2]);
     }
-
-    uint64_t end = tick();
-
-    fprintf(stdout, "Время исполнения %lu (тиков)\nКоличество потоков: %s\n", end - start, argv[1]);
 
     #ifdef __DEBUG__
         print_matrix(args->res);
