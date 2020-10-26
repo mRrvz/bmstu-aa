@@ -13,7 +13,7 @@ debug:
 	$(CC) -o $(APPNAME) $(OBJ) $(FLAGS) $(DEBUG_FLAGS)
 
 clean:
-	rm *.exe *.out && cd src && rm *.o *.hi *.exe *.out
+	rm -rf *.exe *.out && cd src && rm -rf *.o *.hi *.exe *.out
 
 run: build
 	./$(APPNAME) ${THREADS} ${TYPE}

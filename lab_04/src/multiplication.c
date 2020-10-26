@@ -12,15 +12,23 @@ void print_matrix(int **matrix) {
     }
 }
 
-void init_matrix(int **matrix) {
+static void read_matrix(int **matrix, FILE *file) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            matrix[i][j] = 10; // random ?
+            fscanf(file, "%d", &matrix[i][j]);
         }
     }
 }
 
-int **create_matrix(int n, int m) {
+static void init_matrix(int **matrix) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            matrix[i][j] = 10;
+        }
+    }
+}
+
+static int **create_matrix(int n, int m) {
     int **matrix = malloc(sizeof(int *) * n);
 
     if (!matrix) {
@@ -44,7 +52,7 @@ int **create_matrix(int n, int m) {
     return matrix;
 }
 
-args_t *create_args(int n, int m, int k) {
+args_t *create_args(int n, int m, int k, int read_file) {
     args_t *args = malloc(sizeof(args));
     if (!args) {
         return NULL;
@@ -54,13 +62,37 @@ args_t *create_args(int n, int m, int k) {
         return NULL; // TODO: free
     }
 
-    init_matrix(args->m1);
+    if (read_file) {
+        FILE *mtr_file = fopen("data/matrix1.txt", "r");
+
+        if (!mtr_file) {
+            fprintf(stderr, "Ошибка при открытии файла. Файл: %s\nСтрока: %d\n", __FILE__, __LINE__);
+            return NULL; // TODO: free
+        }
+
+        read_matrix(args->m1, mtr_file);
+        fclose(mtr_file);
+    } else {
+        init_matrix(args->m1);
+    }
 
     if (!(args->m2 = create_matrix(m, k))) {
         return NULL; // TODO: free
     }
+    
+    if (read_file) {
+        FILE *mtr_file = fopen("data/matrix2.txt", "r");
 
-    init_matrix(args->m2);
+        if (!mtr_file) {
+            fprintf(stderr, "Ошибка при открытии файла. Файл: %s\nСтрока: %d\n", __FILE__, __LINE__);
+            return NULL; // TODO: free
+        }
+
+        read_matrix(args->m2, mtr_file);
+        fclose(mtr_file);
+    } else {
+        init_matrix(args->m2);
+    }
 
     if (!(args->res = create_matrix(n, k))) {
         return NULL; // TODO: free

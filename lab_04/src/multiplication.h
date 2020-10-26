@@ -6,13 +6,13 @@
 #include <string.h>
 #include "thread_structs.h"
 
-#define N 64
+#define N 3
 #define M N
 #define K N
 
 void print_matrix(int **matrix);
 
-args_t *create_args(int n, int m, int k);
+args_t *create_args(int n, int m, int k, int read_file);
 
 void base_multiplication(args_t *args);
 
