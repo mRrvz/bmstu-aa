@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 100000
+#define N 10000
 #define SWAP(t, a, b) do { t c = a; a = b; b = c; } while (0);
 
 typedef struct {
@@ -89,7 +89,7 @@ void fill_array(check_t a[], int size) {
 
 
 int main() {
-    int a[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    /*int a[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };*/
 
     check_t *b = malloc(sizeof(check_t) * N);
     fill_array(b, N);

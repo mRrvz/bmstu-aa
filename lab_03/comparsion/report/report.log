@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  18 OCT 2020 21:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  28 OCT 2020 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -961,15 +961,6 @@ LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 5
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
 
-LaTeX Warning: Label `fig:mpr' multiply defined.
-
-
-LaTeX Warning: Label `fig:mpr' multiply defined.
-
-
-LaTeX Warning: Label `some-code' multiply defined.
-
-
 LaTeX Warning: Label `some-code' multiply defined.
 
 )
@@ -1055,242 +1046,53 @@ your preamble.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<b_logo.jpg, id=4, 57.816pt x 65.3715pt>
-File: b_logo.jpg Graphic file (type jpg)
-<use b_logo.jpg>
-Package pdftex.def Info: b_logo.jpg  used on input line 64.
-(pdftex.def)             Requested size: 75.06953pt x 84.88416pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (27.62856pt too wide) in paragraph at lines 63--73
-$[]$ $[]$ 
- []
-
-
-Overfull \hbox (11.6656pt too wide) in paragraph at lines 74--78
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
-
- []
-
-
-Overfull \hbox (150.14671pt too wide) in paragraph at lines 81--85
- []$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--92
-
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./b_logo.jpg>]
-(./report.toc)
-\tf@toc=\write4
-\openout4 = `report.toc'.
-
- [1
-
-]
-Overfull \hbox (3.01895pt too wide) in paragraph at lines 108--109
-\T2A/cmr/m/n/12 ти-ров-ка. —ор-ти-ров-кой на-зы-ва-ют про-цесс пе-ре-груп-пи-ро
-в-ки за-дан-ной по-сле-до-ва-тель-но-сти (кор-
- []
-
-[2
-
-]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
-[3
-
-] [4]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-<bsort.jpg, id=30, 454.69875pt x 627.34375pt>
-File: bsort.jpg Graphic file (type jpg)
-<use bsort.jpg>
-Package pdftex.def Info: bsort.jpg  used on input line 171.
-(pdftex.def)             Requested size: 450.43253pt x 621.46469pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<isort.jpg, id=31, 454.69875pt x 627.34375pt>
-File: isort.jpg Graphic file (type jpg)
-<use isort.jpg>
-Package pdftex.def Info: isort.jpg  used on input line 178.
-(pdftex.def)             Requested size: 450.43253pt x 621.46469pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<qsort.jpg, id=32, 454.69875pt x 460.72125pt>
-File: qsort.jpg Graphic file (type jpg)
-<use qsort.jpg>
-Package pdftex.def Info: qsort.jpg  used on input line 185.
-(pdftex.def)             Requested size: 500.484pt x 507.11832pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5
-
-
-] [6] [7 <./bsort.jpg>] [8 <./isort.jpg>] [9 <./qsort.jpg>]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
 LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
-323.
+75.
+
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-326.
+88.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [10
+) [1
 
-] [11]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
-
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[12
-
-] [13] (./report.bbl [14
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 32--37
-[]\T2A/cmr/m/n/12 ѕроцессор Intel\TS1/cmr/m/n/12 Ѓ \T2A/cmr/m/n/12 Core\TS1/cmr
-/m/n/12 Ч \T2A/cmr/m/n/12 i5-3550 [Ёлек-трон-ный ре-сурс].  –е-жим до-сту-па:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--37
-\T2A/cmr/m/n/10.95 https://ark.intel.com/content/www/ru/ru/ark/products/65516/i
-ntel-core-i5-3550-processor-6m-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--44
-[]\T2A/cmr/m/n/12 OCaml profiling [Ёлек-трон-ный ре-сурс].  –е-жим до-сту-па:
- []
-
-) [15
-
-] (./report.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<re.jpg, id=15, 531.9875pt x 197.73875pt>
+File: re.jpg Graphic file (type jpg)
+<use re.jpg>
+Package pdftex.def Info: re.jpg  used on input line 141.
+(pdftex.def)             Requested size: 452.19151pt x 168.07872pt.
+ [2 <./re.jpg>] (./report.bbl) [3]
+(./report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29266 strings out of 481820
- 720627 string characters out of 5937972
- 1207444 words of memory out of 5000000
- 44574 multiletter control sequences out of 15000+600000
- 548228 words of font info for 57 fonts, out of 8000000 for 9000
+ 29160 strings out of 481820
+ 719282 string characters out of 5937972
+ 1370547 words of memory out of 5000000
+ 44499 multiletter control sequences out of 15000+600000
+ 537385 words of font info for 32 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 68i,9n,98p,1379b,1712s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1095.600p
-k> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.60
+ 68i,7n,98p,727b,1705s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.60
 0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/lass1095.60
 0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/lasx1095.60
 0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm0600.60
-0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1440.60
-0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm0800.60
 0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.
-600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx2488.
-600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1728.
 600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1200.
-600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1200.
-600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on report.pdf (16 pages, 325290 bytes).
+600pk>
+Output written on report.pdf (3 pages, 79651 bytes).
 PDF statistics:
- 527 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
+ 172 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
