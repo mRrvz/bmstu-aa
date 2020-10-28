@@ -1,0 +1,51 @@
+\begin{thebibliography}{1}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{Nemirovsky}
+\selectlanguageifdefined{english}
+Mario~Nemirovsky~D. M.~T. Multithreading Architecture~// Morgan and Claypool
+  Publishers.
+\newblock 2013.
+
+\bibitem{Olukotun}
+\selectlanguageifdefined{english}
+Olukotun~K. Chip Multiprocessor Architecture — Techniques to Improve
+  Throughput and Latency~// Morgan and Claypool Publishers.
+\newblock 2007.
+\newblock p.~154.
+
+\bibitem{C}
+\selectlanguageifdefined{russian}
+The С99 Standard.
+\newblock Режим
+  доступа:\url{http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf}.
+\newblock Дата обращения: 16.09.2020.
+
+\bibitem{debian}
+\selectlanguageifdefined{russian}
+Debian -- универсальная операционная система
+  [Электронный ресурс].
+\newblock Режим доступа: \url{https://www.debian.org/}.
+\newblock Дата обращения: 20.09.2020.
+
+\bibitem{linux}
+\selectlanguageifdefined{russian}
+Linux -- Getting Started [Электронный ресурс].
+\newblock Режим доступа: \url{https://linux.org}.
+\newblock Дата обращения: 20.09.2020.
+
+\bibitem{i5}
+\selectlanguageifdefined{russian}
+Процессор Intel® Core™ i5-3550 [Электронный
+  ресурс].
+\newblock Режим доступа:
+  \url{https://ark.intel.com/content/www/ru/ru/ark/products/65516/intel-core-i5-3550-processor-6m-cache-up-to-3-70-ghz.html}.
+\newblock Дата обращения: 20.09.2020.
+
+\end{thebibliography}

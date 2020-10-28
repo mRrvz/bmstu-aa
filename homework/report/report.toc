@@ -1,0 +1,7 @@
+\babel@toc {russian}{}
+\contentsline {chapter}{\numberline {1}Исходный код алгоритма}{2}%
+\contentsline {chapter}{\numberline {2}Модели программ}{3}%
+\contentsline {section}{\numberline {2.1}Граф управления программы}{3}%
+\contentsline {section}{\numberline {2.2}Информационный граф программы}{4}%
+\contentsline {section}{\numberline {2.3}Операционная история программы}{4}%
+\contentsline {section}{\numberline {2.4}Информационная история программы}{4}%
