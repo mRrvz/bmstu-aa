@@ -2,7 +2,7 @@ CC=gcc
 FLAGS=-pg -Wall -O0 -lc
 
 build:
-	$(CC) main.c $(FLAGS) -o app.exe
+	$(CC) main2.c $(FLAGS) -o app.exe
 
 run: build
 	./app.exe

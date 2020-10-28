@@ -1,0 +1,20 @@
+\babel@toc {russian}{}
+\contentsline {chapter}{Введение}{2}%
+\contentsline {chapter}{\numberline {1}Аналитическая часть}{3}%
+\contentsline {section}{\numberline {1.1}Описание задачи}{3}%
+\contentsline {section}{\numberline {1.2}Вывод}{3}%
+\contentsline {chapter}{\numberline {2}Конструкторская часть}{4}%
+\contentsline {section}{\numberline {2.1}Схемы алгоритмов}{4}%
+\contentsline {section}{\numberline {2.2}Вывод}{4}%
+\contentsline {chapter}{\numberline {3}Технологическая часть}{5}%
+\contentsline {section}{\numberline {3.1}Требование к ПО}{5}%
+\contentsline {section}{\numberline {3.2}Средства реализации}{5}%
+\contentsline {section}{\numberline {3.3}Реализация алгоритмов}{5}%
+\contentsline {section}{\numberline {3.4}Тестовые данные}{5}%
+\contentsline {section}{\numberline {3.5}Вывод}{5}%
+\contentsline {chapter}{\numberline {4}Исследовательская часть}{6}%
+\contentsline {section}{\numberline {4.1}Технические характеристики}{6}%
+\contentsline {section}{\numberline {4.2}Время выполнения алгоритмов}{6}%
+\contentsline {section}{\numberline {4.3}Вывод}{6}%
+\contentsline {chapter}{Заключение}{7}%
+\contentsline {chapter}{Литература}{7}%
