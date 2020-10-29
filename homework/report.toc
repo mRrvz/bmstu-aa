@@ -1,7 +1,7 @@
 \babel@toc {russian}{}
-\contentsline {chapter}{\numberline {1}Исходный код алгоритма}{2}%
-\contentsline {chapter}{\numberline {2}Модели программ}{3}%
-\contentsline {section}{\numberline {2.1}Граф управления программы}{3}%
-\contentsline {section}{\numberline {2.2}Информационный граф программы}{4}%
-\contentsline {section}{\numberline {2.3}Операционная история программы}{4}%
-\contentsline {section}{\numberline {2.4}Информационная история программы}{4}%
+\contentsline {chapter}{\numberline {1}\IeC {\CYRI }\IeC {\cyrs }\IeC {\cyrh }\IeC {\cyro }\IeC {\cyrd }\IeC {\cyrn }\IeC {\cyrery }\IeC {\cyrishrt } \IeC {\cyrk }\IeC {\cyro }\IeC {\cyrd } \IeC {\cyra }\IeC {\cyrl }\IeC {\cyrg }\IeC {\cyro }\IeC {\cyrr }\IeC {\cyri }\IeC {\cyrt }\IeC {\cyrm }\IeC {\cyra }}{2}
+\contentsline {chapter}{\numberline {2}\IeC {\CYRM }\IeC {\cyro }\IeC {\cyrd }\IeC {\cyre }\IeC {\cyrl }\IeC {\cyri } \IeC {\cyrp }\IeC {\cyrr }\IeC {\cyro }\IeC {\cyrg }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrm }\IeC {\cyrm }}{3}
+\contentsline {section}{\numberline {2.1}\IeC {\CYRG }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrf } \IeC {\cyru }\IeC {\cyrp }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyrl }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyrya } \IeC {\cyrp }\IeC {\cyrr }\IeC {\cyro }\IeC {\cyrg }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrm }\IeC {\cyrm }\IeC {\cyrery }}{3}
+\contentsline {section}{\numberline {2.2}\IeC {\CYRI }\IeC {\cyrn }\IeC {\cyrf }\IeC {\cyro }\IeC {\cyrr }\IeC {\cyrm }\IeC {\cyra }\IeC {\cyrc }\IeC {\cyri }\IeC {\cyro }\IeC {\cyrn }\IeC {\cyrn }\IeC {\cyrery }\IeC {\cyrishrt } \IeC {\cyrg }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrf } \IeC {\cyrp }\IeC {\cyrr }\IeC {\cyro }\IeC {\cyrg }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrm }\IeC {\cyrm }\IeC {\cyrery }}{4}
+\contentsline {section}{\numberline {2.3}\IeC {\CYRO }\IeC {\cyrp }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrc }\IeC {\cyri }\IeC {\cyro }\IeC {\cyrn }\IeC {\cyrn }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyri }\IeC {\cyrs }\IeC {\cyrt }\IeC {\cyro }\IeC {\cyrr }\IeC {\cyri }\IeC {\cyrya } \IeC {\cyrp }\IeC {\cyrr }\IeC {\cyro }\IeC {\cyrg }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrm }\IeC {\cyrm }\IeC {\cyrery }}{4}
+\contentsline {section}{\numberline {2.4}\IeC {\CYRI }\IeC {\cyrn }\IeC {\cyrf }\IeC {\cyro }\IeC {\cyrr }\IeC {\cyrm }\IeC {\cyra }\IeC {\cyrc }\IeC {\cyri }\IeC {\cyro }\IeC {\cyrn }\IeC {\cyrn }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyri }\IeC {\cyrs }\IeC {\cyrt }\IeC {\cyro }\IeC {\cyrr }\IeC {\cyri }\IeC {\cyrya } \IeC {\cyrp }\IeC {\cyrr }\IeC {\cyro }\IeC {\cyrg }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrm }\IeC {\cyrm }\IeC {\cyrery }}{4}
