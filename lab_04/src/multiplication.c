@@ -193,11 +193,11 @@ void *transpose_parallel_multiplication1(void *args) {
 void *transpose_parallel_multiplication2(void *args) {
     pthread_args_t *argsp = (pthread_args_t *)args;
 
-    int row_start = argsp->tid * (argsp->size / argsp->cnt_threads);
-    int row_end = (argsp->tid + 1) * (argsp->size / argsp->cnt_threads);
+    int col_start = argsp->tid * (argsp->size / argsp->cnt_threads);
+    int col_end = (argsp->tid + 1) * (argsp->size / argsp->cnt_threads);
 
-    for (int i = row_start; i < row_end; i++) {
-        for (int j = 0; j < K; j++) {
+    for (int i = 0; i < N; i++) {
+        for (int j = col_start; j < col_end; j++) {
             argsp->mult_args->res[i][j] = 0;
 
             for (int k = 0; k < M; k++) {
