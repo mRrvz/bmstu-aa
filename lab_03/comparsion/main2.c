@@ -26,7 +26,7 @@ int random_i(int r, int l){
 
 #define N 10
 #define SWAP(t, a, b) do { t c = a; a = b; b = c; } while (0);
-#define MB 1048576
+#define MB 10485760 
 
 typedef struct {
     size_t a;

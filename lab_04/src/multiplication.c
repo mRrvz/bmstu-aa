@@ -1,7 +1,7 @@
 #include "multiplication.h"
 
 void print_matrix(int **matrix) {
-    fprintf(stdout, "Результат: ");
+    fprintf(stdout, "Результат: \n");
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {

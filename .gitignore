@@ -30,3 +30,7 @@ cabal.project.local~
 
 *.cmi
 *.cmo
+
+*.bin
+*.dll
+*.so
