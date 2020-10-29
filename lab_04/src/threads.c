@@ -16,16 +16,29 @@ int start_threading(args_t *args, const int cnt_threads, const int type) {
         return ALLOCATE_ERROR;
     }
 
+    if (type == 3 || type == 4) {
+        transpose(args);
+    }
+
     for (int i = 0; i < cnt_threads; i++) {
         args_array[i].mult_args = args;
         args_array[i].tid = i;
         args_array[i].size = N;
         args_array[i].cnt_threads = cnt_threads;
 
-        if (type == 1) {
-            pthread_create(&threads[i], NULL, parallel_multiplication1, &args_array[i]);
-        } else {
-            pthread_create(&threads[i], NULL, parallel_multiplication2, &args_array[i]);
+        switch (type) {
+            case 1:
+                pthread_create(&threads[i], NULL, parallel_multiplication1, &args_array[i]);
+                break;
+            case 2:
+                pthread_create(&threads[i], NULL, parallel_multiplication2, &args_array[i]);
+                break;
+            case 3:
+                pthread_create(&threads[i], NULL, transpose_parallel_multiplication1, &args_array[i]);
+                break;
+            case 4:
+                pthread_create(&threads[i], NULL, transpose_parallel_multiplication2, &args_array[i]);
+                break;
         }
     }
 
