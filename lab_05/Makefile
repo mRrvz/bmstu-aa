@@ -1,10 +1,8 @@
-CC := gcc
-OBJ = src/*.c
+CC := g++
+OBJ = src/*.cxx
 APPNAME := app.exe
-FLAGS=-lpthread -O0 -std=c99 -Wall -pg -lc
+FLAGS=-lpthread -O0 -Wall -lpthread -pg -lc
 DEBUG_FLAGS=-D__DEBUG__ -g
-THREADS=16
-TYPE=1
 
 build:
 	$(CC) -o $(APPNAME) $(OBJ) $(FLAGS)
@@ -16,7 +14,7 @@ clean:
 	rm -rf *.exe *.out && cd src && rm -rf *.o *.hi *.exe *.out
 
 run: build
-	./$(APPNAME) ${THREADS} ${TYPE}
+	./$(APPNAME)
 
 prof: run
 	gprof ${APPNAME} gmon.out -p
