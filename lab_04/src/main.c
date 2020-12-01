@@ -10,6 +10,8 @@
  */
 
 int main(int argc, char *argv[]) {
+    setbuf(stdout, NULL);
+
     if (argc < 3) {
         return INVALID_ARGS;
     }
@@ -21,7 +23,14 @@ int main(int argc, char *argv[]) {
 
     int type = atoi(argv[2]);
 
-    if (3 == type) {
+    /*if (type == 3 || type == 4) { // 4*/
+        /*transpose(args);*/
+        /*print_matrix(args->m1);*/
+        /*print_matrix(args->m2);*/
+    /*}*/
+
+
+    if (5 == type) {
 
         uint64_t start = tick();
         base_multiplication(args);

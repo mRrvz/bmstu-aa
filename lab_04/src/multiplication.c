@@ -1,5 +1,8 @@
 #include "multiplication.h"
 
+
+#define SWAP(t, a, b) do { t c = a; a = b; b = c; } while (0);
+
 void print_matrix(int **matrix) {
     fprintf(stdout, "Результат: \n");
 
@@ -151,6 +154,54 @@ void *parallel_multiplication2(void *args) {
 
             for (int k = 0; k < M; k++) {
                 argsp->mult_args->res[i][j] += argsp->mult_args->m1[i][k] * argsp->mult_args->m2[k][j];
+            }
+        }
+    }
+
+    return NULL;
+}
+
+void transpose(void *args) {
+    args_t *argsp = (args_t *)args;
+
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < i; ++j) {
+            SWAP(int, argsp->m2[i][j], argsp->m2[j][i]);
+        }
+    }
+}
+
+void *transpose_parallel_multiplication1(void *args) {
+    pthread_args_t *argsp = (pthread_args_t *)args;
+
+    int row_start = argsp->tid * (argsp->size / argsp->cnt_threads);
+    int row_end = (argsp->tid + 1) * (argsp->size / argsp->cnt_threads);
+
+    for (int i = row_start; i < row_end; i++) {
+        for (int j = 0; j < K; j++) {
+            argsp->mult_args->res[i][j] = 0;
+
+            for (int k = 0; k < M; k++) {
+                argsp->mult_args->res[i][j] += argsp->mult_args->m1[i][k] * argsp->mult_args->m2[j][k];
+            }
+        }
+    }
+
+    return NULL;
+}
+
+void *transpose_parallel_multiplication2(void *args) {
+    pthread_args_t *argsp = (pthread_args_t *)args;
+
+    int col_start = argsp->tid * (argsp->size / argsp->cnt_threads);
+    int col_end = (argsp->tid + 1) * (argsp->size / argsp->cnt_threads);
+
+    for (int i = 0; i < N; i++) {
+        for (int j = col_start; j < col_end; j++) {
+            argsp->mult_args->res[i][j] = 0;
+
+            for (int k = 0; k < M; k++) {
+                argsp->mult_args->res[i][j] += argsp->mult_args->m1[i][k] * argsp->mult_args->m2[j][k];
             }
         }
     }

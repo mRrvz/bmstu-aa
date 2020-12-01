@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.8)  26 OCT 2020 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.8)  30 OCT 2020 14:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1500,7 +1500,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--94
 \tf@toc=\write4
 \openout4 = `report.toc'.
 
- [1
+ [2
 
 ]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 133.
@@ -1511,21 +1511,21 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
 
-[2
+[3
 
-] [3]
+] [4]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
-[4
+[5
 
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
 <base.jpg, id=32, 454.69875pt x 783.92876pt>
 File: base.jpg Graphic file (type jpg)
 <use base.jpg>
-Package pdftex.def Info: base.jpg  used on input line 233.
+Package pdftex.def Info: base.jpg  used on input line 234.
 (pdftex.def)             Requested size: 386.49576pt x 666.3426pt.
 
-LaTeX Warning: Float too large for page by 12.01639pt on input line 236.
+LaTeX Warning: Float too large for page by 12.01639pt on input line 237.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1533,10 +1533,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <parallel1.jpg, id=33, 513.92pt x 784.9325pt>
 File: parallel1.jpg Graphic file (type jpg)
 <use parallel1.jpg>
-Package pdftex.def Info: parallel1.jpg  used on input line 240.
+Package pdftex.def Info: parallel1.jpg  used on input line 241.
 (pdftex.def)             Requested size: 436.83405pt x 667.19577pt.
 
-LaTeX Warning: Float too large for page by 12.86955pt on input line 243.
+LaTeX Warning: Float too large for page by 12.86955pt on input line 244.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1544,21 +1544,21 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <parallel2.jpg, id=34, 513.92pt x 784.9325pt>
 File: parallel2.jpg Graphic file (type jpg)
 <use parallel2.jpg>
-Package pdftex.def Info: parallel2.jpg  used on input line 247.
+Package pdftex.def Info: parallel2.jpg  used on input line 248.
 (pdftex.def)             Requested size: 436.83405pt x 667.19577pt.
 
-LaTeX Warning: Float too large for page by 12.86955pt on input line 250.
+LaTeX Warning: Float too large for page by 12.86955pt on input line 251.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<start_threading.jpg, id=35, 454.69875pt x 659.46375pt>
+<start_threading.jpg, id=35, 454.69875pt x 658.46pt>
 File: start_threading.jpg Graphic file (type jpg)
 <use start_threading.jpg>
-Package pdftex.def Info: start_threading.jpg  used on input line 254.
-(pdftex.def)             Requested size: 454.69763pt x 659.46213pt.
+Package pdftex.def Info: start_threading.jpg  used on input line 255.
+(pdftex.def)             Requested size: 454.69763pt x 658.4584pt.
 
-LaTeX Warning: Float too large for page by 5.13591pt on input line 257.
+LaTeX Warning: Float too large for page by 4.13219pt on input line 258.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1566,7 +1566,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <parallel_scheme_01.jpg, id=36, 272.01625pt x 383.4325pt>
 File: parallel_scheme_01.jpg Graphic file (type jpg)
 <use parallel_scheme_01.jpg>
-Package pdftex.def Info: parallel_scheme_01.jpg  used on input line 263.
+Package pdftex.def Info: parallel_scheme_01.jpg  used on input line 264.
 (pdftex.def)             Requested size: 190.41006pt x 268.40092pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1574,16 +1574,16 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <parallel_scheme_02.jpg, id=37, 272.01625pt x 382.42876pt>
 File: parallel_scheme_02.jpg Graphic file (type jpg)
 <use parallel_scheme_02.jpg>
-Package pdftex.def Info: parallel_scheme_02.jpg  used on input line 271.
+Package pdftex.def Info: parallel_scheme_02.jpg  used on input line 272.
 (pdftex.def)             Requested size: 190.41006pt x 267.69829pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5
+[6
 
 
-] [6 <./base.jpg>] [7 <./parallel1.jpg>] [8 <./parallel2.jpg>] [9 <./start_thre
-ading.jpg>] [10 <./parallel_scheme_01.jpg> <./parallel_scheme_02.jpg>]
+] [7 <./base.jpg>] [8 <./parallel1.jpg>] [9 <./parallel2.jpg>] [10 <./start_thr
+eading.jpg>] [11 <./parallel_scheme_01.jpg> <./parallel_scheme_02.jpg>]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -1591,35 +1591,40 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for T2A+cmss on input line 302
+LaTeX Font Info:    Try loading font information for T2A+cmss on input line 303
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 303
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 304
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 303.
+LaTeX Font Info:    No file OMScmss.fd. on input line 304.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textasteriskcentered' on input line 303.
+(Font)              for symbol `textasteriskcentered' on input line 304.
 
-[11
+[12
 
-] [12]
+] [13]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13] [14]
+[14] [15]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
 
+Overfull \hbox (19.69962pt too wide) in paragraph at lines 521--536
+ [] 
+ []
+
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15
+[16
 
-] [16] (./report.bbl [17
+] [17] (./report.bbl [18
 
 ]
 Overfull \hbox (10.7204pt too wide) in paragraph at lines 25--29
@@ -1639,7 +1644,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--50
 ntel-core-i5-3550-processor-6m-
  []
 
-) [18
+) [19
 
 ] (./report.aux)
 
@@ -1652,7 +1657,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  28866 strings out of 492982
  707662 string characters out of 6134896
- 1058358 words of memory out of 5000000
+ 1058355 words of memory out of 5000000
  31898 multiletter control sequences out of 15000+600000
  18772 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1671,7 +1676,7 @@ m-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb
 onts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb>
 
-Output written on report.pdf (19 pages, 470576 bytes).
+Output written on report.pdf (19 pages, 464808 bytes).
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
  93 compressed objects within 1 object stream

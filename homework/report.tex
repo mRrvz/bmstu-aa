@@ -119,7 +119,7 @@ for (int i = 0; i < M2; ++i) {															(4)
 
 for (int i = 0; i < N1; ++i) {															(7)
 	for (int j = 0; j < M2; ++j) {														(8)
-		res[i][j] = -rows[i][j] - vec[j];												(9)
+		res[i][j] = -rows[i] - col[j];											  	(9)
 		for (int k = 0; k < M1 / 2; ++k) {											(10)
 			res[i][j] += (matrix1[i][2 * k + 1] +
 			 			  matrix2[2 * k][j]) * (matrix1[i][2 * k] +
