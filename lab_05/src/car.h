@@ -10,7 +10,6 @@ public:
     Carcass(size_t num);
     ~Carcass() = default;
 
-private:
     bool is_freight;
 };
 
@@ -20,7 +19,6 @@ public:
     Engine(int a, int x);
     ~Engine() = default;
 
-private:
     size_t engine_power;
 };
 
@@ -30,7 +28,6 @@ public:
     Wheels(int n);
     ~Wheels() = default;
 
-private:
     size_t wheels_cnt;
 };
 

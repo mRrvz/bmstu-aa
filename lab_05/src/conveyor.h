@@ -1,10 +1,9 @@
 #ifndef __CONVEYOR_H__
 #define __CONVEYOR_H__
 
+#include <iostream>
 #include <thread>
 #include <queue>
-#include <iostream>
-//#include <memory>
 
 #include "car.h"
 

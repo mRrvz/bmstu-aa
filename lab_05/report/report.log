@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  29 OCT 2020 00:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  1 DEC 2020 23:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -956,28 +956,31 @@ LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 5
 .
  (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-))
+)
+
+LaTeX Warning: Label `some-code' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
 \c@lstlisting=\count325
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count326
 \scratchdimen=\dimen295
@@ -1004,7 +1007,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
 your preamble.
- on input line 61.
+ on input line 59.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1043,95 +1046,95 @@ your preamble.
 <b_logo.jpg, id=4, 57.816pt x 65.3715pt>
 File: b_logo.jpg Graphic file (type jpg)
 <use b_logo.jpg>
-Package pdftex.def Info: b_logo.jpg  used on input line 66.
+Package pdftex.def Info: b_logo.jpg  used on input line 64.
 (pdftex.def)             Requested size: 75.06953pt x 84.88416pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (27.62856pt too wide) in paragraph at lines 65--75
+Overfull \hbox (27.62856pt too wide) in paragraph at lines 63--73
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (11.6656pt too wide) in paragraph at lines 76--80
+Overfull \hbox (11.6656pt too wide) in paragraph at lines 74--78
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
 
  []
 
 
-Overfull \hbox (150.14671pt too wide) in paragraph at lines 83--87
+Overfull \hbox (150.14671pt too wide) in paragraph at lines 81--85
  []$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--93
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--93
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--93
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--93
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--93
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--93
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
  []
 
@@ -1160,65 +1163,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--93
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
-163.
+181.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ) [5
 
 ]
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
-[6
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
+220.
 
-] (./report.bbl [7
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [6] [7] [8] [9]
+{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
+[10
+
+] [11] (./report.bbl [12
 
 ]
-Overfull \hbox (10.7204pt too wide) in paragraph at lines 12--16
-[]\T2A/cmr/m/n/12 The —99 Standard.  –е-жим доступа:\T2A/cmr/m/n/10.95 http://w
-ww.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf\T2A/cmr/m/n/12 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--37
+Underfull \hbox (badness 10000) in paragraph at lines 31--36
 []\T2A/cmr/m/n/12 ѕроцессор Intel\TS1/cmr/m/n/12 Ѓ \T2A/cmr/m/n/12 Core\TS1/cmr
 /m/n/12 Ч \T2A/cmr/m/n/12 i5-3550 [Ёлек-трон-ный ре-сурс].  –е-жим до-сту-па:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--37
+Underfull \hbox (badness 10000) in paragraph at lines 31--36
 \T2A/cmr/m/n/10.95 https://ark.intel.com/content/www/ru/ru/ark/products/65516/i
 ntel-core-i5-3550-processor-6m-
  []
 
-) [8
 
-] (./report.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 39--43
+[]\T2A/cmr/m/n/12 GNU gprof -Introducing to Profiling.  –е-жим до-сту-па: \T2A/
+cmr/m/n/10.95 https://ftp.gnu.org/old-
+ []
+
+) [13
+
+] (./report.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 29179 strings out of 481820
- 719374 string characters out of 5937972
- 1267478 words of memory out of 5000000
- 44494 multiletter control sequences out of 15000+600000
- 546259 words of font info for 54 fonts, out of 8000000 for 9000
+ 29359 strings out of 481820
+ 721827 string characters out of 5937972
+ 1383011 words of memory out of 5000000
+ 44668 multiletter control sequences out of 15000+600000
+ 546604 words of font info for 55 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 68i,8n,98p,727b,1231s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t
-2a/larm1095.600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t
-2a/lass1095.600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t
-2a/lasx1095.600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t
-2a/larm0600.600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappe
-n/ec/tcrm1200.600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh
--t2a/labx2488.600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh
--t2a/labx1728.600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh
--t2a/larm1200.600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh
--t2a/labx1200.600pk>
-Output written on report.pdf (9 pages, 122508 bytes).
+ 68i,8n,98p,1290b,1823s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1095.600p
+k> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.60
+0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/lass1095.60
+0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/lasx1095.60
+0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm0600.60
+0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.
+600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx2488.
+600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1728.
+600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1200.
+600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1200.
+600pk>
+Output written on report.pdf (14 pages, 162315 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 476 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

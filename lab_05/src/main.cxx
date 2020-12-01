@@ -8,7 +8,7 @@ int main()
 {
     setbuf(stdout, NULL);
     Conveyor *conveyor_obj = new Conveyor();
-    conveyor_obj->run(25);
+    conveyor_obj->run(200);
 
     delete conveyor_obj;
 

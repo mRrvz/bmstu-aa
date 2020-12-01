@@ -8,7 +8,7 @@ Carcass::Carcass(size_t num)
 
     for (size_t i = 2; i <= sqrt(num); i++)
     {
-        if (0 == num % i) 
+        if (0 == num % i)
         {
             return;
         }
@@ -44,7 +44,14 @@ Wheels::Wheels(int n)
 
 void Car::create_engine()
 {
-    this->engine = std::unique_ptr<Engine>(new Engine(5, 15000000));
+    if (this->carcass->is_freight) 
+    {
+        this->engine = std::unique_ptr<Engine>(new Engine(10, 1500000));
+    } 
+    else
+    {
+        this->engine = std::unique_ptr<Engine>(new Engine(5, 1500000));
+    }
 }
 
 void Car::create_carcass()
@@ -54,5 +61,5 @@ void Car::create_carcass()
 
 void Car::create_wheels()
 {
-    this->wheels = std::unique_ptr<Wheels>(new Wheels(1000000));
+    this->wheels = std::unique_ptr<Wheels>(new Wheels(this->engine->engine_power));
 }

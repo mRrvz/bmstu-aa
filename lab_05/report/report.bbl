@@ -7,12 +7,11 @@
 \ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
 \ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
 
-\bibitem{C}
+\bibitem{C++}
 \selectlanguageifdefined{russian}
-The С99 Standard.
-\newblock Режим
-  доступа:\url{http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf}.
-\newblock Дата обращения: 16.09.2020.
+C++ Standard.
+\newblock Режим доступа:\url{https://isocpp.org/}.
+\newblock Дата обращения: 01.12.2020.
 
 \bibitem{debian}
 \selectlanguageifdefined{russian}
@@ -34,5 +33,12 @@ Linux -- Getting Started [Электронный ресурс].
 \newblock Режим доступа:
   \url{https://ark.intel.com/content/www/ru/ru/ark/products/65516/intel-core-i5-3550-processor-6m-cache-up-to-3-70-ghz.html}.
 \newblock Дата обращения: 20.09.2020.
+
+\bibitem{profiling}
+\selectlanguageifdefined{russian}
+GNU gprof -Introducing to Profiling.
+\newblock Режим доступа:
+  \url{https://ftp.gnu.org/old-gnu/Manuals/gprof-2.9.1/html\_chapter/gprof\_1.html}.
+\newblock Дата обращения: 01.12.2020.
 
 \end{thebibliography}
