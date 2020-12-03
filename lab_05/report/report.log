@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  3 DEC 2020 16:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  3 DEC 2020 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1164,10 +1164,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--91
 <scheme_lab05.jpg, id=27, 402.50375pt x 452.69125pt>
 File: scheme_lab05.jpg Graphic file (type jpg)
 <use scheme_lab05.jpg>
-Package pdftex.def Info: scheme_lab05.jpg  used on input line 160.
+Package pdftex.def Info: scheme_lab05.jpg  used on input line 159.
 (pdftex.def)             Requested size: 241.5041pt x 271.61684pt.
 [5
-
 
  <./scheme_lab05.jpg>]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
@@ -1181,7 +1180,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
-191.
+190.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
@@ -1189,7 +1188,7 @@ File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-229.
+228.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -1199,7 +1198,7 @@ File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 <prog_ex.png, id=54, 318.18875pt x 464.73625pt>
 File: prog_ex.png Graphic file (type png)
 <use prog_ex.png>
-Package pdftex.def Info: prog_ex.png  used on input line 455.
+Package pdftex.def Info: prog_ex.png  used on input line 454.
 (pdftex.def)             Requested size: 254.55133pt x 371.78949pt.
 [12
 
@@ -1249,7 +1248,7 @@ k> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.60
 600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1200.
 600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1200.
 600pk>
-Output written on report.pdf (16 pages, 197914 bytes).
+Output written on report.pdf (16 pages, 197877 bytes).
 PDF statistics:
  492 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream
