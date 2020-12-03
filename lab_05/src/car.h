@@ -4,6 +4,8 @@
 #include <memory>
 #include <cmath>
 
+#include "logger.h"
+
 class Carcass
 {
 public:
@@ -37,9 +39,9 @@ public:
     Car() = default;
     ~Car() = default;
 
-    void create_engine();
-    void create_carcass();
-    void create_wheels();
+    void create_engine(size_t);
+    void create_carcass(size_t);
+    void create_wheels(size_t);
 
 private:
     std::unique_ptr<Carcass> carcass;

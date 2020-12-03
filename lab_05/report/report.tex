@@ -135,26 +135,36 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 
 \section{Описание задачи}
 
+В качестве алгоритма, реализованного для распределения на конвейере, был выбран процес сборки автомобиля, состоящий из трех этапов:
+
+\begin{itemize}
+	\item сборка движка (возведение числа в степень);
+	\item сборка корпуса (проверка числа на простоту);
+	\item сборка колёс (вычисление числа Фибоначчи).
+\end{itemize}
+
 \section*{Вывод}
-	Вывод: аналит
+	В данном разделе были рассмотренны особенности построения конвейерных вычислений.
 \clearpage
 
 \chapter{Конструкторская часть}
 
+В данном разделе представлены схемы рассматриваемых алгоритмов.
+
 \section{Разработка алгоритмов}
 
+На риснуке 2.1 приведена схема организации конвейерных вычислений.
 
 \begin{figure}[h]
 	\centering
-	%\includegraphics[scale=0.85]{base.jpg}
+	\includegraphics[scale=0.6]{scheme_lab05.jpg}
 	\caption{Схема стандартного алгоритма умножения матриц.}
 	\label{fig:mpr}
 \end{figure}
 
 
-
 \section*{Вывод}
-Вывод: конструктор
+На основе теоретических данных, полученных аз аналитического раздела, были построенна схема алгоритма конвейерных вычислений.
 
 \chapter{Технологическая часть}
 
@@ -176,10 +186,9 @@ escapeinside={\#*}{*)}   % если нужно добавить коммента
 
 \section{Реализация алгоритмов}
 
-В листингах 3.1 и 3.2 приведены реализации конвейерных вычислений (класс Cloveyor) и реализация сборки машины (класс Car).
+В листингах 3.1 и 3.2 приведены реализации конвейерных вычислений (класс Cloveyor), реализация сборки машины (класс Car) и реализация класса отвечающего за логгирование (класс Logger).
 
 \begin{lstlisting}[label=some-code,caption=Реализация класса конвейера, language=C++]
-#include <iostream>
 #include <thread>
 #include <queue>
 
@@ -198,7 +207,7 @@ public:
 	void create_engine();
 	void create_carcass();
 	void create_wheels();
-
+	
 private:
 	std::thread threads[THRD_CNT];
 	std::vector<std::shared_ptr<Car>> cars;
@@ -216,7 +225,7 @@ void Conveyor::run(size_t cars_cnt)
 		cars.push_back(new_car);
 		q1.push(new_car);
 	}
-
+	
 	this->threads[0] = std::thread(&Conveyor::create_carcass, this);
 	this->threads[1] = std::thread(&Conveyor::create_engine, this);
 	this->threads[2] = std::thread(&Conveyor::create_wheels, this);
@@ -229,68 +238,63 @@ void Conveyor::run(size_t cars_cnt)
 
 void Conveyor::create_carcass()
 {
-	std::cout << "Create carcass: start\n";
+	size_t task_num = 0;
 	
 	while (!this->q1.empty())
 	{
 		std::shared_ptr<Car> car = q1.front();
-		car->create_carcass();
+		car->create_carcass(++task_num);
 		
 		q2.push(car);
 		q1.pop();
 	}
-
-	std::cout << "Create carcass: end\n";
 }
 
 void Conveyor::create_engine()
 {
-	std::cout << "Create engine: start\n";
+	size_t task_num = 0;
 	
 	do
 	{
 		if (!this->q2.empty())
 		{
 			std::shared_ptr<Car> car = q2.front();
-			car->create_engine();
-			
+			car->create_engine(++task_num);
+	
 			q3.push(car);
 			q2.pop();
 		}
 	} while(!q1.empty() || !q2.empty());
-	
-	std::cout << "Create engine: end\n";
 }
 
 void Conveyor::create_wheels()
 {
-	std::cout << "Create wheels: start\n";
-
+	size_t task_num = 0;
+	
 	do
 	{
 		if (!this->q3.empty())
 		{
 			std::shared_ptr<Car> car = q3.front();
-			car->create_wheels();
+			car->create_wheels(++task_num);
 			q3.pop();
 		}
 	} while (!q1.empty() || !q2.empty() || !q3.empty());
-	
-	std::cout << "Create wheels: end\n";
 }
 \end{lstlisting}
 
-\begin{lstlisting}[label=some-code,caption=Реализация класса машины, language=C++]
+\begin{lstlisting}[label=some-code,caption=Реализация класса сборки машины, language=C++]
 #include <memory>
 #include <cmath>
+
+#include "logger.h"
 
 class Carcass
 {
 public:
 	Carcass(size_t num);
 	~Carcass() = default;
-
-private:
+	
 	bool is_freight;
 };
 
@@ -299,8 +303,7 @@ class Engine
 public:
 	Engine(int a, int x);
 	~Engine() = default;
-
-private:
+	
 	size_t engine_power;
 };
 
@@ -309,8 +312,7 @@ class Wheels
 public:
 	Wheels(int n);
 	~Wheels() = default;
-
-private:
+	
 	size_t wheels_cnt;
 };
 
@@ -319,11 +321,11 @@ class Car
 public:
 	Car() = default;
 	~Car() = default;
-
-	void create_engine();
-	void create_carcass();
-	void create_wheels();
-
+	
+	void create_engine(size_t);
+	void create_carcass(size_t);
+	void create_wheels(size_t);
+	
 private:
 	std::unique_ptr<Carcass> carcass;
 	std::unique_ptr<Engine> engine;
@@ -336,7 +338,7 @@ Carcass::Carcass(size_t num)
 	
 	for (size_t i = 2; i <= sqrt(num); i++)
 	{
-		if (0 == num % i) 
+		if (0 == num % i)
 		{
 			return;
 		}
@@ -359,7 +361,7 @@ Wheels::Wheels(int n)
 {
 	size_t f1 = 1, f2 = 1;
 	this->wheels_cnt = f1;
-
+	
 	for (int i = 2; i < n; i++)
 	{
 		this->wheels_cnt = f1 + f2;
@@ -368,19 +370,71 @@ Wheels::Wheels(int n)
 	}
 }
 
-void Car::create_engine()
+void Car::create_engine(size_t task_num)
 {
-	this->engine = std::unique_ptr<Engine>(new Engine(5, 15000000));
+	Logger::log_current_event(task_num, "Part 2 | Start");
+	
+	if (this->carcass->is_freight) 
+	{
+		this->engine = std::unique_ptr<Engine>(new Engine(10, 150000));
+	} 
+	else
+	{
+		this->engine = std::unique_ptr<Engine>(new Engine(5,  150000));
+	}
+
+	Logger::log_current_event(task_num, "Part 2 | End  ");
 }
 
-void Car::create_carcass()
+void Car::create_carcass(size_t task_num)
 {
+	Logger::log_current_event(task_num, "Part 1 | Start");
 	this->carcass = std::unique_ptr<Carcass>(new Carcass(27644437));
+	Logger::log_current_event(task_num, "Part 1 | End  ");
 }
 
-void Car::create_wheels()
+void Car::create\_wheels(size\_t task\_num)
 {
-	this->wheels = std::unique_ptr<Wheels>(new Wheels(1000000));
+	Logger::log_current_event(task_num, "Part 3 | Start");
+	this->wheels = std::unique_ptr<Wheels>(new Wheels(this->engine->engine\_power));
+	Logger::log_current_event(task_num, "Part 3 | End  ");
+}
+\end{lstlisting}
+
+\begin{lstlisting}[label=some-code,caption=Реализация класса логирования, language=C++]
+#include <iostream>
+#include <chrono>
+
+using namespace std::chrono;
+
+class Logger 
+{
+public:
+	Logger() = default;
+	~Logger() = default;
+	
+	static void log_current_event(size_t task_num, const char *const event);
+}
+
+void Logger::log_current_event(size_t task_num, const char *const event) 
+{
+	system_clock::time_point now = system_clock::now();
+	system_clock::duration tp = now.time_since_epoch();
+	
+	tp -= duration_cast<seconds>(tp);
+	
+	time_t tt = system_clock::to_time_t(now);
+	tm t = *gmtime(&tt);
+	
+	std::printf(
+		"Task #%lu | %s | %02u:%02u:%02u.%3u\n", 
+		task_num,
+		event, 
+		t.tm_hour, 
+		t.tm_min, 
+		t.tm_sec, 
+		static_cast<unsigned>(tp / milliseconds(1))
+	);
 }
 \end{lstlisting}
 
@@ -388,11 +442,20 @@ void Car::create_wheels()
 
 \section*{Вывод}
 
-В данном разделе была разработана реализация конвейерных вычислений.
+В данном разделе была разработана и рассмотрена реализация конвейерных вычислений.
 
 \chapter{Исследовательская часть}
 
-В данном разделе приведен анализ характеристик разработанного ПО.
+В данном разделе приведен анализ характеристик разработанного ПО  и примеры работы ПО.
+
+\section{Пример работы программы}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{prog_ex.png}
+	\caption{Пример работы программы}
+	\label{fig:mpr}
+\end{figure}
 
 \section{Технические характеристики}
 
@@ -408,7 +471,7 @@ void Car::create_wheels()
 
 \section{Время выполнения алгоритмов}
 
-Время выполнения алгоритма замерялось с помощью применения технологии профайлинга \cite{profiling}. Данный инструмент даёт детальное описание количество вызовов и количества времени CPU, занятого каждой функцией.
+Время выполнения алгоритма замерялось с помощью применения технологии профайлинга \cite{profiling}. Данный инструмент даёт детальное описание количество вызовов и количества времени CPU, затраченного на выполнение каждой функции.
 
 \begin{table} [h!]
 	\caption{Таблица времени выполнения асинхронной обработки данных}
@@ -435,7 +498,7 @@ void Car::create_wheels()
 
 \section*{Вывод}
 
-В данном разделе приведены время исполнения алгоритмов. Как видно из таблицы 4.1, вторая линия, то есть сборка двигателей (возведение числа в степень) занимает в среднем 70\% времени от выполнения всей программы.
+В данном разделе приведены время исполнения алгоритмов. Как видно из таблицы 4.1, вторая линия, то есть сборка двигателей (возведение числа в степень) занимает в среднем 70\% времени от выполнения всей программы. Линия №3 в среднем работает быстрее чем линия №1.
 
 \chapter*{Заключение}
 \addcontentsline{toc}{chapter}{Заключение}

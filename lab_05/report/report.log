@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  1 DEC 2020 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  3 DEC 2020 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -960,6 +960,12 @@ File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 
 LaTeX Warning: Label `some-code' multiply defined.
 
+
+LaTeX Warning: Label `some-code' multiply defined.
+
+
+LaTeX Warning: Label `fig:mpr' multiply defined.
+
 )
 \openout1 = `report.aux'.
 
@@ -1153,12 +1159,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--91
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
 [3
 
-]
+] [4]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-[4
+<scheme_lab05.jpg, id=27, 402.50375pt x 452.69125pt>
+File: scheme_lab05.jpg Graphic file (type jpg)
+<use scheme_lab05.jpg>
+Package pdftex.def Info: scheme_lab05.jpg  used on input line 160.
+(pdftex.def)             Requested size: 241.5041pt x 271.61684pt.
+[5
 
 
-]
+ <./scheme_lab05.jpg>]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
@@ -1170,23 +1181,29 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
-181.
+191.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-) [5
+) [6
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-220.
+229.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [6] [7] [8] [9]
+) [7] [8] [9] [10]
+[11]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
-[10
+<prog_ex.png, id=54, 318.18875pt x 464.73625pt>
+File: prog_ex.png Graphic file (type png)
+<use prog_ex.png>
+Package pdftex.def Info: prog_ex.png  used on input line 455.
+(pdftex.def)             Requested size: 254.55133pt x 371.78949pt.
+[12
 
-] [11] (./report.bbl [12
+ <./prog_ex.png>] [13] (./report.bbl [14
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 31--36
@@ -1201,12 +1218,12 @@ ntel-core-i5-3550-processor-6m-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--43
-[]\T2A/cmr/m/n/12 GNU gprof -Introducing to Profiling.  –е-жим до-сту-па: \T2A/
-cmr/m/n/10.95 https://ftp.gnu.org/old-
+Underfull \hbox (badness 6032) in paragraph at lines 39--43
+[]\T2A/cmr/m/n/12 GNU gprof -- Introducing to Profiling.  –е-жим до-сту-па: \T2
+A/cmr/m/n/10.95 https://ftp.gnu.org/old-
  []
 
-) [13
+) [15
 
 ] (./report.aux)
 
@@ -1214,10 +1231,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29359 strings out of 481820
- 721827 string characters out of 5937972
- 1383011 words of memory out of 5000000
- 44668 multiletter control sequences out of 15000+600000
+ 29438 strings out of 481820
+ 722820 string characters out of 5937972
+ 1393124 words of memory out of 5000000
+ 44745 multiletter control sequences out of 15000+600000
  546604 words of font info for 55 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  68i,8n,98p,1290b,1823s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1232,10 +1249,10 @@ k> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.60
 600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1200.
 600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1200.
 600pk>
-Output written on report.pdf (14 pages, 162315 bytes).
+Output written on report.pdf (16 pages, 197914 bytes).
 PDF statistics:
- 476 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 492 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,7 +1,6 @@
 #ifndef __CONVEYOR_H__
 #define __CONVEYOR_H__
 
-#include <iostream>
 #include <thread>
 #include <queue>
 

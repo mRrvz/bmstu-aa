@@ -22,52 +22,46 @@ void Conveyor::run(size_t cars_cnt)
 
 void Conveyor::create_carcass()
 {
-    std::cout << "Create carcass: start\n";
+    size_t task_num = 0;
 
     while (!this->q1.empty())
     {
         std::shared_ptr<Car> car = q1.front();
-        car->create_carcass();
+        car->create_carcass(++task_num);
 
         q2.push(car);
         q1.pop();
     }
-
-    std::cout << "Create carcass: end\n";
 }
 
 void Conveyor::create_engine()
 {
-    std::cout << "Create engine: start\n";
+    size_t task_num = 0;
 
     do
     {
         if (!this->q2.empty())
         {
             std::shared_ptr<Car> car = q2.front();
-            car->create_engine();
+            car->create_engine(++task_num);
 
             q3.push(car);
             q2.pop();
         }
     } while(!q1.empty() || !q2.empty());
-
-    std::cout << "Create engine: end\n";
 }
 
 void Conveyor::create_wheels()
 {
-    std::cout << "Create wheels: start\n";
+    size_t task_num = 0;
 
     do
     {
         if (!this->q3.empty())
         {
             std::shared_ptr<Car> car = q3.front();
-            car->create_wheels();
+            car->create_wheels(++task_num);
             q3.pop();
         }
     } while (!q1.empty() || !q2.empty() || !q3.empty());
-
-    std::cout << "Create wheels: end\n";
 }
