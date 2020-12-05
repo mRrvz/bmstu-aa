@@ -1,9 +1,10 @@
-module Dictionary (
-    simpleSearch,
-    binarySearch,
-    frequencyAnalysis,
-    generateDict
-) where
+module Dictionary 
+  (
+    simpleSearch
+  , binarySearch
+  , frequencyAnalysis
+  , generateDict
+  ) where
 
 import qualified Data.Vector as V
 
@@ -11,11 +12,11 @@ toTuple :: [a] -> [(a, a)]
 toTuple lst = [(head lst, last lst)]
 
 
---generateDict :: [String] -> V.Vector (Int, Int)
-generateDict content = V.fromList lst1
+generateDict :: String -> V.Vector (Int, Int)
+generateDict content = V.fromList formatted
   where
     lst = map (map (\x -> read x:: Int)) (map words $ lines content)
-    lst1 = foldl (\acc y -> acc ++ toTuple y) [] lst
+    formatted = foldl (\acc y -> acc ++ toTuple y) [] lst
 
 
 simpleSearch :: (Ord a, Eq b) => V.Vector (a, b) -> a -> Maybe b

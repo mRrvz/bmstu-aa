@@ -29,7 +29,6 @@ main :: IO ()
 main = do
     mode <- menu
     key <- getKey
-
     dictionary <- openFile "data/dataset.txt" ReadMode >>= hGetContents >>= return . generateDict
 
     let value = case mode of {
