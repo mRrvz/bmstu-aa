@@ -1,10 +1,21 @@
 module Dictionary (
     simpleSearch,
     binarySearch,
-    frequencyAnalysis
+    frequencyAnalysis,
+    generateDict
 ) where
 
 import qualified Data.Vector as V
+
+toTuple :: [a] -> [(a, a)]
+toTuple lst = [(head lst, last lst)]
+
+
+--generateDict :: [String] -> V.Vector (Int, Int)
+generateDict content = V.fromList lst1
+  where
+    lst = map (map (\x -> read x:: Int)) (map words $ lines content)
+    lst1 = foldl (\acc y -> acc ++ toTuple y) [] lst
 
 
 simpleSearch :: (Ord a, Eq b) => V.Vector (a, b) -> a -> Maybe b
@@ -18,8 +29,9 @@ simpleSearch dict key = simpleSearch' dict key $ V.head dict
 binarySearch :: (Ord a, Eq b) => V.Vector (a, b) -> a -> Maybe b 
 binarySearch dict key = binarySearch' dict key $ middle dict
   where
+    droppedSize dict = if V.length dict >= 2 then V.length dict else 2
     fstHalf dict = V.take ((V.length dict) `div` 2) dict
-    sndHalf dict = V.drop ((V.length dict) `div` 2) dict
+    sndHalf dict = V.drop ((droppedSize dict) `div` 2) dict
     middle dict = dict V.! ((V.length dict) `div` 2)
 
     binarySearch' dict key curr | V.null dict = Nothing

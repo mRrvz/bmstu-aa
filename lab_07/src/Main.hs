@@ -1,12 +1,41 @@
 module Main where
 
-import Data.Vector as V
+import System.IO
+import Text.Printf
 import Dictionary
+
+menu :: IO String
+menu = do
+    printf "1. Линейный поиск\n\
+    \2. Бинарный поиск\n\
+    \3. Частотный анализ\n"
+
+    n <- getLine
+    return n
+
+
+getKey :: IO Int
+getKey = do 
+    printf "Введите ключ: \n"
+    key <- getLine 
+    return (read key :: Int)
+    
+
+divider :: Int 
+divider = 10
+
 
 main :: IO ()
 main = do
-    let p = 123
+    mode <- menu
+    key <- getKey
 
-    print $ frequencyAnalysis (V.fromList [(0, "STR0"), (1, "STR1"), (3, "STR3"), (4, "STR4"), 
-        (6, "STR6"), (7, "STR7")]) 7 3
+    dictionary <- openFile "data/dataset.txt" ReadMode >>= hGetContents >>= return . generateDict
 
+    let value = case mode of {
+        "1" -> simpleSearch dictionary key;
+        "2" -> binarySearch dictionary key;
+        "3" -> frequencyAnalysis dictionary key divider;
+    }
+    
+    print value
