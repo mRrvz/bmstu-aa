@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  5 DEC 2020 23:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  6 DEC 2020 01:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -972,6 +972,9 @@ LaTeX Warning: Label `fig:mpr' multiply defined.
 LaTeX Warning: Label `fig:mpr' multiply defined.
 
 
+LaTeX Warning: Label `fig:mpr' multiply defined.
+
+
 LaTeX Warning: Label `some-code' multiply defined.
 
 
@@ -1172,27 +1175,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--92
 
 ] [4]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
+<simple_search.jpg, id=30, 473.77pt x 661.47125pt>
+File: simple_search.jpg Graphic file (type jpg)
+<use simple_search.jpg>
+Package pdftex.def Info: simple_search.jpg  used on input line 179.
+(pdftex.def)             Requested size: 293.73436pt x 410.10794pt.
+<binary_search.jpg, id=31, 774.895pt x 711.65875pt>
+File: binary_search.jpg Graphic file (type jpg)
+<use binary_search.jpg>
+Package pdftex.def Info: binary_search.jpg  used on input line 186.
+(pdftex.def)             Requested size: 542.4228pt x 498.15773pt.
+
+Overfull \hbox (41.93881pt too wide) in paragraph at lines 186--187
+ [][] 
+ []
+
 [5
 
-]
+ <./simple_search.jpg>]
+<calculate_intervals.jpg, id=35, 443.6575pt x 480.79625pt>
+File: calculate_intervals.jpg Graphic file (type jpg)
+<use calculate_intervals.jpg>
+Package pdftex.def Info: calculate_intervals.jpg  used on input line 193.
+(pdftex.def)             Requested size: 443.6564pt x 480.79506pt.
+ [6 <./binary_search.jpg>]
+<freq_analysis.jpg, id=40, 489.83pt x 541.02126pt>
+File: freq_analysis.jpg Graphic file (type jpg)
+<use freq_analysis.jpg>
+Package pdftex.def Info: freq_analysis.jpg  used on input line 200.
+(pdftex.def)             Requested size: 489.8288pt x 541.01993pt.
+ [7 <./calculate_intervals.jpg>] [8 <./freq_analysis.jpg>]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
 LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
-224.
+231.
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-225.
+232.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [6
+) [9
 
-] [7] [8]
+] [10] [11]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
-[9
+[12
 
-] (./report.bbl [10
+] (./report.bbl [13
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 31--36
@@ -1207,12 +1237,17 @@ ntel-core-i5-3550-processor-6m-
  []
 
 
-Underfull \hbox (badness 6032) in paragraph at lines 39--43
-[]\T2A/cmr/m/n/12 GNU gprof -- Introducing to Profiling.  Ре-жим до-сту-па: \T2
-A/cmr/m/n/10.95 https://ftp.gnu.org/old-
+Underfull \hbox (badness 10000) in paragraph at lines 39--43
+[]\T2A/cmr/m/n/12 Glasgow Haskell Compiler -- Profiling.  Ре-жим до-сту-па:
  []
 
-) [11
+
+Underfull \hbox (badness 3189) in paragraph at lines 39--43
+\T2A/cmr/m/n/10.95 https://downloads.haskell.org/ ghc/latest/docs/html/users_gu
+ide/profiling.html\T2A/cmr/m/n/12 .  Да-та об-ра-
+ []
+
+) [14
 
 ] (./report.aux)
 
@@ -1220,10 +1255,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29685 strings out of 481820
- 725709 string characters out of 5937972
- 1302834 words of memory out of 5000000
- 44996 multiletter control sequences out of 15000+600000
+ 29710 strings out of 481820
+ 726239 string characters out of 5937972
+ 1302833 words of memory out of 5000000
+ 45017 multiletter control sequences out of 15000+600000
  546604 words of font info for 55 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  68i,8n,98p,727b,1851s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1240,10 +1275,10 @@ k> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.60
 600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on report.pdf (12 pages, 181616 bytes).
+Output written on report.pdf (15 pages, 369146 bytes).
 PDF statistics:
- 480 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 488 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

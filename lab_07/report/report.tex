@@ -153,11 +153,11 @@
 		\item разбить словарь на сегменты.
 	\end{itemize}
 	
-	Словарь разбивается на сегменты по какому-либу признаку. Например, если ключ является строкой, то можно сделать разбиение по первой букве в ключе. Если ключ является целым числом, можно провести разбиение по остатку от деления ключа на некоторое число $K$.
+	Словарь разбивается на сегменты по какому-либу признаку и сортируется по частоте. Например, если ключ является строкой, то можно сделать разбиение по первой букве в ключе. Если ключ является целым числом, можно провести разбиение по остатку от деления ключа на некоторое число $K$.
 	
 	После выполнения разбиения, нужно определить к какому сегменту относится искомый ключ и провести на этом сегменте двоичный поиск.
 	
-	Таким образом, время поиска в словаре увеличивается, но, при этом, так же как и алгоритм двоичного поиска, частотный анализ требует предварительной обработки данных. 
+	Таким образом, время поиска в словаре увеличивается (особенно для самых часто встречаемых ключей), но, при этом, так же как и алгоритм двоичного поиска, частотный анализ требует предварительной обработки данных. 
 	
 	\section{Описание словаря}
 	
@@ -166,32 +166,39 @@
 	\section*{Вывод}
 	В данном разделе были рассмотренны особенности алгоритмов поиска в словаре.
 	
-	\chapter{Конструкторская часть}
+\chapter{Конструкторская часть}
 	
-	В данном разделе представлены схемы рассматриваемых алгоритмов.
+В данном разделе представлены схемы рассматриваемых алгоритмов.
 	
-	\section{Разработка алгоритмов}
+\section{Разработка алгоритмов}
 	
-	%На рисунке 2.1 приведена схема организации конвейерных вычислений.
+На рисунках 2.1 - 2.3 приведены схема алгоритмов поиска в словаре.
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
-		%\includegraphics[scale=0.6]{scheme_lab05.jpg}
+		\includegraphics[scale=0.62]{simple_search.jpg}
 		\caption{Схема алгоритма полного перебора.}
 		\label{fig:mpr}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
-		%\includegraphics[scale=0.6]{scheme_lab05.jpg}
+		\includegraphics[scale=0.7]{binary_search.jpg}
 		\caption{Схема алгоритма двоичного поиска.}
 		\label{fig:mpr}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
-		%\includegraphics[scale=0.6]{scheme_lab05.jpg}
+		\includegraphics[scale=1]{calculate_intervals.jpg}
 		\caption{Схема алгоритма частотного анализа.}
+		\label{fig:mpr}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=1]{freq_analysis.jpg}
+		\caption{Схема алгоритма поиска с использованием частотного анализа.}
 		\label{fig:mpr}
 	\end{figure}
 	
@@ -245,7 +252,7 @@ binarySearch dict key = binarySearch' dict key $ middle dict
 	binarySearch' dict key curr | key <= fst curr = binarySearch' (fstHalf dict) key $ (middle $ fstHalf dict)
 \end{lstlisting}
 
-\begin{lstlisting}[label=some-code,caption=Алгоритм частотного анализа, language=Haskell]
+\begin{lstlisting}[label=some-code,caption=Алгоритм поиска с использованием частотного анализа, language=Haskell]
 calculateIntervals :: Eq b => V.Vector (Int, b) -> Int -> V.Vector (V.Vector (Int, b))
 calculateIntervals dict divider = intervals
   where 
@@ -297,8 +304,7 @@ frequencyAnalysis dict key divider =
 \chapter{Исследовательская часть}
 	
 В данном разделе приведен анализ характеристик разработанного ПО.
-	
-	
+
 \section{Технические характеристики}
 	
 Ниже приведены технические характеристики устройства, на котором было проведено тестирование ПО:
