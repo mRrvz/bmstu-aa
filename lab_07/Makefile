@@ -1,6 +1,7 @@
 CC := ghc
 MAIN := Main.hs
 APPNAME := app.exe
+PFLAGS=-prof -fprof-auto -rtsopts
 FLAGS=-dynamic --make -O0
 
 build:

@@ -15,5 +15,5 @@
 \contentsline {chapter}{\numberline {4}Исследовательская часть}{12}%
 \contentsline {section}{\numberline {4.1}Технические характеристики}{12}%
 \contentsline {section}{\numberline {4.2}Время выполнения алгоритмов}{12}%
-\contentsline {chapter}{Заключение}{13}%
-\contentsline {chapter}{Литература}{13}%
+\contentsline {chapter}{Заключение}{14}%
+\contentsline {chapter}{Литература}{14}%
