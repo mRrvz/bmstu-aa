@@ -36,3 +36,4 @@ cabal.project.local~
 *.so
 
 .vscode/
+main
