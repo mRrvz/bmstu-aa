@@ -23,6 +23,7 @@ const (
 type Colony struct {
 	graph    [][]int
 	pheromon [][]float64
+	days     int
 }
 
 // Ant ant structure
@@ -209,9 +210,10 @@ func BruteForce(graph [][]int) []int {
 }
 
 // CreateColony creating colony
-func CreateColony(graph [][]int) *Colony {
+func CreateColony(graph [][]int, days int) *Colony {
 	colony := new(Colony)
 	colony.graph = graph
+	colony.days = days
 	colony.pheromon = make([][]float64, len(colony.graph))
 
 	for i := 0; i < len(colony.graph); i++ {
@@ -226,10 +228,10 @@ func CreateColony(graph [][]int) *Colony {
 }
 
 // GoAnts let's go ant clolony optimization!
-func GoAnts(colony *Colony, days int) []int {
+func GoAnts(colony *Colony) []int {
 	shortest := make([]int, len(colony.graph))
 
-	for i := 0; i < days; i++ {
+	for i := 0; i < colony.days; i++ {
 		for j := 0; j < len(colony.graph); j++ {
 			ant := colony.createAnt(j)
 			ant.startMove()

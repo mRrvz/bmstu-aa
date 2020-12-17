@@ -14,10 +14,10 @@ func RunBenchmarks() {
 	for i := 0; i < benchCount; i++ {
 
 		graph := GetGraph("../data/graph_01.txt")
-		colony := CreateColony(graph)
+		colony := CreateColony(graph, 100)
 
 		start := time.Now()
-		_ = GoAnts(colony, 100)
+		_ = GoAnts(colony)
 		end := time.Now()
 		//fmt.Println(value)
 
