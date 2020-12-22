@@ -1,7 +1,7 @@
 #include "conveyor.h"
 
 
-void Conveyor::run(size_t cars_cnt)
+void Conveyor::run_parallel(size_t cars_cnt)
 {
     for (size_t i = 0; i < cars_cnt; i++)
     {
@@ -17,6 +17,33 @@ void Conveyor::run(size_t cars_cnt)
     for (int i = 0; i < THRD_CNT; i++)
     {
         this->threads[i].join();
+    }
+}
+
+void Conveyor::run_linear(size_t cars_cnt) 
+{
+    for (size_t i = 0; i < cars_cnt; i++)
+    {
+        std::shared_ptr<Car> new_car(new Car);
+        cars.push_back(new_car);
+        q1.push(new_car);
+    }
+
+    for (size_t i = 0; i < cars_cnt; i++) 
+    {
+        std::shared_ptr<Car> car = q1.front();
+        car->create_carcass(i + 1);
+        q2.push(car);
+        q1.pop();
+
+        car = q2.front();
+        car->create_engine(i + 1);
+        q3.push(car);
+        q2.pop();
+
+        car = q3.front();
+        car->create_wheels(i + 1);
+        q3.pop();
     }
 }
 

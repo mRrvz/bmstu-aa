@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  3 DEC 2020 16:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.4)  22 DEC 2020 23:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -838,14 +838,42 @@ Package: eucal 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count296
+\float@exts=\toks46
+\float@box=\box62
+\@float@everytoks=\toks47
+\@floatcapt=\box63
+)
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip59
 \enit@outerparindent=\dimen281
-\enit@toks=\toks46
-\enit@inbox=\box62
-\enit@count@id=\count296
-\enitdp@description=\count297
+\enit@toks=\toks48
+\enit@inbox=\box64
+\enit@count@id=\count297
+\enitdp@description=\count298
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/05/30 v3.4k Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/05/30 v1.12 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen282
+\captionmargin@=\dimen283
+\captionwidth=\dimen284
+\caption@tempdima=\dimen285
+\caption@indent=\dimen286
+\caption@parindent=\dimen287
+\caption@hangindent=\dimen288
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count299
+\c@continuedfloat=\count300
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
@@ -862,30 +890,30 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count298
-\Gm@cntv=\count299
-\c@Gm@tempcnt=\count300
-\Gm@bindingoffset=\dimen282
-\Gm@wd@mp=\dimen283
-\Gm@odd@mp=\dimen284
-\Gm@even@mp=\dimen285
-\Gm@layoutwidth=\dimen286
-\Gm@layoutheight=\dimen287
-\Gm@layouthoffset=\dimen288
-\Gm@layoutvoffset=\dimen289
-\Gm@dimlist=\toks47
+\Gm@cnth=\count301
+\Gm@cntv=\count302
+\c@Gm@tempcnt=\count303
+\Gm@bindingoffset=\dimen289
+\Gm@wd@mp=\dimen290
+\Gm@odd@mp=\dimen291
+\Gm@even@mp=\dimen292
+\Gm@layoutwidth=\dimen293
+\Gm@layoutheight=\dimen294
+\Gm@layouthoffset=\dimen295
+\Gm@layoutvoffset=\dimen296
+\Gm@dimlist=\toks49
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box63
+\ttl@box=\box65
 \beforetitleunit=\skip60
 \aftertitleunit=\skip61
-\ttl@plus=\dimen290
-\ttl@minus=\dimen291
-\ttl@toksa=\toks48
-\titlewidth=\dimen292
-\titlewidthlast=\dimen293
-\titlewidthfirst=\dimen294
+\ttl@plus=\dimen297
+\ttl@minus=\dimen298
+\ttl@toksa=\toks50
+\titlewidth=\dimen299
+\titlewidthlast=\dimen300
+\titlewidthfirst=\dimen301
 )
 (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
@@ -893,24 +921,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count301
-\c@Blindtext=\count302
-\c@blind@countparstart=\count303
-\blind@countxx=\count304
-\blindtext@numBlindtext=\count305
-\blind@countyy=\count306
-\c@blindlist=\count307
-\c@blindlistlevel=\count308
-\c@blindlist@level=\count309
-\blind@listitem=\count310
-\c@blind@listcount=\count311
-\c@blind@levelcount=\count312
-\blind@mathformula=\count313
-\blind@Mathformula=\count314
-\c@blind@randomcount=\count315
-\c@blind@randommax=\count316
-\c@blind@pangramcount=\count317
-\c@blind@pangrammax=\count318
+\c@blindtext=\count304
+\c@Blindtext=\count305
+\c@blind@countparstart=\count306
+\blind@countxx=\count307
+\blindtext@numBlindtext=\count308
+\blind@countyy=\count309
+\c@blindlist=\count310
+\c@blindlistlevel=\count311
+\c@blindlist@level=\count312
+\blind@listitem=\count313
+\c@blind@listcount=\count314
+\c@blind@levelcount=\count315
+\blind@mathformula=\count316
+\blind@Mathformula=\count317
+\c@blind@randomcount=\count318
+\c@blind@randommax=\count319
+\c@blind@pangramcount=\count320
+\c@blind@pangrammax=\count321
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/dat
 avisualization/tikzlibrarydatavisualization.code.tex
@@ -921,20 +949,20 @@ on.code.tex
 File: pgfmoduledatavisualization.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleoo.code.tex
-\pgfoo@objectcount=\count319
-\pgfoothis@count=\count320
-\pgfoo@toks=\toks49
+\pgfoo@objectcount=\count322
+\pgfoothis@count=\count323
+\pgfoo@toks=\toks51
 )
-\pgf@lib@dv@cache@count=\count321
-\pgf@lib@dv@cache@count=\count322
+\pgf@lib@dv@cache@count=\count324
+\pgf@lib@dv@cache@count=\count325
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@layerbox@background=\box64
-\pgf@layerboxsaved@background=\box65
+\pgf@layerbox@background=\box66
+\pgf@layerboxsaved@background=\box67
 )
-\tikzdvvisualizercounter=\count323
+\tikzdvvisualizercounter=\count326
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/dat
 avisualization/tikzlibrarydatavisualization.formats.functions.code.tex
@@ -948,8 +976,8 @@ File: pgflibrarydatavisualization.formats.functions.code.tex 2020/01/08 v3.1.5b
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-06-23 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count324
-\l__pdf_internal_box=\box66
+\l__kernel_color_stack_int=\count327
+\l__pdf_internal_box=\box68
 )
 (./report.aux
 LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 5
@@ -963,42 +991,39 @@ LaTeX Warning: Label `some-code' multiply defined.
 
 LaTeX Warning: Label `some-code' multiply defined.
 
-
-LaTeX Warning: Label `fig:mpr' multiply defined.
-
 )
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-\c@lstlisting=\count325
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+\c@lstlisting=\count328
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count326
-\scratchdimen=\dimen295
-\scratchbox=\box67
-\nofMPsegments=\count327
-\nofMParguments=\count328
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count329
-\MPscratchDim=\dimen296
-\MPnumerator=\count330
-\makeMPintoPDFobject=\count331
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count329
+\scratchdimen=\dimen302
+\scratchbox=\box69
+\nofMPsegments=\count330
+\nofMParguments=\count331
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count332
+\MPscratchDim=\dimen303
+\MPnumerator=\count333
+\makeMPintoPDFobject=\count334
+\everyMPtoPDFconversion=\toks53
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1009,12 +1034,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.17}).
 
-Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
-ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
-your preamble.
- on input line 59.
-
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1052,95 +1076,95 @@ your preamble.
 <b_logo.jpg, id=4, 57.816pt x 65.3715pt>
 File: b_logo.jpg Graphic file (type jpg)
 <use b_logo.jpg>
-Package pdftex.def Info: b_logo.jpg  used on input line 64.
+Package pdftex.def Info: b_logo.jpg  used on input line 72.
 (pdftex.def)             Requested size: 75.06953pt x 84.88416pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (27.62856pt too wide) in paragraph at lines 63--73
+Overfull \hbox (27.62856pt too wide) in paragraph at lines 71--81
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (11.6656pt too wide) in paragraph at lines 74--78
+Overfull \hbox (11.6656pt too wide) in paragraph at lines 82--86
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
+Underfull \hbox (badness 10000) in paragraph at lines 82--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
+Underfull \hbox (badness 10000) in paragraph at lines 82--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
+Underfull \hbox (badness 10000) in paragraph at lines 82--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
+Underfull \hbox (badness 10000) in paragraph at lines 82--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
+Underfull \hbox (badness 10000) in paragraph at lines 82--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
+Underfull \hbox (badness 10000) in paragraph at lines 82--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
+Underfull \hbox (badness 10000) in paragraph at lines 82--86
 
  []
 
 
-Overfull \hbox (150.14671pt too wide) in paragraph at lines 81--85
+Overfull \hbox (150.14671pt too wide) in paragraph at lines 89--93
  []$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
 
  []
 
@@ -1159,14 +1183,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--91
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
 [3
 
-] [4]
+]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-<scheme_lab05.jpg, id=27, 402.50375pt x 452.69125pt>
+<scheme_lab05.jpg, id=24, 141.52875pt x 532.99126pt>
 File: scheme_lab05.jpg Graphic file (type jpg)
 <use scheme_lab05.jpg>
-Package pdftex.def Info: scheme_lab05.jpg  used on input line 159.
-(pdftex.def)             Requested size: 241.5041pt x 271.61684pt.
-[5
+Package pdftex.def Info: scheme_lab05.jpg  used on input line 165.
+(pdftex.def)             Requested size: 84.9179pt x 319.79723pt.
+[4
 
  <./scheme_lab05.jpg>]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
@@ -1180,29 +1204,32 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
-190.
+197.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-) [6
+) [5
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-228.
+235.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [7] [8] [9] [10]
-[11]
+) [6] [7] [8] [9]
+[10] [11]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
 <prog_ex.png, id=54, 318.18875pt x 464.73625pt>
 File: prog_ex.png Graphic file (type png)
 <use prog_ex.png>
-Package pdftex.def Info: prog_ex.png  used on input line 454.
+Package pdftex.def Info: prog_ex.png  used on input line 488.
 (pdftex.def)             Requested size: 254.55133pt x 371.78949pt.
 [12
 
- <./prog_ex.png>] [13] (./report.bbl [14
+ <./prog_ex.png>]
+PGFPlots: reading {data/linear.csv}
+PGFPlots: reading {data/parallel.csv}
+ [13] [14] (./report.bbl [15
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 31--36
@@ -1222,7 +1249,7 @@ Underfull \hbox (badness 6032) in paragraph at lines 39--43
 A/cmr/m/n/10.95 https://ftp.gnu.org/old-
  []
 
-) [15
+) [16
 
 ] (./report.aux)
 
@@ -1230,13 +1257,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29438 strings out of 481820
- 722820 string characters out of 5937972
- 1393124 words of memory out of 5000000
- 44745 multiletter control sequences out of 15000+600000
+ 31112 strings out of 481820
+ 758432 string characters out of 5937972
+ 1409169 words of memory out of 5000000
+ 46404 multiletter control sequences out of 15000+600000
  546604 words of font info for 55 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 68i,8n,98p,1290b,1823s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 79i,19n,136p,767b,2363s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1095.600p
 k> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.60
 0pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/lass1095.60
@@ -1247,11 +1274,14 @@ k> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.60
 600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1728.
 600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1200.
 600pk> </home/alexey/.texlive2020/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1200.
-600pk>
-Output written on report.pdf (16 pages, 197877 bytes).
+600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on report.pdf (17 pages, 225732 bytes).
 PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 510 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

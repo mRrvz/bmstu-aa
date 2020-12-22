@@ -14,7 +14,8 @@ public:
     Conveyor() = default;
     ~Conveyor() = default;
 
-    void run(size_t cars_cnt);
+    void run_parallel(size_t cars_cnt);
+    void run_linear(size_t cars_cnt);
 
     void create_engine();
     void create_carcass();
