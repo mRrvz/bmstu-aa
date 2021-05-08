@@ -1,2 +1,4 @@
 *.tex linguist-documentation
+*.toc linguist-documentation
 */docs/* linguist-documentation
+*/tex/* linguist-documentation
